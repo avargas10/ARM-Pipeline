@@ -1,0 +1,45 @@
+`timescale 1ns/1ns
+
+module registerBankTB();
+logic [3:0]in_address1;
+logic [3:0]in_address2;
+logic [3:0]in_address3;
+logic [3:0]in_address4; 
+logic out_data1;
+logic out_data2;
+logic out_data3;
+logic out_data4; 
+logic write_address;
+logic write_data;
+logic write_enable;
+logic write_address2;
+logic write_data2;
+logic write_enable2;
+logic pc;
+logic pc_update;
+logic pc_write;
+logic cspr;
+logic cspr_write;
+logic cspr_update;
+logic clk; 
+
+initial 
+	begin
+		clock=0;
+		pc = 4;
+		re = 1;
+	end
+
+instr_Mem codeMem(
+	.PC(pc),
+	.instr(inst),
+	.read_enable(re),
+	.clk(clock));
+
+
+always
+	begin
+		clock<=1; #10;
+		clock<=0; #10;
+	end 
+endmodule

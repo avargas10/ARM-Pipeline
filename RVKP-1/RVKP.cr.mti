@@ -1,0 +1,15 @@
+C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module instr_decode
+
+Top level modules:
+	instr_decode
+
+} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrDecodeTB.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrDecodeTB.sv
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module instrDecodeTB
+
+Top level modules:
+	instrDecodeTB
+
+} {} {}}

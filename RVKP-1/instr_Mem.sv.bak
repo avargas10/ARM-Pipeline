@@ -1,0 +1,22 @@
+module instr_Mem(PC,instr,read_enable,clk);
+parameter addr_size = 8;	//pc supplies address to instr_cache, so addr_size is same as addr_width here. We ignore msb bits from r15.
+
+reg [31:0] ram [255:0];	//2^addr_size-1, 32 bit instructions
+input read_enable;
+input [31:0]PC;
+input clk;
+output reg [31:0] instr;
+
+initial begin
+	$readmemb("code_Mem.txt",ram);
+end
+
+
+always @ (negedge clk)	
+begin
+	if(read_enable==1) begin
+		instr= ram[PC[addr_size+1:2]];
+	end
+end
+
+endmodule
