@@ -1,16 +1,23 @@
-C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv
+C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplier.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplier.sv
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module multiplier
+
+Top level modules:
+	multiplier
+
+} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module instr_decode
 
 Top level modules:
 	instr_decode
 
-} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBank.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBank.sv
+} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBankTB.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBankTB.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module registerBank
+-- Compiling module registerBankTB
 
 Top level modules:
-	registerBank
+	registerBankTB
 
 } {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrMemTB.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrMemTB.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
@@ -19,12 +26,12 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	instrMemTB
 
-} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv
+} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBank.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBank.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module instr_Mem
+-- Compiling module registerBank
 
 Top level modules:
-	instr_Mem
+	registerBank
 
 } {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrDecodeTB.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrDecodeTB.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
@@ -32,5 +39,12 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 
 Top level modules:
 	instrDecodeTB
+
+} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module instr_Mem
+
+Top level modules:
+	instr_Mem
 
 } {} {}}
