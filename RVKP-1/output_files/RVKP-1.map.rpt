@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RVKP-1
-Fri Mar 30 20:59:11 2018
+Fri Mar 30 22:11:04 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Mar 30 20:59:11 2018       ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 30 22:11:04 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; RVKP-1                                      ;
 ; Top-level Entity Name              ; instr_decode                                ;
@@ -252,7 +252,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -262,10 +262,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Mar 30 20:58:53 2018
+    Info: Processing started: Fri Mar 30 22:10:51 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RVKP-1 -c RVKP-1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file datamemtb.sv
+    Info (12023): Found entity 1: dataMemTB File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/dataMemTB.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file instr_decode.sv
     Info (12023): Found entity 1: instr_decode File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file armpipe.sv
@@ -280,11 +282,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file registe
     Info (12023): Found entity 1: registerBank File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBank.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file registerbanktb.sv
     Info (12023): Found entity 1: registerBankTB File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBankTB.sv Line: 3
-Warning (10238): Verilog Module Declaration warning at multiplier.sv(1): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "multiplier" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplier.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file multiplier.sv
     Info (12023): Found entity 1: multiplier File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplier.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file multipliertb.sv
     Info (12023): Found entity 1: multiplierTB File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/MultiplierTB.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file data_mem.sv
+    Info (12023): Found entity 1: data_Mem File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/data_Mem.sv Line: 1
 Info (12127): Elaborating entity "instr_decode" for the top level hierarchy
 Warning (10240): Verilog HDL Always Construct warning at instr_decode.sv(24): inferring latch(es) for variable "iType", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv Line: 24
 Info (10041): Inferred latch for "iType[0]" at instr_decode.sv(39) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv Line: 39
@@ -325,10 +328,10 @@ Info (21057): Implemented 58 device resources after synthesis - the final resour
     Info (21058): Implemented 32 input pins
     Info (21059): Implemented 4 output pins
     Info (21061): Implemented 22 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 755 megabytes
-    Info: Processing ended: Fri Mar 30 20:59:11 2018
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:39
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
+    Info: Peak virtual memory: 754 megabytes
+    Info: Processing ended: Fri Mar 30 22:11:04 2018
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:29
 
 

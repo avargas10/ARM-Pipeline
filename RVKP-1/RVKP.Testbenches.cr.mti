@@ -19,6 +19,20 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	registerBankTB
 
+} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/data_Mem.sv {1 {vlog -work work -sv -stats=none {C:\Users\afeli\Documents\GitHub\ARM-Pipeline\RVKP-1\data_Mem.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module data_Mem
+
+Top level modules:
+	data_Mem
+
+} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplierTB.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplierTB.sv
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module multiplierTB
+
+Top level modules:
+	multiplierTB
+
 } {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrMemTB.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrMemTB.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module instrMemTB
