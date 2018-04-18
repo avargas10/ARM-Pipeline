@@ -8,59 +8,133 @@ z2
 !i10f 100
 cModel Technology
 dC:/Modeltech_pe_edu_10.4a/examples
-vdata_Mem
+vALU
 Z0 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
-Z1 !s110 1522472273
+Z1 !s110 1523983314
 !i10b 1
-!s100 E;hL2<kk<F<?0S8VeiK4R2
-I6VEaWf0>]26H8m4_b41n@1
+!s100 50>4XG79EQmEKNkFFmVRb1
+IXXmcKZ`V>6^YJf@ODYQDV0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
-!s105 data_Mem_sv_unit
+!s105 ALU_sv_unit
 S1
 Z3 dC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1
-w1522471150
-8C:\Users\afeli\Documents\GitHub\ARM-Pipeline\RVKP-1\data_Mem.sv
-FC:\Users\afeli\Documents\GitHub\ARM-Pipeline\RVKP-1\data_Mem.sv
-L0 1
-Z4 OP;L;10.4a;61
+Z4 w1523929987
+8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/ALU.sv
+FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/ALU.sv
+L0 18
+Z5 OP;L;10.4a;61
 r1
 !s85 0
 31
-Z5 !s108 1522472273.000000
-!s107 C:\Users\afeli\Documents\GitHub\ARM-Pipeline\RVKP-1\data_Mem.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:\Users\afeli\Documents\GitHub\ARM-Pipeline\RVKP-1\data_Mem.sv|
+Z6 !s108 1523983314.000000
+!s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/ALU.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/ALU.sv|
 !s101 -O0
 !i113 1
-Z6 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+Z7 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+n@a@l@u
+varmv7TDMI
+R0
+Z8 !s110 1523983313
+!i10b 1
+!s100 =F:ogQVKG9SfI@4l]ol`:0
+IAz`c10a5@]oT7DaEkb;Hj1
+R2
+!s105 armv7TDMI_sv_unit
+S1
+R3
+w1523982512
+8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/armv7TDMI.sv
+FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/armv7TDMI.sv
+L0 3
+R5
+r1
+!s85 0
+31
+Z9 !s108 1523983313.000000
+!s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/armv7TDMI.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/armv7TDMI.sv|
+!s101 -O0
+!i113 1
+R7
+narmv7@t@d@m@i
+vdata_Mem
+R0
+R8
+!i10b 1
+!s100 AKFC6n9i=V`XLYNQe<6B91
+I:>AI`PYSlJn?fPAzzkTOZ2
+R2
+!s105 data_Mem_sv_unit
+S1
+R3
+w1523979364
+8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/data_Mem.sv
+FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/data_Mem.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/data_Mem.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/data_Mem.sv|
+!s101 -O0
+!i113 1
+R7
 ndata_@mem
 vdataMemTB
 R0
-R1
+R8
 !i10b 1
-!s100 l2OMCJgWB3hfgJUkS<6dh2
-IcogHDnh6k``F96ROW_PQN0
+!s100 543?cCJiGLliMKcg2S^Qa1
+IcM5?N;B>Q:QldBM2foVni2
 R2
 !s105 dataMemTB_sv_unit
 S1
 R3
-w1522472260
-8C:\Users\afeli\Documents\GitHub\ARM-Pipeline\RVKP-1\dataMemTB.sv
-FC:\Users\afeli\Documents\GitHub\ARM-Pipeline\RVKP-1\dataMemTB.sv
+w1523982136
+8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/dataMemTB.sv
+FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/dataMemTB.sv
 L0 3
-R4
+R5
 r1
 !s85 0
 31
-R5
-!s107 C:\Users\afeli\Documents\GitHub\ARM-Pipeline\RVKP-1\dataMemTB.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:\Users\afeli\Documents\GitHub\ARM-Pipeline\RVKP-1\dataMemTB.sv|
+R9
+!s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/dataMemTB.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/dataMemTB.sv|
 !s101 -O0
 !i113 1
-R6
+R7
 ndata@mem@t@b
+vevaluator
+R0
+R8
+!i10b 1
+!s100 De?3=HIi`NN>kd^AzdGak1
+I;^DhZPz^g:>]j^933gGTD0
+R2
+!s105 evaluator_sv_unit
+S1
+R3
+w1523982966
+8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/evaluator.sv
+FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/evaluator.sv
+L0 4
+R5
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/evaluator.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/evaluator.sv|
+!s101 -O0
+!i113 1
+R7
 vinstr_decode
 R0
-Z7 !s110 1522472270
+!s110 1523983311
 !i10b 1
 !s100 LK5HoRVkmd3GIY3ZONI5;0
 INe?9ET>1`LK=cWKCdX9Jh0
@@ -72,19 +146,19 @@ w1522341354
 8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv
 FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv
 L0 15
-R4
+R5
 r1
 !s85 0
 31
-Z8 !s108 1522472270.000000
+!s108 1523983311.000000
 !s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv|
 !s101 -O0
 !i113 1
-R6
+R7
 vinstr_Mem
 R0
-R7
+Z10 !s110 1523983312
 !i10b 1
 !s100 27hR8cQ?=hLQA3oLH<fbM1
 I`e<B];Jb1KQ>eHmBe0G7m0
@@ -96,20 +170,20 @@ w1522384951
 8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv
 FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv
 L0 1
-R4
+R5
 r1
 !s85 0
 31
-R8
+Z11 !s108 1523983312.000000
 !s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv|
 !s101 -O0
 !i113 1
-R6
+R7
 ninstr_@mem
 vinstrDecodeTB
 R0
-R7
+R10
 !i10b 1
 !s100 SHMc>fZ[9n9EgUTMh3:421
 Ig>XOO^?CdgYWI^BWVO=8z3
@@ -121,20 +195,20 @@ w1522382959
 8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrDecodeTB.sv
 FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrDecodeTB.sv
 L0 3
-R4
+R5
 r1
 !s85 0
 31
-R8
+R11
 !s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrDecodeTB.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrDecodeTB.sv|
 !s101 -O0
 !i113 1
-R6
+R7
 ninstr@decode@t@b
 vinstrMemTB
 R0
-R7
+R10
 !i10b 1
 !s100 NSch8NgHoaC>iC=GM^UH22
 Ik8c]RRB3PdkHNlC8eiCeb1
@@ -146,20 +220,20 @@ w1522384837
 8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrMemTB.sv
 FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrMemTB.sv
 L0 3
-R4
+R5
 r1
 !s85 0
 31
-R8
+R11
 !s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrMemTB.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instrMemTB.sv|
 !s101 -O0
 !i113 1
-R6
+R7
 ninstr@mem@t@b
 vmultiplier
 R0
-R1
+R10
 !i10b 1
 !s100 ?AUEjV:PzS^k]RB5fGC@^0
 I>h6;FiQfmZDmCG_R9QkBn2
@@ -171,19 +245,19 @@ w1522465204
 8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplier.sv
 FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplier.sv
 L0 1
-R4
+R5
 r1
 !s85 0
 31
-R5
+R11
 !s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplier.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplier.sv|
 !s101 -O0
 !i113 1
-R6
+R7
 vmultiplierTB
 R0
-R1
+R8
 !i10b 1
 !s100 Xi5JFAZoA_0lbD_AdfXme0
 IV0M<6hd2ZN8Ok`:`3PmBM0
@@ -195,20 +269,44 @@ w1522466804
 8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplierTB.sv
 FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplierTB.sv
 L0 3
-R4
+R5
 r1
 !s85 0
 31
-R5
+R9
 !s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplierTB.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplierTB.sv|
 !s101 -O0
 !i113 1
-R6
+R7
 nmultiplier@t@b
+vpipeline
+R0
+R1
+!i10b 1
+!s100 4Zb@SL5]@@1KbCYQAA2^:2
+IPe3FA=_8fJJnj>ge@eh[g0
+R2
+!s105 pipeline_sv_unit
+S1
+R3
+w1523983293
+8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv
+FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv
+L0 19
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv|
+!s101 -O0
+!i113 1
+R7
 vregisterBank
 R0
-R7
+R10
 !i10b 1
 !s100 af[XhCU>Ih<GSS;hj1z4Y1
 Ib8_Rb6IhdE`6]XmL:Ifa]0
@@ -220,20 +318,20 @@ w1522432950
 8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBank.sv
 FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBank.sv
 L0 1
-R4
+R5
 r1
 !s85 0
 31
-R8
+R11
 !s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBank.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBank.sv|
 !s101 -O0
 !i113 1
-R6
+R7
 nregister@bank
 vregisterBankTB
 R0
-R7
+R10
 !i10b 1
 !s100 PcOO7T8oWbCd9Vn>a=mhj1
 Ia[@^?lYmiLB4D8FGl6N1i3
@@ -245,14 +343,38 @@ w1522435473
 8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBankTB.sv
 FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBankTB.sv
 L0 3
-R4
+R5
 r1
 !s85 0
 31
-R8
+R11
 !s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBankTB.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBankTB.sv|
 !s101 -O0
 !i113 1
-R6
+R7
 nregister@bank@t@b
+vshift
+R0
+R1
+!i10b 1
+!s100 b^VKTG1QA2WKMoo2of3Lj2
+IUB7k_kY]nJ25aW3El;28m2
+R2
+!s105 shift_sv_unit
+S1
+R3
+R4
+8C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv
+FC:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv
+L0 3
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv|
+!s101 -O0
+!i113 1
+R7

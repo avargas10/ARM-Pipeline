@@ -35,7 +35,6 @@ always@(posedge clock)
         address++;
         in = test[address];
         $display("Writing %d in address %d",in,address); 
-       //$display("Reading %d in address %d",out,address);
         if (address>=8  )
             begin
                 $stop;
@@ -47,3 +46,4 @@ always
 		clock<=0; #100;
 	end 
 endmodule
+
