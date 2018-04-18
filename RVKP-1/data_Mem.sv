@@ -1,7 +1,7 @@
 module data_Mem(data_address,in_data,out_data,read_enable,write_enable,clk,isByte);
 parameter data_width = 8;	//size of each data read, will be of width 16, i.e, half word by default.
 parameter N =32;
-parameter addr_width = 12;	//It determines the number of data (half)words in memory
+parameter addr_width = 19;	//It determines the number of data (half)words in memory
 
 reg [data_width-1:0] M [2^addr_width-1:0];	//2^addr_width-1, 16 bit data
 input [N-1 :0] data_address;

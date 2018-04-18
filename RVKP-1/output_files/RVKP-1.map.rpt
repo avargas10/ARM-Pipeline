@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RVKP-1
-Tue Apr 17 10:29:30 2018
+Wed Apr 18 16:47:46 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -49,7 +49,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 17 10:29:29 2018       ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr 18 16:47:46 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; RVKP-1                                      ;
 ; Top-level Entity Name              ; pipeline                                    ;
@@ -75,6 +75,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CGX150DF31C7    ;                    ;
 ; Top-level entity name                                                      ; pipeline           ; RVKP-1             ;
 ; Family name                                                                ; Cyclone IV GX      ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -287,7 +288,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+----------------------------------------+
 ; data_width     ; 8     ; Signed Integer                         ;
 ; N              ; 32    ; Signed Integer                         ;
-; addr_width     ; 12    ; Signed Integer                         ;
+; addr_width     ; 19    ; Signed Integer                         ;
 +----------------+-------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -321,7 +322,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -331,7 +332,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Apr 17 10:29:15 2018
+    Info: Processing started: Wed Apr 18 16:47:28 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RVKP-1 -c RVKP-1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -368,512 +369,512 @@ Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
 Info (12021): Found 1 design units, including 1 entities, in source file evaluator.sv
     Info (12023): Found entity 1: evaluator File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/evaluator.sv Line: 4
 Info (12127): Elaborating entity "pipeline" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at pipeline.sv(249): object "MEM_W_out_data_1" assigned a value but never read File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 249
-Warning (10036): Verilog HDL or VHDL warning at pipeline.sv(250): object "MEM_W_out_data_2" assigned a value but never read File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 250
-Warning (10036): Verilog HDL or VHDL warning at pipeline.sv(252): object "MEM_W_out_data_4" assigned a value but never read File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 252
-Warning (10036): Verilog HDL or VHDL warning at pipeline.sv(254): object "MEM_W_mult_result" assigned a value but never read File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 254
-Warning (10036): Verilog HDL or VHDL warning at pipeline.sv(259): object "MEM_W_flush" assigned a value but never read File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 259
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(334): inferring latch(es) for variable "out_data_1_fwd", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 334
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(334): inferring latch(es) for variable "out_data_2_fwd", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 334
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(334): inferring latch(es) for variable "out_data_3_fwd", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 334
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(334): inferring latch(es) for variable "out_data_4_fwd", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 334
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(334): inferring latch(es) for variable "MUL_ALU_data_1_fwd", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 334
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(334): inferring latch(es) for variable "MUL_ALU_data_2_fwd", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 334
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(334): inferring latch(es) for variable "MUL_ALU_data_3_fwd", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 334
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(334): inferring latch(es) for variable "MUL_ALU_data_4_fwd", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 334
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(550): inferring latch(es) for variable "alu_operand_2", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(608): inferring latch(es) for variable "memory_read_enable", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 608
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(608): inferring latch(es) for variable "memory_write_enable", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 608
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(608): inferring latch(es) for variable "memory_data_address", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 608
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(608): inferring latch(es) for variable "isByte", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 608
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(608): inferring latch(es) for variable "memory_in_data", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 608
-Warning (10230): Verilog HDL assignment warning at pipeline.sv(653): truncated value with size 32 to match size of target (1) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 653
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(639): inferring latch(es) for variable "cspr_write", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 639
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(639): inferring latch(es) for variable "write_enable_2", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 639
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(639): inferring latch(es) for variable "write_address", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 639
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(639): inferring latch(es) for variable "write_data", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 639
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(639): inferring latch(es) for variable "write_address_2", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 639
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(639): inferring latch(es) for variable "write_data_2", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 639
-Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(639): inferring latch(es) for variable "cspr_update", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 639
-Warning (10230): Verilog HDL assignment warning at pipeline.sv(732): truncated value with size 32 to match size of target (1) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 732
-Warning (10230): Verilog HDL assignment warning at pipeline.sv(739): truncated value with size 32 to match size of target (1) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 739
-Warning (10230): Verilog HDL assignment warning at pipeline.sv(756): truncated value with size 32 to match size of target (1) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 756
-Warning (10230): Verilog HDL assignment warning at pipeline.sv(773): truncated value with size 32 to match size of target (1) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 773
-Info (10041): Inferred latch for "cspr_update[0]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[1]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[2]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[3]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[4]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[5]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[6]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[7]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[8]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[9]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[10]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[11]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[12]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[13]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[14]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[15]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[16]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[17]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[18]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[19]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[20]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[21]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[22]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[23]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[24]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[25]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[26]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[27]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[28]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[29]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[30]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_update[31]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[0]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[1]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[2]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[3]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[4]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[5]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[6]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[7]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[8]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[9]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[10]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[11]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[12]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[13]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[14]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[15]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[16]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[17]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[18]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[19]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[20]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[21]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[22]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[23]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[24]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[25]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[26]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[27]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[28]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[29]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[30]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data_2[31]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_address_2[0]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_address_2[1]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_address_2[2]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_address_2[3]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[0]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[1]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[2]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[3]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[4]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[5]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[6]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[7]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[8]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[9]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[10]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[11]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[12]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[13]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[14]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[15]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[16]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[17]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[18]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[19]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[20]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[21]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[22]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[23]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[24]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[25]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[26]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[27]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[28]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[29]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[30]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_data[31]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_address[0]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_address[1]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_address[2]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_address[3]" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "write_enable_2" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "cspr_write" at pipeline.sv(649) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 649
-Info (10041): Inferred latch for "memory_in_data[0]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[1]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[2]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[3]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[4]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[5]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[6]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[7]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[8]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[9]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[10]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[11]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[12]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[13]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[14]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[15]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[16]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[17]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[18]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[19]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[20]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[21]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[22]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[23]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[24]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[25]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[26]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[27]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[28]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[29]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[30]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_in_data[31]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "isByte" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[0]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[1]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[2]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[3]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[4]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[5]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[6]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[7]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[8]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[9]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[10]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[11]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[12]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[13]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[14]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[15]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[16]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[17]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[18]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[19]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[20]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[21]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[22]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[23]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[24]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[25]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[26]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[27]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[28]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[29]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[30]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_data_address[31]" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_write_enable" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "memory_read_enable" at pipeline.sv(613) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 613
-Info (10041): Inferred latch for "alu_operand_2[0]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[1]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[2]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[3]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[4]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[5]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[6]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[7]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[8]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[9]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[10]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[11]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[12]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[13]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[14]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[15]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[16]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[17]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[18]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[19]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[20]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[21]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[22]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[23]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[24]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[25]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[26]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[27]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[28]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[29]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[30]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "alu_operand_2[31]" at pipeline.sv(550) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 550
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[0]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[1]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[2]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[3]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[4]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[5]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[6]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[7]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[8]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[9]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[10]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[11]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[12]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[13]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[14]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[15]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[16]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[17]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[18]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[19]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[20]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[21]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[22]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[23]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[24]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[25]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[26]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[27]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[28]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[29]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[30]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_4_fwd[31]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[0]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[1]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[2]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[3]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[4]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[5]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[6]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[7]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[8]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[9]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[10]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[11]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[12]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[13]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[14]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[15]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[16]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[17]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[18]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[19]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[20]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[21]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[22]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[23]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[24]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[25]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[26]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[27]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[28]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[29]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[30]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_3_fwd[31]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[0]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[1]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[2]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[3]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[4]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[5]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[6]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[7]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[8]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[9]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[10]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[11]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[12]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[13]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[14]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[15]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[16]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[17]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[18]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[19]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[20]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[21]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[22]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[23]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[24]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[25]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[26]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[27]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[28]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[29]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[30]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_2_fwd[31]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[0]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[1]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[2]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[3]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[4]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[5]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[6]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[7]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[8]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[9]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[10]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[11]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[12]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[13]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[14]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[15]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[16]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[17]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[18]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[19]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[20]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[21]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[22]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[23]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[24]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[25]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[26]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[27]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[28]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[29]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[30]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "MUL_ALU_data_1_fwd[31]" at pipeline.sv(525) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 525
-Info (10041): Inferred latch for "out_data_4_fwd[0]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[1]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[2]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[3]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[4]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[5]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[6]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[7]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[8]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[9]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[10]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[11]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[12]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[13]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[14]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[15]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[16]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[17]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[18]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[19]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[20]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[21]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[22]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[23]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[24]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[25]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[26]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[27]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[28]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[29]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[30]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_4_fwd[31]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[0]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[1]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[2]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[3]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[4]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[5]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[6]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[7]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[8]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[9]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[10]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[11]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[12]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[13]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[14]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[15]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[16]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[17]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[18]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[19]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[20]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[21]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[22]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[23]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[24]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[25]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[26]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[27]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[28]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[29]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[30]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_3_fwd[31]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[0]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[1]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[2]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[3]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[4]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[5]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[6]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[7]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[8]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[9]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[10]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[11]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[12]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[13]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[14]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[15]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[16]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[17]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[18]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[19]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[20]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[21]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[22]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[23]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[24]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[25]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[26]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[27]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[28]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[29]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[30]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_2_fwd[31]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[0]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[1]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[2]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[3]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[4]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[5]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[6]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[7]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[8]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[9]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[10]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[11]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[12]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[13]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[14]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[15]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[16]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[17]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[18]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[19]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[20]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[21]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[22]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[23]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[24]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[25]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[26]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[27]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[28]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[29]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[30]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (10041): Inferred latch for "out_data_1_fwd[31]" at pipeline.sv(483) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 483
-Info (12128): Elaborating entity "instr_Mem" for hierarchy "instr_Mem:instrCache" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 41
-Warning (10850): Verilog HDL warning at instr_Mem.sv(10): number of words (1) in memory file does not match the number of elements in the address range [0:255] File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv Line: 10
+Warning (10036): Verilog HDL or VHDL warning at pipeline.sv(218): object "Mem_WB_out1" assigned a value but never read File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 218
+Warning (10036): Verilog HDL or VHDL warning at pipeline.sv(219): object "Mem_WB_out2" assigned a value but never read File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 219
+Warning (10036): Verilog HDL or VHDL warning at pipeline.sv(221): object "Mem_WB_out4" assigned a value but never read File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 221
+Warning (10036): Verilog HDL or VHDL warning at pipeline.sv(223): object "mulRes_Mem_WB" assigned a value but never read File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 223
+Warning (10036): Verilog HDL or VHDL warning at pipeline.sv(227): object "drive_Mem_WB" assigned a value but never read File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 227
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(276): inferring latch(es) for variable "nextData_1", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 276
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(276): inferring latch(es) for variable "nextData_2", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 276
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(276): inferring latch(es) for variable "nextData_3", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 276
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(276): inferring latch(es) for variable "nextData_4", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 276
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(276): inferring latch(es) for variable "nextData1_mul_alu", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 276
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(276): inferring latch(es) for variable "nextData2_mul_alu", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 276
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(276): inferring latch(es) for variable "nextData3_mul_alu", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 276
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(276): inferring latch(es) for variable "nextData4_mul_alu", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 276
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(490): inferring latch(es) for variable "alu_op2", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(541): inferring latch(es) for variable "mem_re", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 541
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(541): inferring latch(es) for variable "mem_we", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 541
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(541): inferring latch(es) for variable "memory_data_address", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 541
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(541): inferring latch(es) for variable "isByte", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 541
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(541): inferring latch(es) for variable "memory_in_data", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 541
+Warning (10230): Verilog HDL assignment warning at pipeline.sv(586): truncated value with size 32 to match size of target (1) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 586
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(572): inferring latch(es) for variable "cspr_write", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 572
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(572): inferring latch(es) for variable "we2", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 572
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(572): inferring latch(es) for variable "write_address", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 572
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(572): inferring latch(es) for variable "write_data", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 572
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(572): inferring latch(es) for variable "write_address_2", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 572
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(572): inferring latch(es) for variable "write_data_2", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 572
+Warning (10240): Verilog HDL Always Construct warning at pipeline.sv(572): inferring latch(es) for variable "cspr_update", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 572
+Warning (10230): Verilog HDL assignment warning at pipeline.sv(660): truncated value with size 32 to match size of target (1) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 660
+Warning (10230): Verilog HDL assignment warning at pipeline.sv(667): truncated value with size 32 to match size of target (1) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 667
+Warning (10230): Verilog HDL assignment warning at pipeline.sv(684): truncated value with size 32 to match size of target (1) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 684
+Warning (10230): Verilog HDL assignment warning at pipeline.sv(701): truncated value with size 32 to match size of target (1) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 701
+Info (10041): Inferred latch for "cspr_update[0]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[1]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[2]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[3]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[4]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[5]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[6]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[7]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[8]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[9]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[10]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[11]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[12]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[13]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[14]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[15]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[16]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[17]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[18]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[19]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[20]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[21]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[22]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[23]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[24]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[25]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[26]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[27]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[28]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[29]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[30]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_update[31]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[0]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[1]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[2]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[3]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[4]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[5]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[6]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[7]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[8]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[9]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[10]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[11]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[12]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[13]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[14]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[15]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[16]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[17]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[18]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[19]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[20]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[21]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[22]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[23]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[24]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[25]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[26]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[27]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[28]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[29]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[30]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data_2[31]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_address_2[0]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_address_2[1]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_address_2[2]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_address_2[3]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[0]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[1]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[2]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[3]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[4]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[5]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[6]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[7]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[8]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[9]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[10]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[11]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[12]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[13]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[14]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[15]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[16]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[17]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[18]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[19]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[20]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[21]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[22]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[23]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[24]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[25]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[26]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[27]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[28]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[29]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[30]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_data[31]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_address[0]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_address[1]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_address[2]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "write_address[3]" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "we2" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "cspr_write" at pipeline.sv(582) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 582
+Info (10041): Inferred latch for "memory_in_data[0]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[1]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[2]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[3]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[4]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[5]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[6]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[7]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[8]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[9]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[10]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[11]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[12]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[13]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[14]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[15]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[16]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[17]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[18]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[19]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[20]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[21]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[22]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[23]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[24]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[25]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[26]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[27]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[28]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[29]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[30]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_in_data[31]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "isByte" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[0]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[1]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[2]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[3]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[4]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[5]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[6]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[7]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[8]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[9]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[10]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[11]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[12]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[13]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[14]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[15]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[16]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[17]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[18]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[19]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[20]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[21]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[22]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[23]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[24]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[25]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[26]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[27]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[28]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[29]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[30]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "memory_data_address[31]" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "mem_we" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "mem_re" at pipeline.sv(546) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 546
+Info (10041): Inferred latch for "alu_op2[0]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[1]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[2]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[3]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[4]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[5]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[6]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[7]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[8]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[9]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[10]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[11]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[12]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[13]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[14]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[15]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[16]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[17]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[18]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[19]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[20]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[21]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[22]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[23]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[24]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[25]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[26]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[27]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[28]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[29]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[30]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "alu_op2[31]" at pipeline.sv(490) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 490
+Info (10041): Inferred latch for "nextData4_mul_alu[0]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[1]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[2]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[3]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[4]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[5]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[6]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[7]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[8]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[9]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[10]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[11]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[12]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[13]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[14]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[15]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[16]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[17]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[18]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[19]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[20]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[21]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[22]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[23]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[24]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[25]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[26]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[27]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[28]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[29]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[30]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData4_mul_alu[31]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[0]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[1]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[2]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[3]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[4]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[5]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[6]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[7]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[8]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[9]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[10]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[11]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[12]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[13]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[14]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[15]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[16]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[17]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[18]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[19]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[20]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[21]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[22]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[23]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[24]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[25]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[26]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[27]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[28]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[29]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[30]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData3_mul_alu[31]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[0]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[1]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[2]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[3]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[4]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[5]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[6]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[7]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[8]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[9]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[10]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[11]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[12]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[13]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[14]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[15]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[16]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[17]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[18]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[19]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[20]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[21]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[22]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[23]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[24]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[25]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[26]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[27]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[28]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[29]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[30]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData2_mul_alu[31]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[0]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[1]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[2]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[3]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[4]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[5]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[6]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[7]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[8]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[9]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[10]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[11]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[12]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[13]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[14]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[15]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[16]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[17]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[18]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[19]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[20]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[21]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[22]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[23]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[24]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[25]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[26]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[27]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[28]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[29]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[30]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData1_mul_alu[31]" at pipeline.sv(465) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 465
+Info (10041): Inferred latch for "nextData_4[0]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[1]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[2]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[3]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[4]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[5]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[6]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[7]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[8]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[9]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[10]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[11]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[12]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[13]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[14]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[15]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[16]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[17]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[18]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[19]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[20]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[21]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[22]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[23]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[24]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[25]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[26]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[27]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[28]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[29]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[30]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_4[31]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[0]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[1]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[2]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[3]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[4]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[5]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[6]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[7]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[8]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[9]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[10]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[11]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[12]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[13]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[14]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[15]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[16]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[17]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[18]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[19]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[20]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[21]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[22]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[23]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[24]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[25]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[26]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[27]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[28]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[29]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[30]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_3[31]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[0]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[1]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[2]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[3]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[4]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[5]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[6]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[7]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[8]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[9]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[10]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[11]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[12]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[13]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[14]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[15]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[16]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[17]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[18]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[19]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[20]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[21]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[22]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[23]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[24]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[25]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[26]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[27]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[28]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[29]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[30]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_2[31]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[0]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[1]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[2]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[3]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[4]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[5]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[6]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[7]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[8]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[9]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[10]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[11]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[12]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[13]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[14]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[15]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[16]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[17]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[18]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[19]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[20]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[21]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[22]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[23]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[24]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[25]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[26]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[27]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[28]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[29]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[30]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (10041): Inferred latch for "nextData_1[31]" at pipeline.sv(423) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 423
+Info (12128): Elaborating entity "instr_Mem" for hierarchy "instr_Mem:instrCache" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 36
+Warning (10850): Verilog HDL warning at instr_Mem.sv(10): number of words (4) in memory file does not match the number of elements in the address range [0:255] File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv Line: 10
 Warning (10030): Net "ram.data_a" at instr_Mem.sv(3) has no driver or initial value, using a default initial value '0' File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv Line: 3
 Warning (10030): Net "ram.waddr_a" at instr_Mem.sv(3) has no driver or initial value, using a default initial value '0' File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv Line: 3
 Warning (10030): Net "ram.we_a" at instr_Mem.sv(3) has no driver or initial value, using a default initial value '0' File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv Line: 3
-Info (12128): Elaborating entity "instr_decode" for hierarchy "instr_decode:Decoder" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 46
+Info (12128): Elaborating entity "instr_decode" for hierarchy "instr_decode:Decoder" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 41
 Warning (10240): Verilog HDL Always Construct warning at instr_decode.sv(24): inferring latch(es) for variable "iType", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv Line: 24
 Info (10041): Inferred latch for "iType[0]" at instr_decode.sv(39) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv Line: 39
 Info (10041): Inferred latch for "iType[1]" at instr_decode.sv(39) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv Line: 39
 Info (10041): Inferred latch for "iType[2]" at instr_decode.sv(39) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv Line: 39
 Info (10041): Inferred latch for "iType[3]" at instr_decode.sv(39) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_decode.sv Line: 39
-Info (12128): Elaborating entity "registerBank" for hierarchy "registerBank:regs" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 111
-Info (12128): Elaborating entity "multiplier" for hierarchy "multiplier:mult" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 138
-Info (12128): Elaborating entity "shift" for hierarchy "shift:Shifter" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 189
+Info (12128): Elaborating entity "registerBank" for hierarchy "registerBank:regs" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 100
+Info (12128): Elaborating entity "multiplier" for hierarchy "multiplier:mult" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 121
+Info (12128): Elaborating entity "shift" for hierarchy "shift:Shifter" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 165
 Warning (10036): Verilog HDL or VHDL warning at shift.sv(20): object "junk" assigned a value but never read File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv Line: 20
 Warning (10240): Verilog HDL Always Construct warning at shift.sv(26): inferring latch(es) for variable "in", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv Line: 26
 Warning (10240): Verilog HDL Always Construct warning at shift.sv(26): inferring latch(es) for variable "shiftby", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv Line: 26
@@ -912,12 +913,12 @@ Info (10041): Inferred latch for "out[28]" at shift.sv(42) File: C:/Users/afeli/
 Info (10041): Inferred latch for "out[29]" at shift.sv(42) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv Line: 42
 Info (10041): Inferred latch for "out[30]" at shift.sv(42) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv Line: 42
 Info (10041): Inferred latch for "out[31]" at shift.sv(42) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv Line: 42
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 200
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 176
 Warning (10240): Verilog HDL Always Construct warning at ALU.sv(42): inferring latch(es) for variable "inData", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/ALU.sv Line: 42
 Warning (10240): Verilog HDL Always Construct warning at ALU.sv(42): inferring latch(es) for variable "outData", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/ALU.sv Line: 42
 Warning (10240): Verilog HDL Always Construct warning at ALU.sv(42): inferring latch(es) for variable "neg", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/ALU.sv Line: 42
-Info (12128): Elaborating entity "evaluator" for hierarchy "evaluator:checker" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 206
-Info (12128): Elaborating entity "data_Mem" for hierarchy "data_Mem:DataCache" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 243
+Info (12128): Elaborating entity "evaluator" for hierarchy "evaluator:instrCheck" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 182
+Info (12128): Elaborating entity "data_Mem" for hierarchy "data_Mem:DataCache" File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv Line: 213
 Warning (10240): Verilog HDL Always Construct warning at data_Mem.sv(16): inferring latch(es) for variable "out_data", which holds its previous value in one or more paths through the always construct File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/data_Mem.sv Line: 16
 Info (10041): Inferred latch for "out_data[0]" at data_Mem.sv(23) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/data_Mem.sv Line: 23
 Info (10041): Inferred latch for "out_data[1]" at data_Mem.sv(23) File: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/data_Mem.sv Line: 23
@@ -959,9 +960,9 @@ Info (21057): Implemented 1 device resources after synthesis - the final resourc
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 0 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
-    Info: Peak virtual memory: 731 megabytes
-    Info: Processing ended: Tue Apr 17 10:29:30 2018
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Peak virtual memory: 736 megabytes
+    Info: Processing ended: Wed Apr 18 16:47:46 2018
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:32
 
 

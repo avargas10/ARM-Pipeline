@@ -18,7 +18,7 @@ def convert(image,txt):
     
     for elemento in datos:
         binario = binary_repr(elemento[0], width=8)
-        f.write('{:03d}\n'.format(binario))
+        f.write(binario+'\n')
         #print(elemento)
     f.close()
     print ("Convertion Completed")

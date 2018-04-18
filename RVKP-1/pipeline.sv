@@ -18,11 +18,6 @@
 
 module pipeline(input clk);
 
-/******************
-*
-* F: Instruction Fetch and decode
-*
-******************/
 
 
 
@@ -32,12 +27,11 @@ logic[31:0] instr;
 logic fetch_instr;
 logic[3:0] itype;
 instr_Mem instrCache(
-                    //in
-						.PC(current_pc),//
+                    
+						.PC(current_pc),
 						.read_enable(fetch_instr),
 						.clk(clk),
 							
-					//out
 						.instr(instr)		
 							);
 
@@ -46,141 +40,123 @@ instr_decode Decoder(
                     .iType(itype)			
                         );
 
-/*******F/R*****/
-logic[31:0] F_R_instr; // = instr in always
-logic[3:0] F_R_type;		//= type
-logic F_R_flush;
 
-/******************
-*
-* R: Register Read (RegisterFile access)
-*
-******************/
+logic[31:0] instr_f_reg; 
+logic[3:0] type_f_reg;		
+logic drive_f_reg;
 
-logic[31:0] out_data_1;
-logic[31:0] out_data_2;
-logic[31:0] out_data_3;
-logic[31:0] out_data_4;
+
+logic[31:0] out_1;
+logic[31:0] out_2;
+logic[31:0] out_3;
+logic[31:0] out_4;
 logic[31:0] operand_2;
 logic[31:0] cspr;
 
 
-logic[3:0] read_address; //have to change based on instruction
+logic[3:0] read_address; 
 
-//For writeback.
+
 logic[3:0] write_address;
 logic[31:0] write_data;
-logic write_enable;
+logic we1;
 logic[3:0] write_address_2;
 logic[31:0] write_data_2;
-logic write_enable_2;
+logic we2;
 logic[31:0] pc_update;
 logic pc_write;
 logic cspr_write;
 logic[31:0] cspr_update;
-//
+
 
 
 
 registerBank regs(	
-                    //in\
-                        .in_address1(F_R_instr[19:16]),
-                        .in_address2(F_R_instr[15:12]),
-                        .in_address3(F_R_instr[11:8]),
-                        .in_address4(F_R_instr[3:0]),
+                   
+                        .in_address1(instr_f_reg[19:16]),
+                        .in_address2(instr_f_reg[15:12]),
+                        .in_address3(instr_f_reg[11:8]),
+                        .in_address4(instr_f_reg[3:0]),
                         .write_address(write_address),
                         .write_address2(write_address_2),							
                         .write_data(write_data),
                         .write_data2(write_data_2),
-                        .write_enable(write_enable),
-                        .write_enable2(write_enable_2),
+                        .write_enable(we1),
+                        .write_enable2(we2),
                         .pc_update(pc_update), 
                         .pc_write(pc_write), 
                         .cspr_write(cspr_write), 
                         .cspr_update(cspr_update),
                         .clk(clk), 
                         
-                    //out
-                        .out_data1(out_data_1),
-                        .out_data2(out_data_2),
-                        .out_data3(out_data_3),
-                        .out_data4(out_data_4),
-                        //s.universal_out_data(),
-                        .pc(pc), 
+                   
+                        .out_data1(out_1),
+                        .out_data2(out_2),
+                        .out_data3(out_3),
+                        .out_data4(out_4),
+                   
+				        .pc(pc), 
                         .cspr(cspr)			
                         );
 
-/*******R/MUL*****/
-logic[3:0] R_MUL_type;			//= F_R_type
-logic[31:0] R_MUL_instr;			//=F_R_instr
-logic[31:0] R_MUL_out_data_1;	//=out_data_1
-logic[31:0] R_MUL_out_data_2;	//=out_data_2
-logic[31:0] R_MUL_out_data_3;	//=out_data_3
-logic[31:0] R_MUL_out_data_4;	//=out_data_4
-logic R_MUL_flush;
+logic[3:0] type_reg_mul;			
+logic[31:0] instr_reg_mul;			
+logic[31:0] reg_mul_out1;	
+logic[31:0] reg_mul_out2;	
+logic[31:0] reg_mul_out3;	
+logic[31:0] reg_mul_out4;	
+logic drive_reg_mul;
 
-/******************
-*
-* MUL : Multiply (Multiply)
-*
-******************/
 
-logic[31:0] mult_result;
+logic[31:0] mulRes;
 logic[3:0] mult_nzcv;
 
 
 multiplier mult(
-							.Rs(R_MUL_out_data_3), 
-							.Rm(R_MUL_out_data_4),
+							.Rs(reg_mul_out3), 
+							.Rm(reg_mul_out4),
 							
-							.result(mult_result)
+							.result(mulRes)
 
 							);
 
-
-/*******MUL/ALU*****/
-logic[3:0] MUL_ALU_type;			//= //= make this 'nop' of condchecker says it will not be executed else, MUL_ALU_type
-logic[31:0] MUL_ALU_instr;		//=R_MUL_instr
-logic[31:0] MUL_ALU_out_data_1;	//=R_MUL_out_data_1
-logic[31:0] MUL_ALU_out_data_2;	//=R_MUL_out_data_2
-logic[31:0] MUL_ALU_out_data_3;	//=R_MUL_out_data_3
-logic[31:0] MUL_ALU_out_data_4;	//=R_MUL_out_data_4
-logic [31:0] MUL_ALU_mult_result;	// = mult_result
-logic MUL_ALU_will_this_be_executed;	//=will this be executed
-logic MUL_ALU_c_update; 	//= c_update
-logic MUL_ALU_c_write;	// = c_write
-logic MUL_ALU_flush;
-/******************
-*
-* ALU : ALU (Barrel shifter, ALU and condition code checker.)
-*
-******************/
+logic[3:0] type_mul_alu;		
+logic[31:0] instr_mul_alu;		
+logic[31:0] mul_alu_out1;	
+logic[31:0] mul_alu_out2;	
+logic[31:0] mul_alu_out3;	
+logic[31:0] mul_alu_out4;	
+logic [31:0] mulRes_mul_alu;	
+logic MUL_ALU_will_this_be_executed;	
+logic MUL_ALU_c_update; 	
+logic MUL_ALU_c_write;	
+logic drive_mul_alu;
 
 
-logic[31:0] alu_result;
+logic[31:0] aluRes;
 logic[3:0] alu_nzcv;
-logic alu_is_writeback;
+logic isWB_alu;
 logic will_this_be_executed;
 
 logic c_to_alu;
 logic[31:0] shifter_result;
 
-logic[3:0] nzcv_forward;	//connected to alu. fed from alu.
+logic[3:0] next_nzcv;	
 
-logic use_shifter;
-logic[31:0] alu_operand_1;
-logic[31:0] alu_operand_2;
+logic useShift;
+logic[31:0] alu_op1;
+logic[31:0] alu_op2;
 logic[3:0] alu_opcode;
 
 
 shift Shifter(		
-							.instr_bit_25(MUL_ALU_instr[25]),
-							.imm_value(MUL_ALU_instr[11:0]), 
-							.Rs(MUL_ALU_out_data_3), 
-							.Rm(MUL_ALU_out_data_4), 
-							.cin(nzcv_forward[1]),
-							.direct_data(alu_operand_2),
-							.use_shifter(use_shifter),
+							.instr_bit_25(instr_mul_alu[25]),
+							.imm_value(instr_mul_alu[11:0]), 
+							.Rs(mul_alu_out3), 
+							.Rm(mul_alu_out4), 
+							.cin(next_nzcv[1]),
+							.direct_data(alu_op2),
+							.use_shifter(useShift),
 
 							
 							.operand2(shifter_result), 
@@ -190,104 +166,83 @@ shift Shifter(
 
 ALU alu(
 							.opcode(alu_opcode), 
-							.op1(alu_operand_1), 
+							.op1(alu_op1), 
 							.op2(shifter_result), 
-							.nzcv_old(nzcv_forward), //I have forwarded this from result of alu itself
+							.nzcv_old(next_nzcv), 
 							.cFlag(c_to_alu), 					
-							.res(alu_result), 
+							.res(aluRes), 
 							.nzcv(alu_nzcv), 
-							.isWriteback(alu_is_writeback)
+							.isWriteback(isWB_alu)
 							);
 
 evaluator instrCheck(
-					.nzcv(alu_nzcv),	//we check for condition right after calculation of nzcv flags. Check this with previous instruction.
-					.codeCond(R_MUL_instr[31:28]),//i.e  with instruction from previous pipeline
+					.nzcv(alu_nzcv),	
+					.codeCond(instr_reg_mul[31:28]),
 					.isExecuted(will_this_be_executed)						
 							);
 
-/*******ALU/MEM*****/
-logic ALU_MEM_will_this_be_executed;	//=MEM
-logic[3:0]  ALU_MEM_type;			
-logic[31:0] ALU_MEM_instr;			//
-logic[31:0] ALU_MEM_out_data_1;	//=
-logic[31:0] ALU_MEM_out_data_2;	//=
-logic[31:0] ALU_MEM_out_data_3;	//=
-logic[31:0] ALU_MEM_out_data_4;	//=
-logic [31:0] ALU_MEM_mult_result;	// = MUL_ALU_mult_result
-logic [31:0] ALU_MEM_alu_result;	// = alu_result
-logic [3:0] ALU_MEM_alu_nzcv;		// = alu_nzcv
-logic ALU_MEM_alu_is_writeback;	//  = alu_is_writeback
-logic ALU_MEM_flush;
-//nzcv_forward = alu_nzcv;
+logic isExecutedAlu_Mem;	
+logic[3:0]  type_alu_Mem;			
+logic[31:0] instr_alu_Mem;	
+logic[31:0] alu_Mem_out1;	
+logic[31:0] alu_Mem_out2;	
+logic[31:0] alu_Mem_out3;	
+logic[31:0] alu_Mem_out4;	
+logic [31:0] mulRes_alu_Mem;	
+logic [31:0] aluRes_alu_Mem;	
+logic [3:0] aluNCZV_alu_Mem;		
+logic is_aluWB_alu_Mem;	
+logic drive_alu_Mem;
 
-/******************
-*
-* MEM: Memory (Memory access)
-*
-******************/
-logic[31:0] memory_out_data;
+
+logic[31:0] memOut;
 logic[31:0] memory_data_address;
 logic[31:0] memory_in_data;
-logic memory_write_enable;
-logic memory_read_enable;
+logic mem_we;
+logic mem_re;
 logic isByte;
 
 data_Mem DataCache(
 							.data_address(memory_data_address),
 							.in_data(memory_in_data),
-							.read_enable(memory_read_enable),
-							.write_enable(memory_write_enable),
+							.read_enable(mem_re),
+							.write_enable(mem_we),
 							.isByte(isByte),
 							.clk(clk),							
-							.out_data(memory_out_data)
+							.out_data(memOut)
 							);
 
-/*******MEM/W*****/
-logic MEM_W_will_this_be_executed; //
-logic[3:0]  MEM_W_type;			//= ALU_MEM_type
-logic[31:0] MEM_W_instr;			//
-logic[31:0] MEM_W_out_data_1;		//=
-logic[31:0] MEM_W_out_data_2;		//=
-logic[31:0] MEM_W_out_data_3;		//=
-logic[31:0] MEM_W_out_data_4;		//=
-logic[31:0] MEM_W_memory_out_data;//= 
-logic [31:0] MEM_W_mult_result;	// = ALU_MEM_mult_result
-logic [31:0] MEM_W_alu_result;
-// = ALU_MEM_alu_result
-logic [3:0] MEM_W_alu_nzcv;		// = ALU_MEM_alu_nzcv
-logic MEM_W_alu_is_writeback;		//  = ALU_MEM_alu_is_writeback
-logic MEM_W_flush;
+logic isExecutedMem_WB; 
+logic[3:0]  type_Mem_WB;
+logic[31:0] instr_Mem_WB;
+logic[31:0] Mem_WB_out1;
+logic[31:0] Mem_WB_out2;
+logic[31:0] Mem_WB_out3;
+logic[31:0] Mem_WB_out4;		
+logic[31:0] memOut_Mem_WB;
+logic [31:0] mulRes_Mem_WB;	
+logic [31:0] aluRes_Mem_WB;
+logic [3:0] aluNCZV_Mem_WB;		
+logic is_aluWB_Mem_WB;		
+logic drive_Mem_WB;
 
-/******************
-*
-* W: Writeback (To RegisterFile and PC)
-*
-******************/
-/*For reference
-logic[3:0] write_address;
-logic[31:0] write_data;
-logic write_enable;
-logic[31:0] pc_update;
-logic pc_write;
-logic cspr_write;
-logic[31:0] cspr_update;
-*/
 
-logic want_to_flush;
+
+logic driven;
 logic number_stalls;
 
 initial begin
-	//Fill alu with nops at the beginning.
+	
 	current_pc  = 0;
 	pc_update = 0;
-	F_R_type = `undefined;
-	R_MUL_type = `undefined;
-	MUL_ALU_type = `undefined;
-	ALU_MEM_type = `undefined;
-	MEM_W_type = `undefined;
+	type_f_reg = `undefined;
+	type_reg_mul = `undefined;
+	type_mul_alu = `undefined;
+	type_alu_Mem = `undefined;
+	type_Mem_WB = `undefined;
 	cspr_update = 0;
-	nzcv_forward = 0;
-	want_to_flush = 0;
+	next_nzcv = 0;
+	driven = 0;
 	number_stalls = 0;
 end
 
@@ -298,204 +253,189 @@ always@(posedge clk) begin
 	fetch_instr = 1; 
 end*/
 
+logic[31:0] nextData_1;
+logic isNext1;
+logic[31:0] nextData_2;
+logic isNext2;
+logic[31:0] nextData_3;
+logic isNext3;
+logic[31:0] nextData_4;
+logic isNext4;
 
-//Register Read
+logic[31:0] nextData1_mul_alu;
+logic isNext1_mul_alu;
+logic[31:0] nextData2_mul_alu;
+logic isNext2_mul_alu;
+logic[31:0] nextData3_mul_alu;
+logic isNext3_mul_alu;
+logic[31:0] nextData4_mul_alu;
+logic isNext4_mul_alu;
 
-//forward registers:
-logic[31:0] out_data_1_fwd;
-logic out_data_1_use_fwd;
-logic[31:0] out_data_2_fwd;
-logic out_data_2_use_fwd;
-logic[31:0] out_data_3_fwd;
-logic out_data_3_use_fwd;
-logic[31:0] out_data_4_fwd;
-logic out_data_4_use_fwd;
 
-logic[31:0] MUL_ALU_data_1_fwd;
-logic MUL_ALU_data_1_use_fwd;
-logic[31:0] MUL_ALU_data_2_fwd;
-logic MUL_ALU_data_2_use_fwd;
-logic[31:0] MUL_ALU_data_3_fwd;
-logic MUL_ALU_data_3_use_fwd;
-logic[31:0] MUL_ALU_data_4_fwd;
-logic MUL_ALU_data_4_use_fwd;
-
-//data dependency. and forwarder
 always@(*) begin
-	/*This block generates control signals that there might be dependency. This will be used in each block only if that instruction is executed.
-	Fetch
-	Register read
-	MUL
-	ALU
-	MEM
-	WB
-	*/
+	isNext1 =0;
+ 	isNext2 =0;
+	isNext3 =0;
+	isNext4 =0;
+	isNext1_mul_alu =0;
+ 	isNext2_mul_alu =0;
+	isNext3_mul_alu =0;
+	isNext4_mul_alu =0;
 
-	out_data_1_use_fwd =0;
- 	out_data_2_use_fwd =0;
-	out_data_3_use_fwd =0;
-	out_data_4_use_fwd =0;
-	MUL_ALU_data_1_use_fwd =0;
- 	MUL_ALU_data_2_use_fwd =0;
-	MUL_ALU_data_3_use_fwd =0;
-	MUL_ALU_data_4_use_fwd =0;
-	//operands used: [19:16], [15:12] [11:8], [3:0]
-	//From WB stage
-	if(write_enable == 1) begin
-		if(F_R_instr[19:16] == write_address) begin
-			out_data_1_fwd = write_data;
-			out_data_1_use_fwd = 1;
+	if(we1 == 1) begin
+		if(instr_f_reg[19:16] == write_address) begin
+			nextData_1 = write_data;
+			isNext1 = 1;
 		end
-		if(F_R_instr[15:12] == write_address) begin
-			out_data_2_fwd = write_data;
-			out_data_2_use_fwd = 1;
+		if(instr_f_reg[15:12] == write_address) begin
+			nextData_2 = write_data;
+			isNext2 = 1;
 		end
-		if(F_R_instr[11:8] == write_address) begin
-			out_data_3_fwd = write_data;
-			out_data_3_use_fwd = 1;
+		if(instr_f_reg[11:8] == write_address) begin
+			nextData_3 = write_data;
+			isNext3 = 1;
 		end
-		if(F_R_instr[3:0] == write_address) begin
-			out_data_4_fwd = write_data;
-			out_data_4_use_fwd = 1;
+		if(instr_f_reg[3:0] == write_address) begin
+			nextData_4 = write_data;
+			isNext4 = 1;
 		end
 	end
 
-	if(write_enable_2 == 1) begin
-		if(F_R_instr[19:16] == write_address_2) begin
-			out_data_1_fwd = write_data_2;
-			out_data_1_use_fwd = 1;
+	if(we2 == 1) begin
+		if(instr_f_reg[19:16] == write_address_2) begin
+			nextData_1 = write_data_2;
+			isNext1 = 1;
 		end
-		if(F_R_instr[15:12] == write_address_2) begin
-			out_data_2_fwd = write_data_2;
-			out_data_2_use_fwd = 1;
+		if(instr_f_reg[15:12] == write_address_2) begin
+			nextData_2 = write_data_2;
+			isNext2 = 1;
 		end
-		if(F_R_instr[11:8] == write_address_2) begin
-			out_data_3_fwd = write_data_2;
-			out_data_3_use_fwd = 1;
+		if(instr_f_reg[11:8] == write_address_2) begin
+			nextData_3 = write_data_2;
+			isNext3 = 1;
 		end
-		if(F_R_instr[3:0] == write_address_2) begin
-			out_data_4_fwd = write_data_2;
-			out_data_4_use_fwd = 1;
+		if(instr_f_reg[3:0] == write_address_2) begin
+			nextData_4 = write_data_2;
+			isNext4 = 1;
 		end
 	end
 
-	//From Mem stage
-	if(ALU_MEM_type == `loadStoreUnsigned && ALU_MEM_will_this_be_executed == 1) begin
+	if(type_alu_Mem == `loadStoreUnsigned && isExecutedAlu_Mem == 1) begin
 		
-		if(ALU_MEM_instr[20]==1) begin 	//Load from memory
-			if(F_R_instr[19:16] == ALU_MEM_instr[15:12] ) begin
-				out_data_1_fwd = memory_out_data;
-				out_data_1_use_fwd = 1;
+		if(instr_alu_Mem[20]==1) begin 	//Load from memory
+			if(instr_f_reg[19:16] == instr_alu_Mem[15:12] ) begin
+				nextData_1 = memOut;
+				isNext1 = 1;
 			end
-			if(F_R_instr[15:12] == ALU_MEM_instr[15:12] ) begin
-				out_data_2_fwd = memory_out_data;
-				out_data_2_use_fwd = 1;
+			if(instr_f_reg[15:12] == instr_alu_Mem[15:12] ) begin
+				nextData_2 = memOut;
+				isNext2 = 1;
 			end
-			if(F_R_instr[11:8] == ALU_MEM_instr[15:12] ) begin
-				out_data_3_fwd = memory_out_data;
-				out_data_3_use_fwd = 1;
+			if(instr_f_reg[11:8] == instr_alu_Mem[15:12] ) begin
+				nextData_3 = memOut;
+				isNext3 = 1;
 			end
-			if(F_R_instr[3:0] == ALU_MEM_instr[15:12] ) begin
-				out_data_4_fwd = memory_out_data;
-				out_data_4_use_fwd = 1;
+			if(instr_f_reg[3:0] == instr_alu_Mem[15:12] ) begin
+				nextData_4 = memOut;
+				isNext4 = 1;
 			end
 		end
 
-		if(ALU_MEM_instr[24] == 0 || ALU_MEM_instr[21] ==1 ) begin //postindexing or //preindexing and write back bit set
-				if(F_R_instr[19:16] == ALU_MEM_instr[19:16] ) begin	
-					out_data_1_fwd =ALU_MEM_alu_result;
-					out_data_1_use_fwd = 1;
+		if(instr_alu_Mem[24] == 0 || instr_alu_Mem[21] ==1 ) begin //postindexing or //preindexing and write back bit set
+				if(instr_f_reg[19:16] == instr_alu_Mem[19:16] ) begin	
+					nextData_1 =aluRes_alu_Mem;
+					isNext1 = 1;
 				end
-				if(F_R_instr[15:12] == ALU_MEM_instr[19:16] ) begin	
-					out_data_2_fwd =ALU_MEM_alu_result;
-					out_data_2_use_fwd = 1;
+				if(instr_f_reg[15:12] == instr_alu_Mem[19:16] ) begin	
+					nextData_2 =aluRes_alu_Mem;
+					isNext2 = 1;
 				end
-				if(F_R_instr[11:8] == ALU_MEM_instr[19:16] ) begin	
-					out_data_3_fwd =ALU_MEM_alu_result;
-					out_data_3_use_fwd = 1;
+				if(instr_f_reg[11:8] == instr_alu_Mem[19:16] ) begin	
+					nextData_3 =aluRes_alu_Mem;
+					isNext3 = 1;
 				end
-				if(F_R_instr[3:0] == ALU_MEM_instr[19:16] ) begin	
-					out_data_4_fwd =ALU_MEM_alu_result;
-					out_data_4_use_fwd = 1;
+				if(instr_f_reg[3:0] == instr_alu_Mem[19:16] ) begin	
+					nextData_4 =aluRes_alu_Mem;
+					isNext4 = 1;
 				end
 		end
 	end
 
-	if(ALU_MEM_type == `dataProcessing && ALU_MEM_will_this_be_executed==1 && ALU_MEM_alu_is_writeback ==1) begin
-		if(F_R_instr[19:16] == ALU_MEM_instr[15:12]) begin
-				out_data_1_fwd = ALU_MEM_alu_result;
-				out_data_1_use_fwd = 1;
+	if(type_alu_Mem == `dataProcessing && isExecutedAlu_Mem==1 && is_aluWB_alu_Mem ==1) begin
+		if(instr_f_reg[19:16] == instr_alu_Mem[15:12]) begin
+				nextData_1 = aluRes_alu_Mem;
+				isNext1 = 1;
 		end
-		if(F_R_instr[15:12] == ALU_MEM_instr[15:12]) begin
-				out_data_2_fwd = ALU_MEM_alu_result;
-				out_data_2_use_fwd = 1;
+		if(instr_f_reg[15:12] == instr_alu_Mem[15:12]) begin
+				nextData_2 = aluRes_alu_Mem;
+				isNext2 = 1;
 		end
-		if(F_R_instr[11:8] == ALU_MEM_instr[15:12]) begin
-				out_data_3_fwd = ALU_MEM_alu_result;
-				out_data_3_use_fwd = 1;
+		if(instr_f_reg[11:8] == instr_alu_Mem[15:12]) begin
+				nextData_3 = aluRes_alu_Mem;
+				isNext3 = 1;
 		end
-		if(F_R_instr[3:0] == ALU_MEM_instr[15:12]) begin
-				out_data_4_fwd = ALU_MEM_alu_result;
-				out_data_4_use_fwd = 1;
+		if(instr_f_reg[3:0] == instr_alu_Mem[15:12]) begin
+				nextData_4 = aluRes_alu_Mem;
+				isNext4 = 1;
 		end
 	end
 
-	if(ALU_MEM_type == `multiply && ALU_MEM_will_this_be_executed==1) begin
-		if(F_R_instr[19:16] == ALU_MEM_instr[19:16]) begin
-				out_data_1_fwd= ALU_MEM_alu_result;	//remember accumulate?
-				out_data_1_use_fwd = 1;
+	if(type_alu_Mem == `multiply && isExecutedAlu_Mem==1) begin
+		if(instr_f_reg[19:16] == instr_alu_Mem[19:16]) begin
+				nextData_1= aluRes_alu_Mem;	//remember accumulate?
+				isNext1 = 1;
 		end
-		if(F_R_instr[15:12] == ALU_MEM_instr[19:16]) begin
-				out_data_2_fwd= ALU_MEM_alu_result;	//remember accumulate?
-				out_data_2_use_fwd = 1;
+		if(instr_f_reg[15:12] == instr_alu_Mem[19:16]) begin
+				nextData_2= aluRes_alu_Mem;	//remember accumulate?
+				isNext2 = 1;
 		end
-		if(F_R_instr[11:8] == ALU_MEM_instr[19:16]) begin
-				out_data_3_fwd= ALU_MEM_alu_result;	//remember accumulate?
-				out_data_3_use_fwd = 1;
+		if(instr_f_reg[11:8] == instr_alu_Mem[19:16]) begin
+				nextData_3= aluRes_alu_Mem;	//remember accumulate?
+				isNext3 = 1;
 		end
-		if(F_R_instr[3:0] == ALU_MEM_instr[19:16]) begin
-				out_data_4_fwd= ALU_MEM_alu_result;	//remember accumulate?
-				out_data_4_use_fwd = 1;
+		if(instr_f_reg[3:0] == instr_alu_Mem[19:16]) begin
+				nextData_4= aluRes_alu_Mem;	//remember accumulate?
+				isNext4 = 1;
 		end
 	end
 
 
 	//From ALU stage
-	if(MUL_ALU_type == `dataProcessing && MUL_ALU_will_this_be_executed==1 && alu_is_writeback ==1) begin
-		if(F_R_instr[19:16] == MUL_ALU_instr[15:12]) begin
-				out_data_1_fwd = alu_result;
-				out_data_1_use_fwd = 1;
+	if(type_mul_alu == `dataProcessing && MUL_ALU_will_this_be_executed==1 && isWB_alu ==1) begin
+		if(instr_f_reg[19:16] == instr_mul_alu[15:12]) begin
+				nextData_1 = aluRes;
+				isNext1 = 1;
 		end
-		if(F_R_instr[15:12] == MUL_ALU_instr[15:12]) begin
-				out_data_2_fwd = alu_result;
-				out_data_2_use_fwd = 1;
+		if(instr_f_reg[15:12] == instr_mul_alu[15:12]) begin
+				nextData_2 = aluRes;
+				isNext2 = 1;
 		end
-		if(F_R_instr[11:8] == MUL_ALU_instr[15:12]) begin
-				out_data_3_fwd = alu_result;
-				out_data_3_use_fwd = 1;
+		if(instr_f_reg[11:8] == instr_mul_alu[15:12]) begin
+				nextData_3 = aluRes;
+				isNext3 = 1;
 		end
-		if(F_R_instr[3:0] == MUL_ALU_instr[15:12]) begin
-				out_data_4_fwd = alu_result;
-				out_data_4_use_fwd = 1;
+		if(instr_f_reg[3:0] == instr_mul_alu[15:12]) begin
+				nextData_4 = aluRes;
+				isNext4 = 1;
 		end
 	end
 
-	if(MUL_ALU_type == `multiply && MUL_ALU_will_this_be_executed==1) begin
-		if(F_R_instr[19:16] == MUL_ALU_instr[19:16]) begin
-				out_data_1_fwd= alu_result;	//remember accumulate?
-				out_data_1_use_fwd = 1;
+	if(type_mul_alu == `multiply && MUL_ALU_will_this_be_executed==1) begin
+		if(instr_f_reg[19:16] == instr_mul_alu[19:16]) begin
+				nextData_1= aluRes;	//remember accumulate?
+				isNext1 = 1;
 		end
-		if(F_R_instr[15:12] == MUL_ALU_instr[19:16]) begin
-				out_data_2_fwd= alu_result;	//remember accumulate?
-				out_data_2_use_fwd = 1;
+		if(instr_f_reg[15:12] == instr_mul_alu[19:16]) begin
+				nextData_2= aluRes;	//remember accumulate?
+				isNext2 = 1;
 		end
-		if(F_R_instr[11:8] == MUL_ALU_instr[19:16]) begin
-				out_data_3_fwd= alu_result;	//remember accumulate?
-				out_data_3_use_fwd = 1;
+		if(instr_f_reg[11:8] == instr_mul_alu[19:16]) begin
+				nextData_3= aluRes;	//remember accumulate?
+				isNext3 = 1;
 		end
-		if(F_R_instr[3:0] == MUL_ALU_instr[19:16]) begin
-				out_data_4_fwd= alu_result;	//remember accumulate?
-				out_data_4_use_fwd = 1;
+		if(instr_f_reg[3:0] == instr_mul_alu[19:16]) begin
+				nextData_4= aluRes;	//remember accumulate?
+				isNext4 = 1;
 		end
 	end
 
@@ -503,41 +443,41 @@ always@(*) begin
 	//There is problem with forwarding instructions. We can't do forwarding from register stage itself.
 
 	//ALU to ALU:
-	if(MUL_ALU_type == `dataProcessing && MUL_ALU_will_this_be_executed==1 && alu_is_writeback ==1) begin
-		if(R_MUL_instr[19:16] == MUL_ALU_instr[15:12]) begin
-				MUL_ALU_data_1_fwd = alu_result;
-				MUL_ALU_data_1_use_fwd = 1;
+	if(type_mul_alu == `dataProcessing && MUL_ALU_will_this_be_executed==1 && isWB_alu ==1) begin
+		if(instr_reg_mul[19:16] == instr_mul_alu[15:12]) begin
+				nextData1_mul_alu = aluRes;
+				isNext1_mul_alu = 1;
 		end
-		if(R_MUL_instr[15:12] == MUL_ALU_instr[15:12]) begin
-				MUL_ALU_data_2_fwd = alu_result;
-				MUL_ALU_data_2_use_fwd = 1;
+		if(instr_reg_mul[15:12] == instr_mul_alu[15:12]) begin
+				nextData2_mul_alu = aluRes;
+				isNext2_mul_alu = 1;
 		end
-		if(R_MUL_instr[11:8] == MUL_ALU_instr[15:12]) begin
-				MUL_ALU_data_3_fwd = alu_result;
-				MUL_ALU_data_3_use_fwd = 1;
+		if(instr_reg_mul[11:8] == instr_mul_alu[15:12]) begin
+				nextData3_mul_alu = aluRes;
+				isNext3_mul_alu = 1;
 		end
-		if(R_MUL_instr[3:0] == MUL_ALU_instr[15:12]) begin
-				MUL_ALU_data_4_fwd = alu_result;
-				MUL_ALU_data_4_use_fwd = 1;
+		if(instr_reg_mul[3:0] == instr_mul_alu[15:12]) begin
+				nextData4_mul_alu = aluRes;
+				isNext4_mul_alu = 1;
 		end
 	end
 
-	if(MUL_ALU_type == `multiply && MUL_ALU_will_this_be_executed==1) begin
-		if(R_MUL_instr[19:16] == MUL_ALU_instr[19:16]) begin
-				MUL_ALU_data_1_fwd= alu_result;	//remember accumulate?
-				MUL_ALU_data_1_use_fwd = 1;
+	if(type_mul_alu == `multiply && MUL_ALU_will_this_be_executed==1) begin
+		if(instr_reg_mul[19:16] == instr_mul_alu[19:16]) begin
+				nextData1_mul_alu= aluRes;	//remember accumulate?
+				isNext1_mul_alu = 1;
 		end
-		if(R_MUL_instr[15:12] == MUL_ALU_instr[19:16]) begin
-				MUL_ALU_data_2_fwd= alu_result;	//remember accumulate?
-				MUL_ALU_data_2_use_fwd = 1;
+		if(instr_reg_mul[15:12] == instr_mul_alu[19:16]) begin
+				nextData2_mul_alu= aluRes;	//remember accumulate?
+				isNext2_mul_alu = 1;
 		end
-		if(R_MUL_instr[11:8] == MUL_ALU_instr[19:16]) begin
-				MUL_ALU_data_3_fwd= alu_result;	//remember accumulate?
-				MUL_ALU_data_3_use_fwd = 1;
+		if(instr_reg_mul[11:8] == instr_mul_alu[19:16]) begin
+				nextData3_mul_alu= aluRes;	//remember accumulate?
+				isNext3_mul_alu = 1;
 		end
-		if(R_MUL_instr[3:0] == MUL_ALU_instr[19:16]) begin
-				MUL_ALU_data_4_fwd= alu_result;	//remember accumulate?
-				MUL_ALU_data_4_use_fwd = 1;
+		if(instr_reg_mul[3:0] == instr_mul_alu[19:16]) begin
+				nextData4_mul_alu= aluRes;	//remember accumulate?
+				isNext4_mul_alu = 1;
 		end
 	end
 
@@ -547,87 +487,80 @@ end
 
 //ALU. 
 always@(*) begin
-	case(MUL_ALU_type)
+	case(type_mul_alu)
 		`dataProcessing: begin
-				alu_operand_1 = MUL_ALU_out_data_1;	//=R[instr[[19:16]]
-				use_shifter = 1; 					//alu_operand_2 = shifter_result;
-				alu_opcode = MUL_ALU_instr[24:21];
+				alu_op1 = mul_alu_out1;	//=R[instr[[19:16]]
+				useShift = 1; 					//alu_op2 = shifter_result;
+				alu_opcode = instr_mul_alu[24:21];
 			end
 
 		`multiply: begin
-			if(MUL_ALU_instr[21] == 1 ) begin //Multiply accumulate
-				alu_operand_1 = MUL_ALU_out_data_2;	//=R[instr[[19:16]]
-				alu_operand_2 = MUL_ALU_mult_result;
-				use_shifter = 0;
+			if(instr_mul_alu[21] == 1 ) begin //Multiply accumulate
+				alu_op1 = mul_alu_out2;	//=R[instr[[19:16]]
+				alu_op2 = mulRes_mul_alu;
+				useShift = 0;
 				alu_opcode = `ADD;
 			end
 			else begin	//No accumulate. Add 0, so that nzcv flags go through.
-				alu_operand_1 = 0;
-				alu_operand_2 = MUL_ALU_mult_result;
-				use_shifter = 0;
+				alu_op1 = 0;
+				alu_op2 = mulRes_mul_alu;
+				useShift = 0;
 				alu_opcode = `ADD;
 			end
 		end
 
 		`branch: begin	//address calculation
 			//flush instructions.
-			//want_to_flush = 1;
-			alu_operand_1 = current_pc-4;	//because current pc is 3 instructions ahead. As seen from simulator
-			alu_operand_2 = (MUL_ALU_instr[23] == 1)? {6'b111111,MUL_ALU_instr[23:0],2'b00}:{6'b000000,MUL_ALU_instr[23:0],2'b00};	//sign extended 24 bit offset.
-			use_shifter = 0;
+			//driven = 1;
+			alu_op1 = current_pc-4;	//because current pc is 3 instructions ahead. As seen from simulator
+			alu_op2 = (instr_mul_alu[23] == 1)? {6'b111111,instr_mul_alu[23:0],2'b00}:{6'b000000,instr_mul_alu[23:0],2'b00};	//sign extended 24 bit offset.
+			useShift = 0;
 			alu_opcode = `ADD;
 		end
 
 		`loadStoreUnsigned: begin
 			//address calculation
-			alu_operand_1 = MUL_ALU_out_data_1;		//base register.
-			use_shifter = 1;	//offset			//alu_operand_2 = shifter_result;
-			alu_opcode = (MUL_ALU_instr[23]==1)?`ADD: `SUB;	//depending on up bit
+			alu_op1 = mul_alu_out1;		//base register.
+			useShift = 1;	//offset			//alu_op2 = shifter_result;
+			alu_opcode = (instr_mul_alu[23]==1)?`ADD: `SUB;	//depending on up bit
 		end
 
-		/*
-		Not supported yet: 
-		Multiply long
-		Need not do anything for
-		`undefined
-		`branchAndExchange
-		*/
 
 		default: begin
-				//want_to_flush = 0;
-				alu_operand_1 = MUL_ALU_out_data_1;
-				use_shifter = 1; //alu_operand_2 = shifter_result;	
+				//driven = 0;
+				alu_op1 = mul_alu_out1;
+				useShift = 1; //alu_op2 = shifter_result;	
 				alu_opcode =`ADD;
 			end
 	endcase
 end
 
 
-//Memory
+
 always@(*) begin
-	if(ALU_MEM_will_this_be_executed == 0) begin
-		memory_read_enable = 0;
-		memory_write_enable = 0;
+	if(isExecutedAlu_Mem == 0) begin
+		mem_re = 0;
+		mem_we = 0;
 	end
 	else begin
-		case(ALU_MEM_type)
+		case(type_alu_Mem)
 			`loadStoreUnsigned: begin
-				memory_data_address = (ALU_MEM_instr[24]==1)?ALU_MEM_alu_result:ALU_MEM_out_data_1;	//pre or post indexing
-				isByte = ALU_MEM_instr[22];
-				if(ALU_MEM_instr[20] == 0) begin	//store
-					memory_in_data = ALU_MEM_out_data_2;	//store base register
-					memory_write_enable = 1;
+				memory_data_address = (instr_alu_Mem[24]==1)?aluRes_alu_Mem:alu_Mem_out1;	//pre or post indexing
+				isByte = instr_alu_Mem[22];
+				if(instr_alu_Mem[20] == 0) begin	//store
+					memory_in_data = alu_Mem_out2;	//store base register
+					mem_we = 1;
 				end
 				else begin //load
-					memory_read_enable = 1;
+					mem_re = 1;
 				end
 			end
 
 
 
 			default: begin
-				memory_write_enable = 0;
-				memory_read_enable = 0;
+				mem_we = 0;
+				mem_re = 0;
 			end
 		endcase	
 	end
@@ -636,89 +569,84 @@ end
 
 //Write back
 always@(*) begin
-	if(MEM_W_will_this_be_executed == 0) begin
+	if(isExecutedMem_WB == 0) begin
 		pc_update = current_pc + 4;//
 		pc_write = 1;
 		cspr_write = 0;
-		write_enable = 0;
-		write_enable_2 = 0;
+		we1 = 0;
+		we2 = 0;
 	end
 
 	else begin
 
-		case(MEM_W_type)
+		case(type_Mem_WB)
 			`dataProcessing:begin
-				write_address = MEM_W_instr[15:12];
-				write_data = MEM_W_alu_result;
-				write_enable = (MEM_W_alu_is_writeback == 1)? 1:0;
-				write_enable_2 = 0;
-				cspr_update = {MEM_W_alu_nzcv,cspr_update[27:0]};
-				cspr_write = MEM_W_instr[20];	//set bit
+				write_address = instr_Mem_WB[15:12];
+				write_data = aluRes_Mem_WB;
+				we1 = (is_aluWB_Mem_WB == 1)? 1:0;
+				we2 = 0;
+				cspr_update = {aluNCZV_Mem_WB,cspr_update[27:0]};
+				cspr_write = instr_Mem_WB[20];	//set bit
 				pc_update = current_pc + 4;
 				pc_write = 1;
 			end
 
 			`multiply: begin
-				write_address = MEM_W_instr[19:16];
-				write_data = MEM_W_alu_result;	//remember accumulate?
-				write_enable = 1;
-				write_enable_2 = 0;
-				cspr_update = {MEM_W_alu_nzcv,cspr_update[27:0]};
-				cspr_update = MEM_W_instr[20];	//set bit
+				write_address = instr_Mem_WB[19:16];
+				write_data = aluRes_Mem_WB;	//remember accumulate?
+				we1 = 1;
+				we2 = 0;
+				cspr_update = {aluNCZV_Mem_WB,cspr_update[27:0]};
+				cspr_update = instr_Mem_WB[20];	//set bit
 				pc_update = current_pc + 4;
 				pc_write = 1;
 			end
 
 			`branch: begin
-				pc_update = MEM_W_alu_result;
+				pc_update = aluRes_Mem_WB;
 				pc_write = 1;
 				cspr_write = 0;
-				if(MEM_W_instr[24]==0)	write_enable = 0;	//i.e, not link
+				if(instr_Mem_WB[24]==0)	we1 = 0;	//i.e, not link
 				else begin
 					write_address = 4'd14;
-					write_enable = 1;
+					we1 = 1;
 					write_data = current_pc-28;
 				end
-				write_enable_2 = 0;
+				we2 = 0;
 			end
 
 			`branchAndExchange: begin
-				pc_update = MEM_W_out_data_3;
+				pc_update = Mem_WB_out3;
 				pc_write = 1;
 				cspr_write = 0;
-				write_enable = 0;
-				write_enable_2 = 0;
+				we1 = 0;
+				we2 = 0;
 			end
 
 			`loadStoreUnsigned: begin
-				if(MEM_W_instr[20]==1) begin 	//Load from memory
-					write_data = MEM_W_memory_out_data;
-					write_address = MEM_W_instr[15:12];
-					write_enable = 1;
+				if(instr_Mem_WB[20]==1) begin 	//Load from memory
+					write_data = memOut_Mem_WB;
+					write_address = instr_Mem_WB[15:12];
+					we1 = 1;
 				end
-				else write_enable = 0;	//store from memory
+				else we1 = 0;	//store from memory
 
-				if(MEM_W_instr[24] == 0 || MEM_W_instr[21] ==1 ) begin	//postindexing or //preindexing and write back bit set
-					write_address_2 = MEM_W_instr[19:16];
-					write_data_2 = MEM_W_alu_result;
-					write_enable_2 = 1;
+				if(instr_Mem_WB[24] == 0 || instr_Mem_WB[21] ==1 ) begin	//postindexing or //preindexing and write back bit set
+					write_address_2 = instr_Mem_WB[19:16];
+					write_data_2 = aluRes_Mem_WB;
+					we2 = 1;
 				end
-				else write_enable_2 = 0; 
+				else we2 = 0; 
 				cspr_write = 0;
 				pc_update = current_pc + 4;
 				pc_write = 1;
 			end
-			/*
-			Not supported yet: 
-				Multiply long
-			Just to increase pc:
-				undefined
-			*/
+		
 			default: begin
 				pc_update = current_pc +4;//
 				pc_write = 1;
 				cspr_write = 0;
-				write_enable = 0;
+				we1 = 0;
 			end
 		endcase
 
@@ -736,84 +664,84 @@ always @(posedge clk) begin
 		current_pc = pc_update;
 
 		/*******MEM/W*****/
-		MEM_W_will_this_be_executed =(ALU_MEM_flush ==1)?0:ALU_MEM_will_this_be_executed;
-		MEM_W_type 			 = ALU_MEM_type;
-		MEM_W_instr 		 = ALU_MEM_instr;
-		MEM_W_out_data_1 	 = ALU_MEM_out_data_1;
-		MEM_W_out_data_2 	 = ALU_MEM_out_data_2;
-		MEM_W_out_data_3 	 = ALU_MEM_out_data_3;
-		MEM_W_out_data_4 	 = ALU_MEM_out_data_4;
-		MEM_W_memory_out_data = memory_out_data;
-		MEM_W_mult_result 	 = ALU_MEM_mult_result;
-		MEM_W_alu_result 	 = ALU_MEM_alu_result;
-		MEM_W_alu_nzcv 		 = ALU_MEM_alu_nzcv;
-		MEM_W_alu_is_writeback = ALU_MEM_alu_is_writeback;
-		MEM_W_flush			 = ALU_MEM_flush;
+		isExecutedMem_WB =(drive_alu_Mem ==1)?0:isExecutedAlu_Mem;
+		type_Mem_WB 	 = type_alu_Mem;
+		instr_Mem_WB 	 = instr_alu_Mem;
+		Mem_WB_out1 	 = alu_Mem_out1;
+		Mem_WB_out2 	 = alu_Mem_out2;
+		Mem_WB_out3 	 = alu_Mem_out3;
+		Mem_WB_out4 	 = alu_Mem_out4;
+		memOut_Mem_WB    = memOut;
+		mulRes_Mem_WB 	 = mulRes_alu_Mem;
+		aluRes_Mem_WB 	 = aluRes_alu_Mem;
+		aluNCZV_Mem_WB 	 = aluNCZV_alu_Mem;
+		is_aluWB_Mem_WB = is_aluWB_alu_Mem;   
+		drive_Mem_WB	 = drive_alu_Mem;
 		/*******MEM/W*****/
 
 		
 		/*******ALU/MEM*****/
-		ALU_MEM_will_this_be_executed = (MUL_ALU_flush==1)?0:MUL_ALU_will_this_be_executed;
-		ALU_MEM_type 		 = MUL_ALU_type;
-		ALU_MEM_instr 		 = MUL_ALU_instr;
-		ALU_MEM_out_data_1 	 = MUL_ALU_out_data_1;
-		ALU_MEM_out_data_2 	 = MUL_ALU_out_data_2;
-		ALU_MEM_out_data_3 	 = MUL_ALU_out_data_3;
-		ALU_MEM_out_data_4 	 = MUL_ALU_out_data_4;
-		ALU_MEM_mult_result  = MUL_ALU_mult_result;
-		ALU_MEM_alu_result 	 = alu_result;
-		ALU_MEM_alu_nzcv 	 = alu_nzcv;
-		ALU_MEM_alu_is_writeback  = alu_is_writeback;
-		ALU_MEM_flush		 = MUL_ALU_flush;
-		nzcv_forward = alu_nzcv;	//forwarding!
+		isExecutedAlu_Mem = (drive_mul_alu==1)?0:MUL_ALU_will_this_be_executed;
+		type_alu_Mem 	  = type_mul_alu;
+		instr_alu_Mem 	  = instr_mul_alu;
+		alu_Mem_out1 	  = mul_alu_out1;
+		alu_Mem_out2 	  = mul_alu_out2;
+		alu_Mem_out3 	  = mul_alu_out3;
+		alu_Mem_out4 	  = mul_alu_out4;
+		mulRes_alu_Mem    = mulRes_mul_alu;
+		aluRes_alu_Mem 	  = aluRes;
+		aluNCZV_alu_Mem   = alu_nzcv;
+		is_aluWB_alu_Mem  = isWB_alu;
+		drive_alu_Mem	  = drive_mul_alu;
+		next_nzcv = alu_nzcv;	//forwarding!
 		/*******ALU/MEM*****/
 
 		/*******MUL/ALU*****/
 		////condition field checking done in alu stage, right aftern zcvnzcv is calculated . so if decided to be not executing, make type undefined.
-		MUL_ALU_will_this_be_executed = (R_MUL_flush == 1)?0:will_this_be_executed;
-		MUL_ALU_type 		 =R_MUL_type;
-		MUL_ALU_instr 		 =R_MUL_instr;
-		MUL_ALU_out_data_1 	 =(MUL_ALU_data_1_use_fwd == 0)?R_MUL_out_data_1: MUL_ALU_data_1_fwd;
-		MUL_ALU_out_data_2 	 =(MUL_ALU_data_2_use_fwd == 0)?R_MUL_out_data_2: MUL_ALU_data_2_fwd;
-		MUL_ALU_out_data_3 	 =(MUL_ALU_data_3_use_fwd == 0)?R_MUL_out_data_3: MUL_ALU_data_3_fwd;
-		MUL_ALU_out_data_4 	 =(MUL_ALU_data_4_use_fwd == 0)?R_MUL_out_data_4: MUL_ALU_data_4_fwd;
-		MUL_ALU_mult_result	 = mult_result;
-		MUL_ALU_flush		 = R_MUL_flush;
+		MUL_ALU_will_this_be_executed = (drive_reg_mul == 1)?0:will_this_be_executed;
+		type_mul_alu 		 =type_reg_mul;
+		instr_mul_alu 		 =instr_reg_mul;
+		mul_alu_out1 	     =(isNext1_mul_alu == 0)?reg_mul_out1: nextData1_mul_alu;
+		mul_alu_out2 	     =(isNext2_mul_alu == 0)?reg_mul_out2: nextData2_mul_alu;
+		mul_alu_out3 	     =(isNext3_mul_alu == 0)?reg_mul_out3: nextData3_mul_alu;
+		mul_alu_out4 	     =(isNext4_mul_alu == 0)?reg_mul_out4: nextData4_mul_alu;
+		mulRes_mul_alu	     = mulRes;
+		drive_mul_alu		 = drive_reg_mul;
 		//MUL_ALU_shifter_result = shifter_result;
 		/*******MUL/ALU*****/
 
 		/*******R/MUL*****/
-		R_MUL_type 			 =F_R_type;
-		R_MUL_instr 		 =F_R_instr;
-		R_MUL_out_data_1 	 =(out_data_1_use_fwd == 0)?out_data_1:out_data_1_fwd;
-		R_MUL_out_data_2 	 =(out_data_2_use_fwd == 0)?out_data_2:out_data_2_fwd;
-		R_MUL_out_data_3 	 =(out_data_3_use_fwd == 0)?out_data_3:out_data_3_fwd;
-		R_MUL_out_data_4 	 =(out_data_4_use_fwd == 0)?out_data_4:out_data_4_fwd;
-		R_MUL_flush			 =F_R_flush;
+		type_reg_mul 		 =type_f_reg;
+		instr_reg_mul 		 =instr_f_reg;
+		reg_mul_out1 	 	 =(isNext1 == 0)?out_1:nextData_1;
+		reg_mul_out2 	 	 =(isNext2 == 0)?out_2:nextData_2;
+		reg_mul_out3 	 	 =(isNext3 == 0)?out_3:nextData_3;
+		reg_mul_out4 	 	 =(isNext4 == 0)?out_4:nextData_4;
+		drive_reg_mul		 =drive_f_reg;
 		/*******R/MUL*****/
 
 		/*******F/R*****/
-		F_R_instr    = instr;
-		F_R_type 	 = itype;
-		F_R_flush	 =  want_to_flush;
+		instr_f_reg    = instr;
+		type_f_reg 	 = itype;
+		drive_f_reg	 =  driven;
 		/*******F/R*****/
 
 		//Flushing: For branch instructions at write back stage, flush all the pipeline filled
-		if(MUL_ALU_type==`branch )begin
-			want_to_flush=1;
+		if(type_mul_alu==`branch )begin
+			driven=1;
 		end
-		if(MUL_ALU_type!=`branch && MUL_ALU_type!=`dataProcessing && MUL_ALU_type!=`multiply && MUL_ALU_type!=`loadStoreUnsigned)begin
-			want_to_flush = 0;
+		if(type_mul_alu!=`branch && type_mul_alu!=`dataProcessing && type_mul_alu!=`multiply && type_mul_alu!=`loadStoreUnsigned)begin
+			driven = 0;
 		end
-		if( (MEM_W_type == `branch || MEM_W_type == `branchAndExchange) && (MEM_W_will_this_be_executed ==1)) begin
-			want_to_flush = 1;
-			F_R_flush = 1;
-			R_MUL_flush = 1;
-			MUL_ALU_flush = 1;
-			ALU_MEM_flush = 1;
+		if( (type_Mem_WB == `branch || type_Mem_WB == `branchAndExchange) && (isExecutedMem_WB ==1)) begin
+			driven = 1;
+			drive_f_reg = 1;
+			drive_reg_mul = 1;
+			drive_mul_alu = 1;
+			drive_alu_Mem = 1;
 		end
 		else begin
-			want_to_flush = 0;
+			driven = 0;
 		end
 
 	end
