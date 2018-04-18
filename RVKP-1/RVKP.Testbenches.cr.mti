@@ -61,12 +61,12 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	registerBankTB
 
-} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/data_Mem.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/data_Mem.sv
+} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/armv7TDMI.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/armv7TDMI.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module data_Mem
+-- Compiling module armv7TDMI
 
 Top level modules:
-	data_Mem
+	armv7TDMI
 
 } {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/evaluator.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/evaluator.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
@@ -82,18 +82,19 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	multiplierTB
 
-} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv
+} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv {0 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module instr_Mem
+** Error: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv(10): (vlog-2110) Illegal reference to net "read_enable".
+
+** Error: C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv(12): (vlog-2110) Illegal reference to net "read_enable".
+
+
+} {4.0 5.0 6.0 7.0} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module shift
 
 Top level modules:
 	shift
-
-} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module instr_Mem
-
-Top level modules:
-	instr_Mem
 
 } {} {}}
