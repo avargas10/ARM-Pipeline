@@ -1,0 +1,12 @@
+inicio
+  add r3,r2,r1
+  mov r3,#0x24
+  cmp r4 , #0x45
+  str R0, [R1]
+  str R0, [R1, R2]
+  str R0, [R1, #-4]  ;offset asd
+  STR R0, [R1, #-4]! ;pre index
+  Str R0, [R1], #-4 ;post index
+  mul r1,r2,r4
+fin
+  end
