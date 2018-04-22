@@ -9,9 +9,9 @@ def convert(image,txt):
     foto = PIL.Image.open(fp)
     #foto = Image.open(image)
     width, height = foto.size
-    if(width!=640 or height!=480):
-        print('Size needs to be 640x480')
-        return 0
+    ##if(width!=640 or height!=480):
+       ## print('Size needs to be 640x480')
+        ##return 0
     datos = list(foto.getdata())
     foto.close()
     f = open (txt,'w')

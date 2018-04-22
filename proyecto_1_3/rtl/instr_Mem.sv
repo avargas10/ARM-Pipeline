@@ -7,7 +7,7 @@ input clk;
 output reg [31:0] instr;
 
 initial begin
-	$readmemb("code_Mem.txt",ram);
+	$readmemh("code_Mem.txt",ram);
 end
 
 
