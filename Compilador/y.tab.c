@@ -1922,9 +1922,9 @@ void encondig_instruccion2(std::string op,std::string rs,std::string rd){
   text_memory+=0x4;
   if(op.compare("cmp")==0 || op.compare("CMP")==0 || op.compare("Cmp")==0){
     binIns+="00010101";
-    binIns+=regtobin(rs);
-    binIns+="000000000000";
     binIns+=regtobin(rd);
+    binIns+="000000000000";
+    binIns+=regtobin(rs);
     fs<<binIns<<'\n';
   }else if(op.compare("mov")==0 || op.compare("MOV")==0 || op.compare("Mov")==0){
     binIns+="000110100000";
