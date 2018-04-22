@@ -11,8 +11,7 @@
     #include <cstdlib>
     #include <fstream>
 
-    std::vector<std::string> labels;
-    std::vector<int> values;
+    std::map<std::string,int> labels;
     std::map<std::string,int> futureLabels;
     std::fstream fs;
     std::fstream fs2;
@@ -183,13 +182,13 @@ void encondig_instruccion4(std::string op,std::string rs,std::string tag){
   if(op.compare("ldr")==0 || op.compare("Ldr")==0 || op.compare("LDR")==0){
     binIns+="010100010000";
     binIns+=regtobin(rs);
-    int result=values[indexOf(tag)];
+    int result=labels.find(tag)->second;
     binIns+=std::bitset<12>(result).to_string();
     fs<<binIns<<'\n';
   }else if(op.compare("str")==0 || op.compare("Str")==0 || op.compare("STR")==0){
     binIns+="010100000000";
     binIns+=regtobin(rs);
-    int result=values[indexOf(tag)];
+    int result=labels.find(tag)->second;
     binIns+=std::bitset<12>(result).to_string();
     fs<<binIns<<'\n';
   }else{
@@ -198,35 +197,46 @@ void encondig_instruccion4(std::string op,std::string rs,std::string tag){
 }
 
 void encondig_instruccion5(std::string op,std::string tag){
-  std::string binIns="111010";
   text_memory+=0x4;
   if(op.compare("B")==0 || op.compare("b")==0){
-    binIns+="10";
-    int index=indexOf(tag);
-    if(index==-1){
+    std::string binIns="11101010";
+    int index=labels.find(tag)->second;
+    if(index < 0){
       futureLabels[tag]=fs.tellp();
     }
-    int result=(values[index]-text_memory+0x4)/4;
+    int result=(index-text_memory+0x4)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
+    fs<<'\n';
+    fs<<'\n';
+    fs<<'\n';
+    fs<<'\n';
   }else if(op.compare("Beq")==0 || op.compare("BEQ")==0 || op.compare("beq")==0){
-    binIns+="10";
-    int index=indexOf(tag);
-    if(index==-1){
+    std::string binIns="00001010";
+    int index=labels.find(tag)->second;
+    if(index < 0){
       futureLabels[tag]=fs.tellp();
     }
-    int result=(values[index]-text_memory+0x4)/4;
+    int result=(index-text_memory+0x4)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
+    fs<<'\n';
+    fs<<'\n';
+    fs<<'\n';
+    fs<<'\n';
   }else if(op.compare("Bne")==0 || op.compare("BNE")==0 || op.compare("bne")==0){
-    binIns+="10";
-    int index=indexOf(tag);
-    if(index==-1){
+    std::string binIns="00011010";
+    int index=labels.find(tag)->second;
+    if(index < 0){
       futureLabels[tag]=fs.tellp();
     }
-    int result=(values[index]-text_memory+0x4)/4;
+    int result=(index-text_memory+0x4)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
+    fs<<'\n';
+    fs<<'\n';
+    fs<<'\n';
+    fs<<'\n';
   }else{
     std::cout<< "Error at read instruccion: 2"<<'\n';
   }
@@ -388,7 +398,7 @@ std::string regtobin(std::string r){
   return bin;
 }
 
-int indexOf(std::string tag){
+/*int indexOf(std::string tag){
   int pos =std::find(labels.begin(),labels.end(),tag)-labels.begin();
   if (pos < labels.size()){
     return pos;
@@ -396,7 +406,7 @@ int indexOf(std::string tag){
     std::cout<<"elem not found "<<tag<<'\n';
     return -1;
   }
-}
+}*/
 
 void variablestobin(int val){
   if(current_type.compare("DCB")==0){
@@ -436,12 +446,10 @@ void procces_label(std::string tag,std::string g,int type){
   }
 
   if(type==1){
-    labels.push_back(tag);
-    values.push_back(text_memory);
+    labels[tag]=text_memory;
   }else if(type==2){
     current_type=g;
-    labels.push_back(tag);
-    values.push_back(data_memory);
+    labels[tag]=data_memory;
   }
 }
 

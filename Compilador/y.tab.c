@@ -82,8 +82,7 @@
     #include <cstdlib>
     #include <fstream>
 
-    std::vector<std::string> labels;
-    std::vector<int> values;
+    std::map<std::string,int> labels;
     std::map<std::string,int> futureLabels;
     std::fstream fs;
     std::fstream fs2;
@@ -112,7 +111,7 @@
 
 
 /* Line 189 of yacc.c  */
-#line 116 "y.tab.c"
+#line 115 "y.tab.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -187,7 +186,7 @@ typedef union YYSTYPE
 {
 
 /* Line 214 of yacc.c  */
-#line 43 "Compiler.y"
+#line 42 "Compiler.y"
 
   char* id;
   int num;
@@ -195,7 +194,7 @@ typedef union YYSTYPE
 
 
 /* Line 214 of yacc.c  */
-#line 199 "y.tab.c"
+#line 198 "y.tab.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -207,7 +206,7 @@ typedef union YYSTYPE
 
 
 /* Line 264 of yacc.c  */
-#line 211 "y.tab.c"
+#line 210 "y.tab.c"
 
 #ifdef short
 # undef short
@@ -508,10 +507,10 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    58,    58,    59,    60,    61,    62,    63,    64,    65,
-      68,    69,    70,    71,    72,    73,    74,    75,    76,    77,
-      78,    79,    80,    83,    85,    86,    88,    89,    90,    93,
-      94,    95,    96,    97,    98,    99,   100,   101,   102
+       0,    57,    57,    58,    59,    60,    61,    62,    63,    64,
+      67,    68,    69,    70,    71,    72,    73,    74,    75,    76,
+      77,    78,    79,    82,    84,    85,    87,    88,    89,    92,
+      93,    94,    95,    96,    97,    98,    99,   100,   101
 };
 #endif
 
@@ -1445,231 +1444,231 @@ yyreduce:
         case 4:
 
 /* Line 1455 of yacc.c  */
-#line 60 "Compiler.y"
+#line 59 "Compiler.y"
     {procces_label((yyvsp[(2) - (3)].id),"",1);}
     break;
 
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 61 "Compiler.y"
+#line 60 "Compiler.y"
     {procces_label((yyvsp[(2) - (4)].id),"",1);}
     break;
 
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 63 "Compiler.y"
+#line 62 "Compiler.y"
     {procces_label((yyvsp[(2) - (4)].id),"",1);}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 68 "Compiler.y"
+#line 67 "Compiler.y"
     {encondig_instruccion2((yyvsp[(1) - (4)].id),(yyvsp[(4) - (4)].id),(yyvsp[(2) - (4)].id));}
     break;
 
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 69 "Compiler.y"
+#line 68 "Compiler.y"
     {encondig_instruccion3((yyvsp[(1) - (4)].id),(yyvsp[(2) - (4)].id),(yyvsp[(4) - (4)].id));}
     break;
 
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 70 "Compiler.y"
+#line 69 "Compiler.y"
     {encondig_instruccion5((yyvsp[(1) - (2)].id),(yyvsp[(2) - (2)].id));}
     break;
 
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 71 "Compiler.y"
+#line 70 "Compiler.y"
     {encondig_instruccion4((yyvsp[(1) - (5)].id),(yyvsp[(2) - (5)].id),(yyvsp[(5) - (5)].id));}
     break;
 
   case 14:
 
 /* Line 1455 of yacc.c  */
-#line 72 "Compiler.y"
+#line 71 "Compiler.y"
     {encondig_instruccion1((yyvsp[(1) - (6)].id),(yyvsp[(4) - (6)].id),(yyvsp[(2) - (6)].id),(yyvsp[(6) - (6)].id));}
     break;
 
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 73 "Compiler.y"
+#line 72 "Compiler.y"
     {encondig_instruccion6((yyvsp[(1) - (6)].id),(yyvsp[(2) - (6)].id),(yyvsp[(5) - (6)].id),"",1);}
     break;
 
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 74 "Compiler.y"
+#line 73 "Compiler.y"
     {encondig_instruccion6((yyvsp[(1) - (8)].id),(yyvsp[(2) - (8)].id),(yyvsp[(5) - (8)].id),(yyvsp[(7) - (8)].id),2);}
     break;
 
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 75 "Compiler.y"
+#line 74 "Compiler.y"
     {encondig_instruccion6((yyvsp[(1) - (8)].id),(yyvsp[(2) - (8)].id),(yyvsp[(5) - (8)].id),(yyvsp[(7) - (8)].id),3);}
     break;
 
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 76 "Compiler.y"
+#line 75 "Compiler.y"
     {encondig_instruccion7((yyvsp[(1) - (8)].id),(yyvsp[(2) - (8)].id),(yyvsp[(5) - (8)].id),(yyvsp[(8) - (8)].id));}
     break;
 
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 77 "Compiler.y"
+#line 76 "Compiler.y"
     {encondig_instruccion6((yyvsp[(1) - (9)].id),(yyvsp[(2) - (9)].id),(yyvsp[(5) - (9)].id),(yyvsp[(7) - (9)].id),4);}
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 78 "Compiler.y"
+#line 77 "Compiler.y"
     {encondig_instruccion((yyvsp[(1) - (6)].id),(yyvsp[(4) - (6)].id),(yyvsp[(6) - (6)].id),(yyvsp[(2) - (6)].id));}
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 79 "Compiler.y"
+#line 78 "Compiler.y"
     {;}
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 80 "Compiler.y"
+#line 79 "Compiler.y"
     {yyerror("2, instruccion wrong");}
     break;
 
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 83 "Compiler.y"
+#line 82 "Compiler.y"
     {procces_label((yyvsp[(1) - (3)].id),(yyvsp[(2) - (3)].id),2);}
     break;
 
   case 24:
 
 /* Line 1455 of yacc.c  */
-#line 85 "Compiler.y"
+#line 84 "Compiler.y"
     {variablestobin((yyvsp[(1) - (1)].num));}
     break;
 
   case 25:
 
 /* Line 1455 of yacc.c  */
-#line 86 "Compiler.y"
+#line 85 "Compiler.y"
     {variablestobin((yyvsp[(3) - (3)].num));}
     break;
 
   case 26:
 
 /* Line 1455 of yacc.c  */
-#line 88 "Compiler.y"
+#line 87 "Compiler.y"
     {(yyval.id)=(yyvsp[(1) - (1)].id);}
     break;
 
   case 27:
 
 /* Line 1455 of yacc.c  */
-#line 89 "Compiler.y"
+#line 88 "Compiler.y"
     {(yyval.id)=(yyvsp[(1) - (1)].id);}
     break;
 
   case 28:
 
 /* Line 1455 of yacc.c  */
-#line 90 "Compiler.y"
+#line 89 "Compiler.y"
     {(yyval.id)=(yyvsp[(1) - (1)].id);}
     break;
 
   case 29:
 
 /* Line 1455 of yacc.c  */
-#line 93 "Compiler.y"
+#line 92 "Compiler.y"
     {;}
     break;
 
   case 30:
 
 /* Line 1455 of yacc.c  */
-#line 94 "Compiler.y"
+#line 93 "Compiler.y"
     {;}
     break;
 
   case 31:
 
 /* Line 1455 of yacc.c  */
-#line 95 "Compiler.y"
+#line 94 "Compiler.y"
     {;}
     break;
 
   case 32:
 
 /* Line 1455 of yacc.c  */
-#line 96 "Compiler.y"
+#line 95 "Compiler.y"
     {;}
     break;
 
   case 33:
 
 /* Line 1455 of yacc.c  */
-#line 97 "Compiler.y"
+#line 96 "Compiler.y"
     {;}
     break;
 
   case 34:
 
 /* Line 1455 of yacc.c  */
-#line 98 "Compiler.y"
+#line 97 "Compiler.y"
     {;}
     break;
 
   case 35:
 
 /* Line 1455 of yacc.c  */
-#line 99 "Compiler.y"
+#line 98 "Compiler.y"
     {;}
     break;
 
   case 36:
 
 /* Line 1455 of yacc.c  */
-#line 100 "Compiler.y"
+#line 99 "Compiler.y"
     {;}
     break;
 
   case 37:
 
 /* Line 1455 of yacc.c  */
-#line 101 "Compiler.y"
+#line 100 "Compiler.y"
     {;}
     break;
 
   case 38:
 
 /* Line 1455 of yacc.c  */
-#line 102 "Compiler.y"
+#line 101 "Compiler.y"
     {;}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1673 "y.tab.c"
+#line 1672 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1881,7 +1880,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 105 "Compiler.y"
+#line 104 "Compiler.y"
 
 
 extern int yyparse();
@@ -1963,13 +1962,13 @@ void encondig_instruccion4(std::string op,std::string rs,std::string tag){
   if(op.compare("ldr")==0 || op.compare("Ldr")==0 || op.compare("LDR")==0){
     binIns+="010100010000";
     binIns+=regtobin(rs);
-    int result=values[indexOf(tag)];
+    int result=labels.find(tag)->second;
     binIns+=std::bitset<12>(result).to_string();
     fs<<binIns<<'\n';
   }else if(op.compare("str")==0 || op.compare("Str")==0 || op.compare("STR")==0){
     binIns+="010100000000";
     binIns+=regtobin(rs);
-    int result=values[indexOf(tag)];
+    int result=labels.find(tag)->second;
     binIns+=std::bitset<12>(result).to_string();
     fs<<binIns<<'\n';
   }else{
@@ -1978,35 +1977,46 @@ void encondig_instruccion4(std::string op,std::string rs,std::string tag){
 }
 
 void encondig_instruccion5(std::string op,std::string tag){
-  std::string binIns="111010";
   text_memory+=0x4;
   if(op.compare("B")==0 || op.compare("b")==0){
-    binIns+="10";
-    int index=indexOf(tag);
-    if(index==-1){
+    std::string binIns="11101010";
+    int index=labels.find(tag)->second;
+    if(index < 0){
       futureLabels[tag]=fs.tellp();
     }
-    int result=(values[index]-text_memory+0x4)/4;
+    int result=(index-text_memory+0x4)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
+    fs<<'\n';
+    fs<<'\n';
+    fs<<'\n';
+    fs<<'\n';
   }else if(op.compare("Beq")==0 || op.compare("BEQ")==0 || op.compare("beq")==0){
-    binIns+="10";
-    int index=indexOf(tag);
-    if(index==-1){
+    std::string binIns="00001010";
+    int index=labels.find(tag)->second;
+    if(index < 0){
       futureLabels[tag]=fs.tellp();
     }
-    int result=(values[index]-text_memory+0x4)/4;
+    int result=(index-text_memory+0x4)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
+    fs<<'\n';
+    fs<<'\n';
+    fs<<'\n';
+    fs<<'\n';
   }else if(op.compare("Bne")==0 || op.compare("BNE")==0 || op.compare("bne")==0){
-    binIns+="10";
-    int index=indexOf(tag);
-    if(index==-1){
+    std::string binIns="00011010";
+    int index=labels.find(tag)->second;
+    if(index < 0){
       futureLabels[tag]=fs.tellp();
     }
-    int result=(values[index]-text_memory+0x4)/4;
+    int result=(index-text_memory+0x4)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
+    fs<<'\n';
+    fs<<'\n';
+    fs<<'\n';
+    fs<<'\n';
   }else{
     std::cout<< "Error at read instruccion: 2"<<'\n';
   }
@@ -2168,7 +2178,7 @@ std::string regtobin(std::string r){
   return bin;
 }
 
-int indexOf(std::string tag){
+/*int indexOf(std::string tag){
   int pos =std::find(labels.begin(),labels.end(),tag)-labels.begin();
   if (pos < labels.size()){
     return pos;
@@ -2176,7 +2186,7 @@ int indexOf(std::string tag){
     std::cout<<"elem not found "<<tag<<'\n';
     return -1;
   }
-}
+}*/
 
 void variablestobin(int val){
   if(current_type.compare("DCB")==0){
@@ -2216,12 +2226,10 @@ void procces_label(std::string tag,std::string g,int type){
   }
 
   if(type==1){
-    labels.push_back(tag);
-    values.push_back(text_memory);
+    labels[tag]=text_memory;
   }else if(type==2){
     current_type=g;
-    labels.push_back(tag);
-    values.push_back(data_memory);
+    labels[tag]=data_memory;
   }
 }
 
