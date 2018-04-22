@@ -1,0 +1,315 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    21:39:26 10/04/2017 
+// Design Name: 
+// Module Name:    xvga 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module xvga(
+    clk, 
+		rst,
+		vsync,
+		hsync,
+		VGA_R,
+		VGA_G,
+		VGA_B,
+		pul,
+		o1,
+		o2,
+		select,
+		shoot
+);
+
+// ====================================================================================
+// 										Inputs Declarations
+// ====================================================================================			
+	input 		 clk; 
+	input 		 rst;
+	output		 vsync;
+	output		 hsync;
+	output [2:0] VGA_R;
+	output [2:0] VGA_G;
+	output [1:0] VGA_B;
+	
+	input			 pul;
+	input			 o1;
+	input			 o2;
+	input			 select;
+	input			 shoot;
+   
+// ====================================================================================
+// 								Parameters, Register, and Wires
+// ====================================================================================	
+	reg			 vs;
+	reg			 hs;
+   reg [10:0]	 hcount;
+   reg [9:0]	 vcount;
+	reg [9:0]	 counter;
+   reg 			 hblank;
+	reg			 vblank;
+   reg			 frame;
+	
+	///////////////////STATIC POSITIONS DRAW//////////////////////////////////
+	reg [7:0]	 x_one = 1000; // score pos x
+	reg [9:0]	 x_tank = 380; // tank pos x
+	reg [9:0]	 x_bulletgun = 403; // bullets tank gun pos x
+	reg [9:0]	 y_plane1 = 100; // plane 1 pos y initial
+	reg [9:0]	 y_plane2 = 200; // plane 2 pos y initial
+	reg [9:0]    time_x = 300;
+
+///////////////////PIXEL POSITIONS DRAW//////////////////////////////////
+
+	wire [7:0] 	 pixel;
+	wire [7:0]	 score1_pixel;
+	wire [7:0]	 tank_pixel;
+	wire [7:0]	 tankGun_pixel;
+	wire [7:0]	 plane1_pixel;
+	wire [7:0]	 plane2_pixel;
+	wire [7:0]	 lastTime_pixel;
+	
+	wire [7:0] 	 final_pixels;
+	
+	///////////////////WIRES TO LINK POSITIONS AND DRAW//////////////////////////////////
+	wire [9:0]   bullet_y; // bullets gun movement and draw
+	wire [9:0]   plane1_x; // plane 1 wire movement and draw
+	wire [9:0]   plane2_x; // plane 1 wire movement and draw
+   wire 			 win_rst1;
+	wire 			 win_rst2;
+	//wire 			 win_rst2;
+	wire 			 overTime; //for the output of lastTime and union with final score 
+	//wire         output_yb;
+	
+	wire 			 output_xp1;
+	
+	wire			 over1; //
+	//wire			 over2; // si se gana
+	
+	
+	///////////////////VGA DRAWS//////////////////////////////////
+	wire 			 hsyncon;
+	wire			 hsyncoff;
+	wire			 hreset;
+	wire			 hblankon;
+	wire			 next_hblank;
+	wire			 next_vblank;
+	wire 			 vclk;
+	wire			 secTime;
+	
+//  ===================================================================================
+// 							  				Implementation
+//  ===================================================================================
+	
+		// horizontal: 1039 pixels total
+		// display 800 pixels per line
+		assign hblankon = (hcount == 799);    
+		assign hsyncon = (hcount == 855);
+		assign hsyncoff = (hcount == 975);
+		assign hreset = (hcount == 1039);
+
+		// vertical: 665 lines total
+		// display 600 lines
+		wire vsyncon,vsyncoff,vreset,vblankon;
+		assign vblankon = hreset & (vcount == 599);    
+		assign vsyncon = hreset & (vcount == 636);
+		assign vsyncoff = hreset & (vcount == 642);
+		assign vreset = hreset & (vcount == 665);
+
+		// Get 50Mhz clock for the vga calculations
+		ClkDiv_50MHz vgaclk(
+			 .CLK(clk),
+			 .RST(rst),
+			 .CLKOUT(vclk)
+		);
+		
+		ClkDiv_time secTimeDiv(
+			.clk(clk),
+			.reset(rst),
+			.clk_out(secTime)
+		
+		);
+  
+		// sync and blanking
+		assign next_hblank = hreset ? 0 : hblankon ? 1 : hblank;
+		assign next_vblank = vreset ? 0 : vblankon ? 1 : vblank;
+  	
+		always @(posedge clk) 
+		begin
+			if (rst == 1)  
+			begin
+				hcount <= 0;
+				vcount <= 0;
+				vs <= 1;
+				hs <= 1;
+				vblank <= 0;
+				hblank <= 0;
+				counter <= 0;
+				frame <= 0;
+			end
+			else 
+			begin
+				if ( vclk == 1 ) 
+				begin
+					hcount <= hreset ? 0 : hcount + 1;
+					hblank <= next_hblank;
+					hs <= hsyncon ? 0 : hsyncoff ? 1 : hs;  // active low
+					vcount <= hreset ? (vreset ? 0 : vcount + 1) : vcount;
+					vblank <= next_vblank;
+					vs <= vsyncon ? 0 : vsyncoff ? 1 : vs;  // active low
+      
+					if ( vs == 0 )
+						counter <= counter + 1;
+						
+					if ( counter ==  600) 
+					begin
+						counter <= 0;
+						frame <= 1;
+					end
+					else
+						frame <= 0;
+				end
+			end
+		end
+
+		//-------------------------------------------------------------------------
+		//		 							Draw
+		//-------------------------------------------------------------------------
+		draw_score score1(
+			 .win_rst( win_rst1 || win_rst2), // increase count
+			 .hcount(hcount),
+			 .vcount(vcount),
+			 
+			 .x(x_one),
+			 
+			 .clk(vclk),
+			 .rst(rst),
+			 .pixel(score1_pixel),
+			 .over(over1)
+		);
+		
+		lastTime lastTime(
+			 .hcount(hcount),
+			 .vcount(vcount),
+			 
+			 .x(time_x),
+			 
+			 .clk(secTime),
+			 .rst(rst),
+			 .pixel(lastTime_pixel),
+			 .lastTime(overTime)
+		);
+/////////////////DRAW TANK AND ITS BULLETS AND MOVEMENTS///////////////////////////////////////		
+		draw_tank tank( 
+			 .hcount(hcount),
+			 .vcount(vcount),
+			 .x(x_tank),
+			 .clk(vclk),
+			 .rst(rst),
+			 .pixel(tank_pixel),
+			 .over(over1)
+		);
+		
+		bulle_move gun(
+			.clk(vclk),
+			.frame(frame),
+			.button(shoot),
+			.rst(rst | overTime),
+			.bullet_y(bullet_y)
+		);
+		
+		draw_bullets gunTank(
+			 .hcount(hcount),
+			 .vcount(vcount),
+			 .x(x_bulletgun),
+			 .y(bullet_y),
+			 .clk(vclk),
+			 .pixel(tankGun_pixel)
+		);
+		
+/////////////////DRAW PLANES AND MOVEMENTS///////////////////////////////////////		
+		plane_movement plane1_mov(
+			.clk(vclk),
+			.frame(frame),
+			.rst(rst),
+			.pixThis(y_plane1),
+			.pixBulletsx(x_bulletgun),
+			.pixBulletsy(bullet_y),
+			.pointScore(win_rst1),
+			.plane_x(plane1_x)
+			
+		);
+		
+		draw_plane plane1(
+			 .hcount(hcount),
+			 .vcount(vcount),
+			 .x(plane1_x),
+			 .y(y_plane1),
+			 .clk(vclk),
+			 .pixel(plane1_pixel)
+		);
+
+		plane2_mov plane2_mov(
+			.clk(vclk),
+			.frame(frame),
+			.rst(rst),
+			.pixThis(y_plane2),
+			.pixBulletsx(x_bulletgun),
+			.pixBulletsy(bullet_y),
+			.pointScore(win_rst2),
+			.plane_x(plane2_x)
+			
+		);
+		
+		draw_plane plane2(
+			 .hcount(hcount),
+			 .vcount(vcount),
+			 .x(plane2_x),
+			 .y(y_plane2),
+			 .clk(vclk),
+			 .pixel(plane2_pixel)
+		);
+
+
+		//-------------------------------------------------------------------------
+		//		 							Final outputs WIN or LOOSE
+		//-------------------------------------------------------------------------
+		output_pixels final_out(
+			 .clk(vclk),
+			 .rst(rst),			 
+			 .score1(score1_pixel),
+			 .tank(tank_pixel),
+			 .guntank(tankGun_pixel),
+			 .plane1(plane1_pixel),
+			 .plane2(plane2_pixel),
+			 .lastTime(lastTime_pixel),
+			 
+			 //.overAll(overTime), // loose the game
+			 .winAll(overTime), // end the game
+			 
+			 .hcount(hcount),
+			 .vcount(vcount),
+			 .final(final_pixels)
+		);
+
+ 
+		assign pixel = final_pixels;
+		assign VGA_R = pixel[7:5];
+		assign VGA_G = pixel[4:2];
+		assign VGA_B = pixel[1:0];
+		assign vsync = ~vs;
+		assign hsync = ~hs;
+
+
+endmodule
