@@ -5,6 +5,7 @@
     #include <string.h>
     #include <bitset>
     #include <vector>
+    #include <map>
     #include <stdlib.h>
     #include <algorithm>
     #include <cstdlib>
@@ -12,6 +13,7 @@
 
     std::vector<std::string> labels;
     std::vector<int> values;
+    std::map<std::string,int> futureLabels;
     std::fstream fs;
     std::fstream fs2;
     int memCount=0;
@@ -30,7 +32,7 @@
     std::string immtobin(std::string in,int type);
     void procces_label(std::string tag,std::string g,int type);
     void variablestobin(int val);
-    std::string current_type="";
+    std::string current_type="DCD";
     int data_memory=0x10000000;
     int text_memory=0x00000000;
     void yyerror(std::string S);
@@ -200,17 +202,29 @@ void encondig_instruccion5(std::string op,std::string tag){
   text_memory+=0x4;
   if(op.compare("B")==0 || op.compare("b")==0){
     binIns+="10";
-    int result=values[indexOf(tag)];
+    int index=indexOf(tag);
+    if(index==-1){
+      futureLabels[tag]=fs.tellp();
+    }
+    int result=(values[index]-text_memory+0x4)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
   }else if(op.compare("Beq")==0 || op.compare("BEQ")==0 || op.compare("beq")==0){
     binIns+="10";
-    int result=values[indexOf(tag)];
+    int index=indexOf(tag);
+    if(index==-1){
+      futureLabels[tag]=fs.tellp();
+    }
+    int result=(values[index]-text_memory+0x4)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
   }else if(op.compare("Bne")==0 || op.compare("BNE")==0 || op.compare("bne")==0){
     binIns+="10";
-    int result=values[indexOf(tag)];
+    int index=indexOf(tag);
+    if(index==-1){
+      futureLabels[tag]=fs.tellp();
+    }
+    int result=(values[index]-text_memory+0x4)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
   }else{
@@ -376,7 +390,7 @@ std::string regtobin(std::string r){
 
 int indexOf(std::string tag){
   int pos =std::find(labels.begin(),labels.end(),tag)-labels.begin();
-  if (pos<labels.size()){
+  if (pos < labels.size()){
     return pos;
   }else{
     std::cout<<"elem not found "<<tag<<'\n';
@@ -405,12 +419,22 @@ void variablestobin(int val){
     }
   }else if(current_type.compare("DCD")==0){
     std::string bin=std::bitset<32>(val).to_string();
-    std::cout<<current_type<<'\n';
     fs2<<bin<<'\n';
   }
 }
 
 void procces_label(std::string tag,std::string g,int type){
+  int tmp=futureLabels.find(tag)->second;
+  if(tmp > 0){
+    int tposition=fs.tellp();
+    int result=0x8+(0x4*tmp/33);
+    std::cout<<tag<<" "<<result<<" "<<text_memory<<'\n';
+    result=(text_memory-result)/4;
+    fs.seekp(tmp+8);
+    fs<<std::bitset<24>(result).to_string();
+    fs.seekp(tposition);
+  }
+
   if(type==1){
     labels.push_back(tag);
     values.push_back(text_memory);

@@ -10,7 +10,7 @@
 %option yylineno
 
 comment ;.+
-tag    [a-zA-Z_]+
+tag    [a-zA-Z_][a-zA-Z0-9_]*
 imme   \#-?(0x)?[0-9]+
 numero [0-9]+
 
