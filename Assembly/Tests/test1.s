@@ -1,4 +1,14 @@
-mov r1, #100
-mov r2, #10
-ldr r3,[r2,#35]
-mul r3,r2,r3
+//salto de linea para las filas de la imagen
+mov r1,#0
+mov r2,#100
+mov r9,#3
+matMult
+ldr r5,[r1],#1//extrae el dato en r1+4 de memoria
+ldr r6,[r2],#1//extrae el dato en r2+4 de memoria
+mul r7,r5,r6 //se multiplican los datos
+add r8,r8,r7 //se almacena el dato para la suma de las multiplicaciones 
+mov r7,#0//limpia r7
+sub r9,r9,#1//se disminuye el contador
+cmp r9,#0 //se evalua si se termino el proceso
+bnq matMult
+str r8,[r3],#1
