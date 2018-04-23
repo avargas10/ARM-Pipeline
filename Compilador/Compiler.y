@@ -177,8 +177,11 @@ void encondig_instruccion3(std::string op,std::string rs,std::string imme){
     binIns+="001110100000";
     std::string r=regtobin(rs);
     binIns+=r;
-    binIns+=immtobin(imme,1,r);
-    fs<<binIns<<'\n';
+    std::string inm=immtobin(imme,4,r);
+    binIns+=inm;
+    if(inm.compare("nop")!=0){
+        fs<<binIns<<'\n';
+    }
   }else{
     std::cout<< "Error at read instruccion: 2"<<'\n';
   }
@@ -542,6 +545,33 @@ std::string immtobin(std::string in,int type,std::string rs){
   }else if(type==3){
     std::string bin=std::bitset<24>(x).to_string();
     return bin;
+  }else if(type==4){
+    if(x<4096){
+      std::string bin=std::bitset<12>(x).to_string();
+      return bin;
+    }else{
+      x=x-4095;
+      std::string ins="1110001110100000";
+      ins+=rs;
+      ins+="111111111111";
+      fs<<ins<<'\n';
+      while(x>4096){
+        x=x-4095;
+        ins="111000101000";
+        ins+=rs;
+        ins+=rs;
+        ins+="111111111111";
+        fs<<ins<<'\n';
+        text_memory+=0x4;
+      }
+      ins="111000101000";
+      ins+=rs;
+      ins+=rs;
+      ins+=std::bitset<12>(x).to_string();
+      fs<<ins<<'\n';
+      std::string bin="nop";
+      return "nop";
+    }
   }
 }
 
