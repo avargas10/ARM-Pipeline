@@ -32,7 +32,7 @@ sub r10,r10,#1//se disminuye el contador
 cmp r10,#0 //se evalua si se termino el proceso
 bnq jumpLine
 add r12,r12,#1
-str r8,[r3,r12] //almacena el resultado de la suma
+str r8,[r3],#1 //almacena el resultado de la suma
 mov r8,#0//limpia r8
 cmp r12,#49 
 bne xMapping
