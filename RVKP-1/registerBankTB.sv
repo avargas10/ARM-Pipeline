@@ -1,28 +1,34 @@
+/**
+* Instituto Tecnologico de Costa Rica
+* @author Victor Chavarria Fernadez, Jeison Melendez Arrieta, Andres Vargas Rivera
+* Proyecto 1
+* Arquitectura de Computadores I
+*/
 `timescale 1ns/1ns
-
+//Banco de registro, archivo de prueba
 module registerBankTB();
 parameter N = 32;
-logic [3:0]inA1;
+logic [3:0]inA1; //Dirrecciones de entrada
 logic [3:0]inA2;
 logic [3:0]inA3;
-logic [3:0]inA4; 
-logic [N-1:0]out1;
+logic [3:0]inA4;
+logic [N-1:0]out1; //Datos de salida
 logic [N-1:0]out2;
 logic [N-1:0]out3;
-logic [N-1:0]out4; 
-logic [3:0]writeA;
-logic [N-1:0]writeD;
-logic we;
+logic [N-1:0]out4;
+logic [3:0]writeA; //Dirrecion de registro a escribir
+logic [N-1:0]writeD; //Dato a escribir
+logic we; //Bandera de activacion
 logic [3:0]writeA2;
 logic [N-1:0]writeD2;
 logic we2;
-logic [N-1:0]PC;
+logic [N-1:0]PC; //registro pc
 logic [N-1:0]PC_update;
-logic PC_write;
+logic PC_write; //Flag de escritura pc
 logic [N-1:0]CSPR;
-logic csprW;
+logic csprW; //Flag de escritura
 logic [N-1:0]CSPR_update;
-logic clock; 
+logic clock;
 
 
 registerBank regFile(
@@ -46,10 +52,10 @@ registerBank regFile(
 			.cspr(CSPR),
 			.cspr_write(csprW),
 			.cspr_update(CSPR_update),
-			.clk(clock) 
+			.clk(clock)
 	);
 
-initial 
+initial
 	begin
 		clock=0;
 		PC =0;
@@ -62,7 +68,7 @@ initial
 always@(negedge clock)
 	begin
 		if(writeA<15)
-			begin				
+			begin
 				$display("Writting= %b in reg = %b",writeD,writeA); #100;
 				$display("Reading= %b in reg = %b",out1,inA1);
 				writeA = writeA+1;
@@ -78,6 +84,5 @@ always
 	begin
 		clock<=1; #10;
 		clock<=0; #10;
-	end 
+	end
 endmodule
- 

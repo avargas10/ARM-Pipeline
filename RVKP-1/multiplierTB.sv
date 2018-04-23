@@ -1,12 +1,18 @@
+/**
+* Instituto Tecnologico de Costa Rica
+* @author Victor Chavarria Fernadez, Jeison Melendez Arrieta, Andres Vargas Rivera
+* Proyecto 1
+* Arquitectura de Computadores I
+*/
 `timescale 1ns/1ns
-
+//Archivo de prueba de multiplicacion
 module multiplierTB();
 logic [31:0]rs;
 logic [31:0]res;
 logic [31:0] rm;
 logic [4:0] i;
-logic [31:0] expected;
-logic [31:0] test[26:0];
+logic [31:0] expected; //valor esperado
+logic [31:0] test[26:0]; //prueba
 
 
 multiplier dut(
@@ -15,7 +21,7 @@ multiplier dut(
 	.result(res)
 	);
 
-initial 
+initial
 	begin
 		$readmemb("opTest.txt",test);
 		i=0;
@@ -36,8 +42,8 @@ always
 			end
 		i= i+3;
 		if(i==24)
-			begin 
+			begin
 				$stop;
 			end
-	end 
+	end
 endmodule

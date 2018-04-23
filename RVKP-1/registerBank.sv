@@ -1,15 +1,21 @@
-module registerBank(in_address1,in_address2,in_address3,in_address4, 
-						out_data1,out_data2,out_data3,out_data4, 
+/**
+* Instituto Tecnologico de Costa Rica
+* @author Victor Chavarria Fernadez, Jeison Melendez Arrieta, Andres Vargas Rivera
+* Proyecto 1
+* Arquitectura de Computadores I
+*/
+module registerBank(in_address1,in_address2,in_address3,in_address4,
+						out_data1,out_data2,out_data3,out_data4,
 						write_address,write_data,write_enable,
 						write_address2, write_data2, write_enable2,
-						pc, pc_update, pc_write, 
+						pc, pc_update, pc_write,
 						cspr, cspr_write, cspr_update, clk );
 
-		parameter N = 32;			 //register data size 
+		parameter N = 32;			 //tamaño de los datos de los registros
 
-		reg [N-1:0] R [15:0];	//16, 32 bit registers
+		reg [N-1:0] R [15:0];	//16 registros de 32 bits
 
-		//reading
+		//lectura
 		input [3:0]in_address1;
 		input [3:0]in_address2;
 		input [3:0]in_address3;
@@ -19,12 +25,12 @@ module registerBank(in_address1,in_address2,in_address3,in_address4,
 		output reg [N-1:0]out_data3;
 		output reg [N-1:0]out_data4;
 
-		//writing
+		//escritura
 		input [3:0]write_address;
 		input[N-1:0] write_data;
 		input [3:0]write_address2;
 		input[N-1:0] write_data2;
-
+		//control
 		input clk;
 		input write_enable;
 		input write_enable2;
@@ -70,14 +76,14 @@ module registerBank(in_address1,in_address2,in_address3,in_address4,
 
 
 		always@(negedge clk) begin
-			out_data1=R[in_address1];
+			out_data1=R[in_address1]; //salida de lectura
 			out_data2=R[in_address2];
 			out_data3=R[in_address3];
 			out_data4=R[in_address4];
 
 			if(pc_write == 1) R[15] = pc_update;
 			if(cspr_write == 1) cspr = cspr_update;
-			if (write_enable==1) R[write_address]=write_data;
+			if (write_enable==1) R[write_address]=write_data; //escritura
 			if (write_enable2==1) R[write_address2]=write_data2;
 		end
 

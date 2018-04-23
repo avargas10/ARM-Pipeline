@@ -1,5 +1,11 @@
+/**
+* Instituto Tecnologico de Costa Rica
+* @author Victor Chavarria Fernadez, Jeison Melendez Arrieta, Andres Vargas Rivera
+* Proyecto 1
+* Arquitectura de Computadores I
+*/
 `timescale 1ns/1ns
-
+//Archivo de prueba memoria de datos
 module dataMemTB();
 logic [31:0]address;
 logic [31:0]in;
@@ -20,7 +26,7 @@ data_Mem memory(
     .isByte(isB));
 
 
-initial 
+initial
 	begin
 		$readmemb("opTest.txt",test);
 		clock=0;
@@ -28,13 +34,13 @@ initial
         isB=0;
         we=1;
         re=0;
-        in = test[address];  
+        in = test[address];
     end
 always@(posedge clock)
     begin
         address++;
         in = test[address];
-        $display("Writing %d in address %d",in,address); 
+        $display("Writing %d in address %d",in,address);
         if (address>=8  )
             begin
                 $stop;
@@ -44,6 +50,5 @@ always
 	begin
 		clock<=1; #100;
 		clock<=0; #100;
-	end 
+	end
 endmodule
-
