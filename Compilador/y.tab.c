@@ -82,8 +82,8 @@
     #include <cstdlib>
     #include <fstream>
 
-    std::map<std::string,int> labels;
-    std::map<std::string,int> futureLabels;
+    std::map<std::string,int> labels; //Etiquetas y valores
+    std::map<std::string,int> futureLabels; //En caso de encontrar una etiqueta antes de ser declarada
     std::fstream fs;
     std::fstream fs2;
     int memCount=0;
@@ -507,10 +507,10 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    57,    57,    58,    59,    60,    61,    62,    63,    64,
-      67,    68,    69,    70,    71,    72,    73,    74,    75,    76,
-      77,    78,    79,    82,    84,    85,    87,    88,    89,    92,
-      93,    94,    95,    96,    97,    98,    99,   100,   101
+       0,    58,    58,    59,    60,    61,    62,    63,    64,    65,
+      68,    69,    70,    71,    72,    73,    74,    75,    76,    77,
+      78,    79,    80,    83,    85,    86,    88,    89,    90,    93,
+      94,    95,    96,    97,    98,    99,   100,   101,   102
 };
 #endif
 
@@ -1444,224 +1444,224 @@ yyreduce:
         case 4:
 
 /* Line 1455 of yacc.c  */
-#line 59 "Compiler.y"
+#line 60 "Compiler.y"
     {procces_label((yyvsp[(2) - (3)].id),"",1);}
     break;
 
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 60 "Compiler.y"
+#line 61 "Compiler.y"
     {procces_label((yyvsp[(2) - (4)].id),"",1);}
     break;
 
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 62 "Compiler.y"
+#line 63 "Compiler.y"
     {procces_label((yyvsp[(2) - (4)].id),"",1);}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 67 "Compiler.y"
+#line 68 "Compiler.y"
     {encondig_instruccion2((yyvsp[(1) - (4)].id),(yyvsp[(4) - (4)].id),(yyvsp[(2) - (4)].id));}
     break;
 
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 68 "Compiler.y"
+#line 69 "Compiler.y"
     {encondig_instruccion3((yyvsp[(1) - (4)].id),(yyvsp[(2) - (4)].id),(yyvsp[(4) - (4)].id));}
     break;
 
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 69 "Compiler.y"
+#line 70 "Compiler.y"
     {encondig_instruccion5((yyvsp[(1) - (2)].id),(yyvsp[(2) - (2)].id));}
     break;
 
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 70 "Compiler.y"
+#line 71 "Compiler.y"
     {encondig_instruccion4((yyvsp[(1) - (5)].id),(yyvsp[(2) - (5)].id),(yyvsp[(5) - (5)].id));}
     break;
 
   case 14:
 
 /* Line 1455 of yacc.c  */
-#line 71 "Compiler.y"
+#line 72 "Compiler.y"
     {encondig_instruccion1((yyvsp[(1) - (6)].id),(yyvsp[(4) - (6)].id),(yyvsp[(2) - (6)].id),(yyvsp[(6) - (6)].id));}
     break;
 
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 72 "Compiler.y"
+#line 73 "Compiler.y"
     {encondig_instruccion6((yyvsp[(1) - (6)].id),(yyvsp[(2) - (6)].id),(yyvsp[(5) - (6)].id),"",1);}
     break;
 
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 73 "Compiler.y"
+#line 74 "Compiler.y"
     {encondig_instruccion6((yyvsp[(1) - (8)].id),(yyvsp[(2) - (8)].id),(yyvsp[(5) - (8)].id),(yyvsp[(7) - (8)].id),2);}
     break;
 
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 74 "Compiler.y"
+#line 75 "Compiler.y"
     {encondig_instruccion6((yyvsp[(1) - (8)].id),(yyvsp[(2) - (8)].id),(yyvsp[(5) - (8)].id),(yyvsp[(7) - (8)].id),3);}
     break;
 
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 75 "Compiler.y"
+#line 76 "Compiler.y"
     {encondig_instruccion7((yyvsp[(1) - (8)].id),(yyvsp[(2) - (8)].id),(yyvsp[(5) - (8)].id),(yyvsp[(8) - (8)].id));}
     break;
 
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 76 "Compiler.y"
+#line 77 "Compiler.y"
     {encondig_instruccion6((yyvsp[(1) - (9)].id),(yyvsp[(2) - (9)].id),(yyvsp[(5) - (9)].id),(yyvsp[(7) - (9)].id),4);}
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 77 "Compiler.y"
+#line 78 "Compiler.y"
     {encondig_instruccion((yyvsp[(1) - (6)].id),(yyvsp[(4) - (6)].id),(yyvsp[(6) - (6)].id),(yyvsp[(2) - (6)].id));}
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 78 "Compiler.y"
+#line 79 "Compiler.y"
     {;}
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 79 "Compiler.y"
+#line 80 "Compiler.y"
     {yyerror("2, instruccion wrong");}
     break;
 
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 82 "Compiler.y"
+#line 83 "Compiler.y"
     {procces_label((yyvsp[(1) - (3)].id),(yyvsp[(2) - (3)].id),2);}
     break;
 
   case 24:
 
 /* Line 1455 of yacc.c  */
-#line 84 "Compiler.y"
+#line 85 "Compiler.y"
     {variablestobin((yyvsp[(1) - (1)].num));}
     break;
 
   case 25:
 
 /* Line 1455 of yacc.c  */
-#line 85 "Compiler.y"
+#line 86 "Compiler.y"
     {variablestobin((yyvsp[(3) - (3)].num));}
     break;
 
   case 26:
 
 /* Line 1455 of yacc.c  */
-#line 87 "Compiler.y"
+#line 88 "Compiler.y"
     {(yyval.id)=(yyvsp[(1) - (1)].id);}
     break;
 
   case 27:
 
 /* Line 1455 of yacc.c  */
-#line 88 "Compiler.y"
+#line 89 "Compiler.y"
     {(yyval.id)=(yyvsp[(1) - (1)].id);}
     break;
 
   case 28:
 
 /* Line 1455 of yacc.c  */
-#line 89 "Compiler.y"
+#line 90 "Compiler.y"
     {(yyval.id)=(yyvsp[(1) - (1)].id);}
     break;
 
   case 29:
 
 /* Line 1455 of yacc.c  */
-#line 92 "Compiler.y"
+#line 93 "Compiler.y"
     {;}
     break;
 
   case 30:
 
 /* Line 1455 of yacc.c  */
-#line 93 "Compiler.y"
+#line 94 "Compiler.y"
     {;}
     break;
 
   case 31:
 
 /* Line 1455 of yacc.c  */
-#line 94 "Compiler.y"
+#line 95 "Compiler.y"
     {;}
     break;
 
   case 32:
 
 /* Line 1455 of yacc.c  */
-#line 95 "Compiler.y"
+#line 96 "Compiler.y"
     {;}
     break;
 
   case 33:
 
 /* Line 1455 of yacc.c  */
-#line 96 "Compiler.y"
+#line 97 "Compiler.y"
     {;}
     break;
 
   case 34:
 
 /* Line 1455 of yacc.c  */
-#line 97 "Compiler.y"
+#line 98 "Compiler.y"
     {;}
     break;
 
   case 35:
 
 /* Line 1455 of yacc.c  */
-#line 98 "Compiler.y"
+#line 99 "Compiler.y"
     {;}
     break;
 
   case 36:
 
 /* Line 1455 of yacc.c  */
-#line 99 "Compiler.y"
+#line 100 "Compiler.y"
     {;}
     break;
 
   case 37:
 
 /* Line 1455 of yacc.c  */
-#line 100 "Compiler.y"
+#line 101 "Compiler.y"
     {;}
     break;
 
   case 38:
 
 /* Line 1455 of yacc.c  */
-#line 101 "Compiler.y"
+#line 102 "Compiler.y"
     {;}
     break;
 
@@ -1880,13 +1880,14 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 104 "Compiler.y"
+#line 105 "Compiler.y"
 
 
 extern int yyparse();
 extern FILE *yyin;
 std::string ruta="";
 
+//Instruccion op rd,rs,rm
 void encondig_instruccion(std::string op,std::string rs,std::string rs2,std::string rd){
   std::string binIns="1110";
   text_memory+=0x4;
@@ -1917,6 +1918,7 @@ void encondig_instruccion(std::string op,std::string rs,std::string rs2,std::str
   }
 }
 
+//Instruccion op rd,rs
 void encondig_instruccion2(std::string op,std::string rs,std::string rd){
   std::string binIns="1110";
   text_memory+=0x4;
@@ -1937,6 +1939,7 @@ void encondig_instruccion2(std::string op,std::string rs,std::string rd){
   }
 }
 
+//Instruccion op rd,#imme
 void encondig_instruccion3(std::string op,std::string rs,std::string imme){
   std::string binIns="1110";
   text_memory+=0x4;
@@ -1956,6 +1959,7 @@ void encondig_instruccion3(std::string op,std::string rs,std::string imme){
   }
 }
 
+//No implementadas correctamente, no realizan lo que deberian
 void encondig_instruccion4(std::string op,std::string rs,std::string tag){
   std::string binIns="1110";
   text_memory+=0x4;
@@ -1976,6 +1980,7 @@ void encondig_instruccion4(std::string op,std::string rs,std::string tag){
   }
 }
 
+//Branch instruccion
 void encondig_instruccion5(std::string op,std::string tag){
   text_memory+=0x4;
   if(op.compare("B")==0 || op.compare("b")==0){
@@ -2025,6 +2030,8 @@ void encondig_instruccion5(std::string op,std::string tag){
   }
 }
 
+//intruccion op rd,[rs,rm]
+//          op rd,[rs,#imme] (post index and offset)
 void encondig_instruccion6(std::string op,std::string rd,std::string rs,std::string rs2,int type){
   std::string binIns="111001";
   text_memory+=0x4;
@@ -2139,6 +2146,7 @@ void encondig_instruccion6(std::string op,std::string rd,std::string rs,std::str
   }
 }
 
+//Instruccion op rd,[rs],#imme (post index)
 void encondig_instruccion7(std::string op,std::string rd,std::string rs,std::string rs2){
   std::string binIns="111001";
   text_memory+=0x4;
@@ -2181,6 +2189,7 @@ void encondig_instruccion7(std::string op,std::string rd,std::string rs,std::str
   }
 }
 
+//intruccion  op rd,rs,#imme
 void encondig_instruccion1(std::string op,std::string rs,std::string rd,std::string immen){
   std::string binIns="1110";
   text_memory+=0x4;
@@ -2199,6 +2208,7 @@ void encondig_instruccion1(std::string op,std::string rs,std::string rd,std::str
   }
 }
 
+//Conversion del numero de registro a binario
 std::string regtobin(std::string r){
   r.erase(0,1);
   std::string bin=std::bitset<4>(atoi(r.c_str())).to_string();
@@ -2242,7 +2252,7 @@ void variablestobin(int val){
 
 void procces_label(std::string tag,std::string g,int type){
   int tmp=futureLabels.find(tag)->second;
-  if(tmp > 0){
+  if(tmp > 0){ //Se encontro una etiqueta usada por una instruccion antes de declararse
     int tposition=fs.tellp();
     int result=0x8+(0x4*tmp/33);
     std::cout<<tag<<" "<<result<<" "<<text_memory<<'\n';
@@ -2253,13 +2263,15 @@ void procces_label(std::string tag,std::string g,int type){
   }
 
   if(type==1){
-    labels[tag]=text_memory;
+    labels[tag]=text_memory; //Valor de la etiqueta
   }else if(type==2){
     current_type=g;
     labels[tag]=data_memory;
   }
 }
 
+//Se guarda el inmediato en binario
+//Type= De que tamaño sera el inmediato
 std::string immtobin(std::string in,int type){
   in.erase(0,1);
   int x=0;
@@ -2294,15 +2306,16 @@ void yyerror(std::string S){
 
 int main(void) {
   std::cout<<"Ruta del archivo a compilar"<<'\n';
-  fs.open ("text.txt", std::ios::out | std::ios::trunc);
-  fs2.open ("data.txt", std::ios::out | std::ios::trunc);
+  fs.open ("text.txt", std::ios::out | std::ios::trunc); //Intrucciones
+  fs2.open ("data.txt", std::ios::out | std::ios::trunc); //Datos
   std::cin>>ruta;
   FILE *myfile = fopen(ruta.c_str(), "r");
 	//se verifica si es valido
 	if (!myfile) {
-		std::cout << "I can't open a.snazzle.file!" << std::endl;
+		std::cout << "No es posible abrir el archivo" << std::endl;
 		return -1;
 	}
+  fs<<"11100001101000000000000000000000"<<'\n';
 	yyin = myfile;
 	do {
 		yyparse();
