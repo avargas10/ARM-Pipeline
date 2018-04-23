@@ -25,7 +25,7 @@ mul r7,r5,r6 ;se multiplican los datos
 add r8,r8,r7 ;se almacena el dato para la suma de las multiplicaciones
 mov r7,#0;limpia r7
 sub r9,r9,#1;se disminuye el contador
-cmp r9,#0 ;se evalua si se termino el proceso
+cmp r9,#0 ;se evalua si se termino el proceso   
 bne matMult
 add r2,r2,#50
 sub r10,r10,#1;se disminuye el contador

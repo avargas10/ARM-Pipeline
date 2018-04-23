@@ -21,8 +21,8 @@
 `define SUB 4'd2
 
 //modulo donde se realiza pipeline 
-module pipeline(input clk);
-
+module pipeline(input clk );
+wire [7:0]image[2500-1:0];
 //inicializacion de variables para fetch y decode
 logic[31:0] current_pc;
 logic[31:0] pc;
@@ -50,9 +50,18 @@ logic[31:0] pc_update;
 logic pc_write;
 logic cspr_write;
 logic[31:0] cspr_update;
+/*
+//vga module
+module MainActivity(
+   input clk,	//clock signal
 
-
-
+   output [7:0] COLOUR_OUT,//bit patters for colour that goes to VGA port
+   output HS,					//Horizontal Synch signal that goes into VGA port
+   output VS,	//Vertical Synch signal that goes into VGA port
+	output VGA_SYNC,
+	output VGA_BLANK
+	);
+*/
 //modulo de memoria de datos
 instr_Mem instrCache(
                     
@@ -209,7 +218,8 @@ data_Mem DataCache(
 							.write_enable(mem_we),
 							.isByte(isByte),
 							.clk(clk),							
-							.out_data(memOut)
+							.out_data(memOut),
+							.outImage(image)
 							);
 
 logic isExecutedMem_WB; 
