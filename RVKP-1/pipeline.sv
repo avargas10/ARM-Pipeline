@@ -652,6 +652,7 @@ end
 
 
 always @(posedge clk) begin
+//$display("aluOp2 is %0d",alu_op2);
 	fetch_instr = 1; 
 	if(number_stalls!=0) number_stalls = number_stalls-1;
 

@@ -15,11 +15,20 @@ def convert(image,txt):
     datos = list(foto.getdata())
     foto.close()
     f = open (txt,'w')
-    
+    for x in range(0,width+1):
+        f.write('11111111\n')
+    counter = 1
     for elemento in datos:
+        isFifty = counter%50
+        if(isFifty==0):
+            f.write('11111111\n')
+            f.write('11111111\n')
+        counter=counter+1
         binario = binary_repr(elemento[0], width=8)
         f.write(binario+'\n')
         #print(elemento)
+    for x in range(0,width+1):
+        f.write('11111111\n')
     f.close()
     print ("Convertion Completed")
     print ("Total of pixels: ")
