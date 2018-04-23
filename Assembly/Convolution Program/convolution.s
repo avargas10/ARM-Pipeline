@@ -1,5 +1,5 @@
 ;Carga de valores definidos
-mov r1,#0 ;kernel position 
+mov r1,#0 ;kernel position
 mov r11,#100 ;original image pos
 mov r3,#3100 ;new image pos
 mov r4,#52 ;image size
@@ -8,7 +8,7 @@ mov r4,#52 ;image size
 mov r14,#0
 yMapping
 mul r13,r4,r14
-mov r12,#0;se limpia el contador 
+mov r12,#0;se limpia el contador
 ;salto colunmas
 xMapping
 add r2,r13,r12
@@ -22,7 +22,7 @@ matMult
 ldr r5,[r1],#1;extrae el dato en r1+4 de memoria
 ldr r6,[r2],#1;extrae el dato en r2+4 de memoria
 mul r7,r5,r6 ;se multiplican los datos
-add r8,r8,r7 ;se almacena el dato para la suma de las multiplicaciones 
+add r8,r8,r7 ;se almacena el dato para la suma de las multiplicaciones
 mov r7,#0;limpia r7
 sub r9,r9,#1;se disminuye el contador
 cmp r9,#0 ;se evalua si se termino el proceso
@@ -35,7 +35,7 @@ add r12,r12,#1
 mov r1,#0
 str r8,[r3],#1 ;almacena el resultado de la suma
 mov r8,#0;limpia r8
-cmp r12,#49 
+cmp r12,#49
 bne xMapping
 add r14,r14,#1
 cmp r14,#49
