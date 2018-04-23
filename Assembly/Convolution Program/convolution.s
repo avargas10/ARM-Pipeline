@@ -5,7 +5,7 @@ mov r3,#3100 ;new image pos
 mov r4,#52 ;image size
 ;Proceso de convolucion
 ;salto de filas
-mov r14,0
+mov r14,#0
 ymapping
 mul r13,r4,r14
 mov r12,#0;se limpia el contador 
@@ -37,5 +37,6 @@ str r8,[r3],#1 ;almacena el resultado de la suma
 mov r8,#0;limpia r8
 cmp r12,#49 
 bne xMapping
+add r14,r14,#1
 cmp r14,#49
 bne yMapping

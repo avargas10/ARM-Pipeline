@@ -32,7 +32,7 @@ module shift(instr_bit_25,imm_value, Rm, Rs, operand2, cin, c_to_alu, direct_dat
 		if (instr_bit_25) begin
 			//rotacion a la derecha de extension de cero del imm de 8 bits por 2*rot
 			//rot=4 bits MSB del imm
-			in[n-1:8] = 0;
+			/*in[n-1:8] = 0;
 			in[7:0] = imm_value[7:0];
 			//shiftby*2
 			shiftby[0]=0;
@@ -41,7 +41,8 @@ module shift(instr_bit_25,imm_value, Rm, Rs, operand2, cin, c_to_alu, direct_dat
 			//shifting
 			{junk,out} = {in,in} >> shiftby[7:0];
 			if(shiftby[7:0]==0) c_to_alu = cin;
-			else c_to_alu = out[31];
+			else c_to_alu = out[31];*/
+			out = {20'b00000000000000000000,imm_value[11:0]};
 		end
 
 		else begin

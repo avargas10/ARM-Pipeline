@@ -40,6 +40,13 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	instrMemTB
 
+} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/pipeline.sv
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module pipeline
+
+Top level modules:
+	pipeline
+
 } {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplier.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplier.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module multiplier
@@ -61,6 +68,13 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	data_Mem
 
+} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/armv7TDMI.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/armv7TDMI.sv
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module armv7TDMI
+
+Top level modules:
+	armv7TDMI
+
 } {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/evaluator.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/evaluator.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module evaluator
@@ -81,12 +95,5 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 
 Top level modules:
 	instr_Mem
-
-} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module shift
-
-Top level modules:
-	shift
 
 } {} {}}
