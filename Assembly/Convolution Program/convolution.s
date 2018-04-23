@@ -6,7 +6,7 @@ mov r4,#52 ;image size
 ;Proceso de convolucion
 ;salto de filas
 mov r14,#0
-ymapping
+yMapping
 mul r13,r4,r14
 mov r12,#0;se limpia el contador 
 ;salto colunmas
