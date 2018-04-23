@@ -54,15 +54,15 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 208 80)
 		(output)
-		(text "Blank" (rect 0 0 21 12)(font "Arial" ))
-		(text "Blank" (rect 166 75 187 87)(font "Arial" ))
+		(text "VGA_SYNC" (rect 0 0 56 12)(font "Arial" ))
+		(text "VGA_SYNC" (rect 131 75 187 87)(font "Arial" ))
 		(line (pt 208 80)(pt 192 80)(line_width 1))
 	)
 	(port
 		(pt 208 96)
 		(output)
-		(text "Sync" (rect 0 0 21 12)(font "Arial" ))
-		(text "Sync" (rect 166 91 187 103)(font "Arial" ))
+		(text "VGA_BLANK" (rect 0 0 63 12)(font "Arial" ))
+		(text "VGA_BLANK" (rect 124 91 187 103)(font "Arial" ))
 		(line (pt 208 96)(pt 192 96)(line_width 1))
 	)
 	(parameter

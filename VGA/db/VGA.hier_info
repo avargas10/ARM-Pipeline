@@ -1,10 +1,10 @@
 |VGA
-VGA_HS <= MainActivity:inst4.HS
+VGA_HS <= MainActivity:inst1.HS
 CLOCK_50 => pll:inst.inclk0
-VGA_VS <= MainActivity:inst4.VS
+VGA_VS <= MainActivity:inst1.VS
 VGA_CLK <= pll:inst.c0
-VGA_BLANK_N <= MainActivity:inst4.Blank
-VGA_SYNC_N <= MainActivity:inst4.Sync
+VGA_BLANK_N <= MainActivity:inst1.VGA_BLANK
+VGA_SYNC_N <= MainActivity:inst1.VGA_SYNC
 VGA_B[0] <= color[0].DB_MAX_OUTPUT_PORT_TYPE
 VGA_B[1] <= color[1].DB_MAX_OUTPUT_PORT_TYPE
 VGA_B[2] <= color[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -31,7 +31,7 @@ VGA_R[6] <= color[6].DB_MAX_OUTPUT_PORT_TYPE
 VGA_R[7] <= color[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA|MainActivity:inst4
+|VGA|MainActivity:inst1
 CLK => VGAInterface:VGA.CLK
 CLK => COLOUR_IN[0].CLK
 CLK => COLOUR_IN[1].CLK
@@ -52,11 +52,11 @@ COLOUR_OUT[6] <= VGAInterface:VGA.COLOUR_OUT[6]
 COLOUR_OUT[7] <= VGAInterface:VGA.COLOUR_OUT[7]
 HS <= VGAInterface:VGA.HS
 VS <= VGAInterface:VGA.VS
-Blank <= Blank.DB_MAX_OUTPUT_PORT_TYPE
-Sync <= <GND>
+VGA_SYNC <= <GND>
+VGA_BLANK <= VGA_BLANK.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA|MainActivity:inst4|VGAInterface:VGA
+|VGA|MainActivity:inst1|VGAInterface:VGA
 CLK => CLK.IN4
 REFRESH <= Counter:TimeCounterVertical.TRIGGER_OUT
 COLOUR_IN[0] => COLOUR_OUT.DATAB
@@ -99,7 +99,7 @@ HS <= HS~reg0.DB_MAX_OUTPUT_PORT_TYPE
 VS <= VS~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA|MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterHorizontal
+|VGA|MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterHorizontal
 CLK => TRIGGER_OUT~reg0.CLK
 CLK => TIME_COUNT[0]~reg0.CLK
 CLK => TIME_COUNT[1]~reg0.CLK
@@ -135,7 +135,7 @@ TIME_COUNT[8] <= TIME_COUNT[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 TIME_COUNT[9] <= TIME_COUNT[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA|MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterVertical
+|VGA|MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterVertical
 CLK => TRIGGER_OUT~reg0.CLK
 CLK => TIME_COUNT[0]~reg0.CLK
 CLK => TIME_COUNT[1]~reg0.CLK
@@ -171,7 +171,7 @@ TIME_COUNT[8] <= TIME_COUNT[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 TIME_COUNT[9] <= TIME_COUNT[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA|MainActivity:inst4|VGAInterface:VGA|PixCounter:HorzPix
+|VGA|MainActivity:inst1|VGAInterface:VGA|PixCounter:HorzPix
 CLK => PIXCOUNT[0]~reg0.CLK
 CLK => PIXCOUNT[1]~reg0.CLK
 CLK => PIXCOUNT[2]~reg0.CLK
@@ -224,7 +224,7 @@ ENABLE => PIXCOUNT[8]~reg0.ENA
 ENABLE => PIXCOUNT[9]~reg0.ENA
 
 
-|VGA|MainActivity:inst4|VGAInterface:VGA|PixCounter:VertPix
+|VGA|MainActivity:inst1|VGAInterface:VGA|PixCounter:VertPix
 CLK => PIXCOUNT[0]~reg0.CLK
 CLK => PIXCOUNT[1]~reg0.CLK
 CLK => PIXCOUNT[2]~reg0.CLK
