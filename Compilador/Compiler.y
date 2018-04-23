@@ -244,10 +244,12 @@ void encondig_instruccion5(std::string op,std::string tag){
   }else if(op.compare("Bne")==0 || op.compare("BNE")==0 || op.compare("bne")==0){
     std::string binIns="00011010";
     int index=labels.find(tag)->second;
+    std::cout<<"label "<<tag<<" pos "<<index<<std:endl;
     if(index < 0){
       futureLabels[tag]=fs.tellp();
     }
     int result=(index-text_memory+0x14)/4;
+    std::cout<<"the result of branch "<<res<<std:endl;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
     fs<<"11100001101000000000000000000000"<<'\n';

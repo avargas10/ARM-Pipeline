@@ -8,6 +8,7 @@ mov r4,#52 ;image size
 mov r14,#0
 yMapping
 mul r13,r4,r14
+add r13,r13,r11
 mov r12,#0;se limpia el contador
 ;salto colunmas
 xMapping
