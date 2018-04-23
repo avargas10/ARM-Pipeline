@@ -21,7 +21,7 @@
 `define SUB 4'd2
 
 //modulo donde se realiza pipeline 
-module pipeline(input clk ,output [7:0]image[2500-1:0]);
+module pipeline(input clk);
 
 //inicializacion de variables para fetch y decode
 logic[31:0] current_pc;
@@ -209,8 +209,7 @@ data_Mem DataCache(
 							.write_enable(mem_we),
 							.isByte(isByte),
 							.clk(clk),							
-							.out_data(memOut),
-							.outImage(image)
+							.out_data(memOut)
 							);
 
 logic isExecutedMem_WB; 
@@ -527,7 +526,7 @@ always@(*) begin
 
 
 		default: begin
-				driven = 0;
+				//driven = 0;
 				alu_op1 = mul_alu_out1;
 				useShift = 1;	
 				alu_opcode =`ADD;

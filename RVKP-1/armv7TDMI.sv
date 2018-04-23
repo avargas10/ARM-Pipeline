@@ -8,10 +8,8 @@
 
 module armv7TDMI();
 logic clock;
-logic [7:0] image [2500-1:0];
 pipeline micro(
-    .clk(clock),
-	.image(image));
+    .clk(clock));
 
 initial
 	begin

@@ -4,7 +4,7 @@
 * Proyecto 1
 * Arquitectura de Computadores I
 */
-module data_Mem(data_address,in_data,out_data,read_enable,write_enable,clk,isByte,outImage);
+module data_Mem(data_address,in_data,out_data,read_enable,write_enable,clk,isByte);
 parameter data_width = 8;
 parameter N =32;
 parameter addr_width = 10;
@@ -16,9 +16,7 @@ input read_enable;
 input write_enable;
 input clk;
 input isByte;
-output logic [7:0] outImage [2500-1:0];
 
-assign outImage = M[2600-1:100];
 
 output reg [N-1:0] out_data; //Datos de salida
 input [N-1 :0] in_data; //Datos de entrada

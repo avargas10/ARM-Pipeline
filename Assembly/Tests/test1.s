@@ -3,7 +3,7 @@
     mov r2,#181
     mov r3,#0
     mov r9,#3
-    matMult
+    x   matMult
     ldr r5,[r1],#1;extrae el dato en r1+4 de memoria
     ldr r6,[r2],#1;extrae el dato en r2+4 de memoria
     mul r7,r5,r6 ;se multiplican los datos
