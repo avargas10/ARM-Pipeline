@@ -1,4 +1,9 @@
-// Top module
+/**
+* Instituto Tecnologico de Costa Rica
+* @author Victor Chavarria Fernadez, Jeison Melendez Arrieta, Andres Vargas Rivera
+* Proyecto 1
+* Arquitectura de Computadores I
+*/
 `define multiply				0
 `define multiplyLong			1
 `define branchAndExchange		2
@@ -15,17 +20,40 @@
 `define ADD 4'd4
 `define SUB 4'd2
 
+//modulo donde se realiza pipeline 
+module pipeline(input clk ,output [7:0]image[2500-1:0]);
 
-module pipeline(input clk);
-
-
-
-
+//inicializacion de variables para fetch y decode
 logic[31:0] current_pc;
 logic[31:0] pc;
 logic[31:0] instr;
 logic fetch_instr;
 logic[3:0] itype;
+//variables para el banco de registros
+logic[31:0] instr_f_reg; 
+logic[3:0] type_f_reg;		
+logic drive_f_reg;
+logic[31:0] out_1;
+logic[31:0] out_2;
+logic[31:0] out_3;
+logic[31:0] out_4;
+logic[31:0] operand_2;
+logic[31:0] cspr;
+logic[3:0] read_address; 
+logic[3:0] write_address;
+logic[31:0] write_data;
+logic we1;
+logic[3:0] write_address_2;
+logic[31:0] write_data_2;
+logic we2;
+logic[31:0] pc_update;
+logic pc_write;
+logic cspr_write;
+logic[31:0] cspr_update;
+
+
+
+//modulo de memoria de datos
 instr_Mem instrCache(
                     
 						.PC(current_pc),
@@ -41,36 +69,8 @@ instr_decode Decoder(
                         );
 
 
-logic[31:0] instr_f_reg; 
-logic[3:0] type_f_reg;		
-logic drive_f_reg;
 
-
-logic[31:0] out_1;
-logic[31:0] out_2;
-logic[31:0] out_3;
-logic[31:0] out_4;
-logic[31:0] operand_2;
-logic[31:0] cspr;
-
-
-logic[3:0] read_address; 
-
-
-logic[3:0] write_address;
-logic[31:0] write_data;
-logic we1;
-logic[3:0] write_address_2;
-logic[31:0] write_data_2;
-logic we2;
-logic[31:0] pc_update;
-logic pc_write;
-logic cspr_write;
-logic[31:0] cspr_update;
-
-
-
-
+//banco de registros
 registerBank regs(	
                    
                         .in_address1(instr_f_reg[19:16]),
@@ -209,7 +209,8 @@ data_Mem DataCache(
 							.write_enable(mem_we),
 							.isByte(isByte),
 							.clk(clk),							
-							.out_data(memOut)
+							.out_data(memOut),
+							.outImage(image)
 							);
 
 logic isExecutedMem_WB; 
@@ -382,19 +383,19 @@ always@(*) begin
 
 	if(type_alu_Mem == `multiply && isExecutedAlu_Mem==1) begin
 		if(instr_f_reg[19:16] == instr_alu_Mem[19:16]) begin
-				nextData_1= aluRes_alu_Mem;	//remember accumulate?
+				nextData_1= aluRes_alu_Mem;
 				isNext1 = 1;
 		end
 		if(instr_f_reg[15:12] == instr_alu_Mem[19:16]) begin
-				nextData_2= aluRes_alu_Mem;	//remember accumulate?
+				nextData_2= aluRes_alu_Mem;
 				isNext2 = 1;
 		end
 		if(instr_f_reg[11:8] == instr_alu_Mem[19:16]) begin
-				nextData_3= aluRes_alu_Mem;	//remember accumulate?
+				nextData_3= aluRes_alu_Mem;
 				isNext3 = 1;
 		end
 		if(instr_f_reg[3:0] == instr_alu_Mem[19:16]) begin
-				nextData_4= aluRes_alu_Mem;	//remember accumulate?
+				nextData_4= aluRes_alu_Mem;
 				isNext4 = 1;
 		end
 	end
@@ -422,19 +423,19 @@ always@(*) begin
 
 	if(type_mul_alu == `multiply && MUL_ALU_will_this_be_executed==1) begin
 		if(instr_f_reg[19:16] == instr_mul_alu[19:16]) begin
-				nextData_1= aluRes;	//remember accumulate?
+				nextData_1= aluRes;
 				isNext1 = 1;
 		end
 		if(instr_f_reg[15:12] == instr_mul_alu[19:16]) begin
-				nextData_2= aluRes;	//remember accumulate?
+				nextData_2= aluRes;
 				isNext2 = 1;
 		end
 		if(instr_f_reg[11:8] == instr_mul_alu[19:16]) begin
-				nextData_3= aluRes;	//remember accumulate?
+				nextData_3= aluRes;
 				isNext3 = 1;
 		end
 		if(instr_f_reg[3:0] == instr_mul_alu[19:16]) begin
-				nextData_4= aluRes;	//remember accumulate?
+				nextData_4= aluRes;
 				isNext4 = 1;
 		end
 	end
@@ -464,19 +465,19 @@ always@(*) begin
 
 	if(type_mul_alu == `multiply && MUL_ALU_will_this_be_executed==1) begin
 		if(instr_reg_mul[19:16] == instr_mul_alu[19:16]) begin
-				nextData1_mul_alu= aluRes;	//remember accumulate?
+				nextData1_mul_alu= aluRes;
 				isNext1_mul_alu = 1;
 		end
 		if(instr_reg_mul[15:12] == instr_mul_alu[19:16]) begin
-				nextData2_mul_alu= aluRes;	//remember accumulate?
+				nextData2_mul_alu= aluRes;
 				isNext2_mul_alu = 1;
 		end
 		if(instr_reg_mul[11:8] == instr_mul_alu[19:16]) begin
-				nextData3_mul_alu= aluRes;	//remember accumulate?
+				nextData3_mul_alu= aluRes;
 				isNext3_mul_alu = 1;
 		end
 		if(instr_reg_mul[3:0] == instr_mul_alu[19:16]) begin
-				nextData4_mul_alu= aluRes;	//remember accumulate?
+				nextData4_mul_alu= aluRes;
 				isNext4_mul_alu = 1;
 		end
 	end
