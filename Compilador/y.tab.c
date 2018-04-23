@@ -1987,10 +1987,11 @@ void encondig_instruccion5(std::string op,std::string tag){
     int result=(index-text_memory+0x4)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
-    fs<<"00000000000000000000000000000000"<<'\n';
-    fs<<"00000000000000000000000000000000"<<'\n';
-    fs<<"00000000000000000000000000000000"<<'\n';
-    fs<<"00000000000000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
   }else if(op.compare("Beq")==0 || op.compare("BEQ")==0 || op.compare("beq")==0){
     std::string binIns="00001010";
     int index=labels.find(tag)->second;
@@ -2000,10 +2001,11 @@ void encondig_instruccion5(std::string op,std::string tag){
     int result=(index-text_memory+0x4)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
-    fs<<"00000000000000000000000000000000"<<'\n';
-    fs<<"00000000000000000000000000000000"<<'\n';
-    fs<<"00000000000000000000000000000000"<<'\n';
-    fs<<"00000000000000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
   }else if(op.compare("Bne")==0 || op.compare("BNE")==0 || op.compare("bne")==0){
     std::string binIns="00011010";
     int index=labels.find(tag)->second;
@@ -2013,10 +2015,11 @@ void encondig_instruccion5(std::string op,std::string tag){
     int result=(index-text_memory+0x4)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
-    fs<<"00000000000000000000000000000000"<<'\n';
-    fs<<"00000000000000000000000000000000"<<'\n';
-    fs<<"00000000000000000000000000000000"<<'\n';
-    fs<<"00000000000000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
+    fs<<"11100001101000000000000000000000"<<'\n';
   }else{
     std::cout<< "Error at read instruccion: 2"<<'\n';
   }
@@ -2027,91 +2030,91 @@ void encondig_instruccion6(std::string op,std::string rd,std::string rs,std::str
   text_memory+=0x4;
   if(op.compare("ldr")==0 || op.compare("Ldr")==0 || op.compare("LDR")==0){
     if(type==1){
-      binIns+="011001";
+      binIns+="111001";
       binIns+=regtobin(rs);
       binIns+=regtobin(rd);
       binIns+="000000000000";
       fs<<binIns<<'\n';
-      fs<<"00000000000000000000000000000000"<<'\n';
-      fs<<"00000000000000000000000000000000"<<'\n';
-      fs<<"00000000000000000000000000000000"<<'\n';
+      fs<<"11100001101000000000000000000000"<<'\n';
+      fs<<"11100001101000000000000000000000"<<'\n';
+      fs<<"11100001101000000000000000000000"<<'\n';
     }else if(type==2){
-      binIns+="111001";
+      binIns+="011001";
       binIns+=regtobin(rs);
       binIns+=regtobin(rd);
-      binIns+="00000001";
+      binIns+="00000000";
       binIns+=regtobin(rs2);
       fs<<binIns<<'\n';
-      fs<<"00000000000000000000000000000000"<<'\n';
-      fs<<"00000000000000000000000000000000"<<'\n';
-      fs<<"00000000000000000000000000000000"<<'\n';
+      fs<<"11100001101000000000000000000000"<<'\n';
+      fs<<"11100001101000000000000000000000"<<'\n';
+      fs<<"11100001101000000000000000000000"<<'\n';
     }else if(type==3){
       if(rs2.find("-")==std::string::npos){
-        binIns+="011001";
+        binIns+="111001";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
         binIns+=immtobin(rs2,2);
         fs<<binIns<<'\n';
-        fs<<"00000000000000000000000000000000"<<'\n';
-        fs<<"00000000000000000000000000000000"<<'\n';
-        fs<<"00000000000000000000000000000000"<<'\n';
+        fs<<"11100001101000000000000000000000"<<'\n';
+        fs<<"11100001101000000000000000000000"<<'\n';
+        fs<<"11100001101000000000000000000000"<<'\n';;
       }else{
         rs2.erase(1,1);
-        binIns+="010001";
+        binIns+="110001";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
         binIns+=immtobin(rs2,2);
         fs<<binIns<<'\n';
-        fs<<"00000000000000000000000000000000"<<'\n';
-        fs<<"00000000000000000000000000000000"<<'\n';
-        fs<<"00000000000000000000000000000000"<<'\n';
+        fs<<"11100001101000000000000000000000"<<'\n';
+        fs<<"11100001101000000000000000000000"<<'\n';
+        fs<<"11100001101000000000000000000000"<<'\n';
       }
     }else if(type==4){
       if(rs2.find("-")==std::string::npos){
-        binIns+="011011";
+        binIns+="111011";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
         binIns+=immtobin(rs2,2);
         fs<<binIns<<'\n';
-        fs<<"00000000000000000000000000000000"<<'\n';
-        fs<<"00000000000000000000000000000000"<<'\n';
-        fs<<"00000000000000000000000000000000"<<'\n';
+        fs<<"11100001101000000000000000000000"<<'\n';
+        fs<<"11100001101000000000000000000000"<<'\n';
+        fs<<"11100001101000000000000000000000"<<'\n';
       }else{
         rs2.erase(1,1);
-        binIns+="010011";
+        binIns+="110011";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
         binIns+=immtobin(rs2,2);
         fs<<binIns<<'\n';
-        fs<<"00000000000000000000000000000000"<<'\n';
-        fs<<"00000000000000000000000000000000"<<'\n';
-        fs<<"00000000000000000000000000000000"<<'\n';
+        fs<<"11100001101000000000000000000000"<<'\n';
+        fs<<"11100001101000000000000000000000"<<'\n';
+        fs<<"11100001101000000000000000000000"<<'\n';
       }
     }
   }else if(op.compare("str")==0 || op.compare("Str")==0 || op.compare("STR")==0){
     if(type==1){
-      binIns+="011000";
+      binIns+="111000";
       binIns+=regtobin(rs);
       binIns+=regtobin(rd);
       binIns+="000000000000";
       fs<<binIns<<'\n';
     }else if(type==2){
-      binIns+="111000";
+      binIns+="011000";
       binIns+=regtobin(rs);
       binIns+=regtobin(rd);
-      binIns+="00000001";
+      binIns+="00000000";
       binIns+=regtobin(rs2);
       fs<<binIns<<'\n';
     }else if(type==3){
       if(rs2.find("-")==std::string::npos){
-        binIns+="011000";
+        binIns+="111000";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
         binIns+=immtobin(rs2,2);
         fs<<binIns<<'\n';
       }else{
         rs2.erase(1,1);
-        binIns+="010000";
+        binIns+="110000";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
         binIns+=immtobin(rs2,2);
@@ -2119,14 +2122,14 @@ void encondig_instruccion6(std::string op,std::string rd,std::string rs,std::str
       }
     }else if(type==4){
       if(rs2.find("-")==std::string::npos){
-        binIns+="011010";
+        binIns+="111010";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
         binIns+=immtobin(rs2,2);
         fs<<binIns<<'\n';
       }else{
         rs2.erase(1,1);
-        binIns+="010010";
+        binIns+="110010";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
         binIns+=immtobin(rs2,2);
@@ -2141,35 +2144,35 @@ void encondig_instruccion7(std::string op,std::string rd,std::string rs,std::str
   text_memory+=0x4;
   if(op.compare("ldr")==0 || op.compare("Ldr")==0 || op.compare("LDR")==0){
     if(rs2.find("-")==std::string::npos){
-      binIns+="001001";
+      binIns+="101001";
       binIns+=regtobin(rs);
       binIns+=regtobin(rd);
       binIns+=immtobin(rs2,2);
       fs<<binIns<<'\n';
-      fs<<"00000000000000000000000000000000"<<'\n';
-      fs<<"00000000000000000000000000000000"<<'\n';
-      fs<<"00000000000000000000000000000000"<<'\n';
+      fs<<"11100001101000000000000000000000"<<'\n';
+      fs<<"11100001101000000000000000000000"<<'\n';
+      fs<<"11100001101000000000000000000000"<<'\n';
     }else{
       rs2.erase(1,1);
-      binIns+="000001";
+      binIns+="100001";
       binIns+=regtobin(rs);
       binIns+=regtobin(rd);
       binIns+=immtobin(rs2,2);
       fs<<binIns<<'\n';
-      fs<<"00000000000000000000000000000000"<<'\n';
-      fs<<"00000000000000000000000000000000"<<'\n';
-      fs<<"00000000000000000000000000000000"<<'\n';
+      fs<<"11100001101000000000000000000000"<<'\n';
+      fs<<"11100001101000000000000000000000"<<'\n';
+      fs<<"11100001101000000000000000000000"<<'\n';
     }
   }else if(op.compare("str")==0 || op.compare("Str")==0 || op.compare("STR")==0){
     if(rs2.find("-")==std::string::npos){
-      binIns+="001000";
+      binIns+="101000";
       binIns+=regtobin(rs);
       binIns+=regtobin(rd);
       binIns+=immtobin(rs2,2);
       fs<<binIns<<'\n';
     }else{
       rs2.erase(1,1);
-      binIns+="000000";
+      binIns+="100000";
       binIns+=regtobin(rs);
       binIns+=regtobin(rd);
       binIns+=immtobin(rs2,2);
