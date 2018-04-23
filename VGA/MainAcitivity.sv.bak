@@ -23,8 +23,8 @@ module MainActivity(
    output [7:0] COLOUR_OUT,//bit patters for colour that goes to VGA port
    output HS,					//Horizontal Synch signal that goes into VGA port
    output VS,	//Vertical Synch signal that goes into VGA port
-	output Blank,
-	output Sync
+	output VGA_SYNC,
+	output VGA_BLANK
 	);
 	
 	reg DOWNCOUNTER = 0;		//need a downcounter to 25MHz
@@ -40,7 +40,7 @@ module MainActivity(
 	end
 	
 	reg [7:0] COLOUR_IN;
-	reg [7:0] COLOUR_DATA [0:50624];
+	reg [7:0] COLOUR_DATA [0:Gimpy-1];
 	wire [12:0] STATE;
 	wire TrigRefresh;			//Trigger gives a pulse when displayed refreshed
 	wire [9:0] ADDRH;			//wire for getting Horizontal pixel value
@@ -64,27 +64,42 @@ module MainActivity(
 
 	reg signed [4:0] ZeroX = -3;
 	reg signed [4:0] ZeroY = -3;
-	reg [31:0] counter = 0;
+	reg [3:0]Speed = 3;
+	
+	assign VGA_SYNC=1'b0;
+	assign VGA_BLANK = VS & HS;
 
 	always @(posedge CLK) begin 
 		if (TrigRefresh) begin
-				if(counter >= 50625)
-					counter <= 0;
-				else 
-					counter <= counter + 1;
+				if (639 <= X + 80+5)  //iif RIGTH wall was reached
+					ZeroX <= -Speed;	//change the direction
+				if (5 >= X)	//the same for the LEFT, UPPER & LOWER walls
+					ZeroX <= Speed;
+				if (479 <= Y + 80+5)
+					ZeroY <= -Speed;
+				if (5 >= Y)
+					ZeroY <= Speed;
+			
+				X <= X + ZeroX;				// Get a new position every frame
+				Y <= Y + ZeroY;
 		end
 	end
 
 	initial
 	$readmemb ("image.txt", COLOUR_DATA);
 	
-	assign Blank= HS & VS;
-	assign Sync = 1'b0;
+	//assign STATE = (ADDRH-X)*GimpyXY+ADDRV-Y;
 	
-	assign STATE = ADDRH*225 + ADDRV;
-
+	/*always @(posedge CLK) begin
+		if (ADDRH>=X && ADDRH<X+GimpyXY
+			&& ADDRV>=Y && ADDRV<Y+GimpyXY)
+				COLOUR_IN <= COLOUR_DATA[{STATE}];
+			else
+				COLOUR_IN <= 8'hFF;
+	end*/
+	assign STATE = ADDRH + ADDRV*GimpyXY;
 	always @(posedge CLK) begin
-		if (ADDRV < 225 && ADDRH < 225)begin
+		if (ADDRV < GimpyXY && ADDRH < GimpyXY)begin
 			COLOUR_IN <= COLOUR_DATA[{STATE}];
 		end
 		else COLOUR_IN <= 8'hFF;
@@ -92,8 +107,15 @@ module MainActivity(
 	
 endmodule
 
-	
-
+	//assign STATE = ADDRH*GimpyXY + ADDRV;
+/*
+	always @(posedge CLK) begin
+		if (ADDRV < GimpyXY && ADDRH < GimpyXY)begin
+			COLOUR_IN <= COLOUR_DATA[{STATE}];
+		end
+		else COLOUR_IN <= 8'hFF;
+	end
+	*/
 
 
 //Code used to put a not moving picture on the screen

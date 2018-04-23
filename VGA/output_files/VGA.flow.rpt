@@ -1,5 +1,5 @@
 Flow report for VGA
-Sun Apr 22 12:44:50 2018
+Mon Apr 23 00:41:56 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Apr 22 12:44:39 2018       ;
+; Flow Status                        ; Successful - Mon Apr 23 00:41:48 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; VGA                                         ;
 ; Top-level Entity Name              ; VGA                                         ;
 ; Family                             ; Cyclone IV GX                               ;
 ; Device                             ; EP4CGX150DF31C7                             ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 5,841 / 149,760 ( 4 % )                     ;
-;     Total combinational functions  ; 5,841 / 149,760 ( 4 % )                     ;
+; Total logic elements               ; 1,289 / 149,760 ( < 1 % )                   ;
+;     Total combinational functions  ; 1,289 / 149,760 ( < 1 % )                   ;
 ;     Dedicated logic registers      ; 59 / 149,760 ( < 1 % )                      ;
 ; Total registers                    ; 59                                          ;
 ; Total pins                         ; 30 / 508 ( 6 % )                            ;
@@ -68,7 +68,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/22/2018 12:40:24 ;
+; Start date & time ; 04/23/2018 00:40:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VGA                 ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 229521383731692.152442242409904        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 229521383731692.152446562210992        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; pll.bsf                                ; --            ; --          ; --         ;
@@ -89,6 +89,8 @@ refer to the applicable agreement for further details.
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
@@ -98,11 +100,11 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:03:07     ; 1.0                     ; 795 MB              ; 00:03:29                           ;
-; Fitter                    ; 00:00:51     ; 1.0                     ; 1689 MB             ; 00:01:04                           ;
-; Assembler                 ; 00:00:11     ; 1.0                     ; 696 MB              ; 00:00:10                           ;
-; TimeQuest Timing Analyzer ; 00:00:09     ; 1.0                     ; 909 MB              ; 00:00:09                           ;
-; Total                     ; 00:04:18     ; --                      ; --                  ; 00:04:52                           ;
+; Analysis & Synthesis      ; 00:00:48     ; 1.0                     ; 762 MB              ; 00:01:38                           ;
+; Fitter                    ; 00:00:26     ; 1.0                     ; 1538 MB             ; 00:00:34                           ;
+; Assembler                 ; 00:00:08     ; 1.0                     ; 680 MB              ; 00:00:06                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 853 MB              ; 00:00:04                           ;
+; Total                     ; 00:01:29     ; --                      ; --                  ; 00:02:22                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -212,9 +212,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 576 88 784 232)
+	(rect 568 88 776 232)
 	(text "MainActivity" (rect 5 0 66 12)(font "Arial" ))
-	(text "inst4" (rect 8 128 30 145)(font "Intel Clear" ))
+	(text "inst1" (rect 8 128 30 145)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -246,31 +246,31 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 208 80)
 		(output)
-		(text "Blank" (rect 0 0 27 12)(font "Arial" ))
-		(text "Blank" (rect 165 75 192 87)(font "Arial" ))
+		(text "VGA_SYNC" (rect 0 0 60 12)(font "Arial" ))
+		(text "VGA_SYNC" (rect 137 75 197 87)(font "Arial" ))
 		(line (pt 208 80)(pt 192 80))
 	)
 	(port
 		(pt 208 96)
 		(output)
-		(text "Sync" (rect 0 0 25 12)(font "Arial" ))
-		(text "Sync" (rect 166 91 191 103)(font "Arial" ))
+		(text "VGA_BLANK" (rect 0 0 63 12)(font "Arial" ))
+		(text "VGA_BLANK" (rect 134 91 197 103)(font "Arial" ))
 		(line (pt 208 96)(pt 192 96))
 	)
 	(parameter
 		"Gimpy"
-		"0010111000001"
+		"0000101010010000"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"GimpyXY"
-		"1100001"
+		"00110100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
 		(rectangle (rect 16 16 192 128))
 	)
-	(annotation_block (parameter)(rect 560 -8 808 56))
+	(annotation_block (parameter)(rect 560 8 822 65))
 )
 (connector
 	(pt 448 80)
@@ -285,10 +285,6 @@ refer to the applicable agreement for further details.
 	(pt 512 280)
 )
 (connector
-	(pt 856 136)
-	(pt 856 256)
-)
-(connector
 	(pt 896 272)
 	(pt 832 272)
 )
@@ -297,52 +293,12 @@ refer to the applicable agreement for further details.
 	(pt 896 256)
 )
 (connector
-	(pt 832 152)
-	(pt 832 272)
-)
-(connector
 	(pt 904 312)
 	(pt 816 312)
 )
 (connector
-	(pt 816 312)
-	(pt 816 168)
-)
-(connector
 	(pt 904 328)
 	(pt 800 328)
-)
-(connector
-	(pt 800 184)
-	(pt 800 328)
-)
-(connector
-	(pt 480 120)
-	(pt 576 120)
-)
-(connector
-	(pt 480 80)
-	(pt 480 120)
-)
-(connector
-	(pt 480 120)
-	(pt 480 280)
-)
-(connector
-	(pt 784 136)
-	(pt 856 136)
-)
-(connector
-	(pt 784 152)
-	(pt 832 152)
-)
-(connector
-	(pt 784 168)
-	(pt 816 168)
-)
-(connector
-	(pt 784 184)
-	(pt 800 184)
 )
 (connector
 	(pt 968 80)
@@ -370,15 +326,59 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "color[7..0]" (rect 800 104 847 121)(font "Intel Clear" ))
-	(pt 784 120)
-	(pt 888 120)
-	(bus)
+	(pt 856 256)
+	(pt 856 136)
+)
+(connector
+	(pt 832 272)
+	(pt 832 152)
+)
+(connector
+	(pt 480 120)
+	(pt 568 120)
+)
+(connector
+	(pt 800 328)
+	(pt 800 168)
+)
+(connector
+	(pt 816 312)
+	(pt 816 184)
+)
+(connector
+	(pt 480 80)
+	(pt 480 120)
+)
+(connector
+	(pt 480 120)
+	(pt 480 280)
 )
 (connector
 	(pt 888 120)
 	(pt 904 120)
 	(bus)
+)
+(connector
+	(text "color[7..0]" (rect 792 104 839 121)(font "Intel Clear" ))
+	(pt 776 120)
+	(pt 888 120)
+	(bus)
+)
+(connector
+	(pt 776 136)
+	(pt 856 136)
+)
+(connector
+	(pt 776 152)
+	(pt 832 152)
+)
+(connector
+	(pt 776 168)
+	(pt 800 168)
+)
+(connector
+	(pt 776 184)
+	(pt 816 184)
 )
 (junction (pt 480 120))
 (junction (pt 904 120))

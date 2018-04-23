@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGA
-Sun Apr 22 12:43:31 2018
+Mon Apr 23 00:41:11 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -16,21 +16,20 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   8. Analysis & Synthesis IP Cores Summary
   9. General Register Statistics
  10. Inverted Register Statistics
- 11. Parameter Settings for User Entity Instance: MainActivity:inst4
- 12. Parameter Settings for User Entity Instance: MainActivity:inst4|VGAInterface:VGA
- 13. Parameter Settings for User Entity Instance: MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterHorizontal
- 14. Parameter Settings for User Entity Instance: MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterVertical
- 15. Parameter Settings for User Entity Instance: MainActivity:inst4|VGAInterface:VGA|PixCounter:HorzPix
- 16. Parameter Settings for User Entity Instance: MainActivity:inst4|VGAInterface:VGA|PixCounter:VertPix
+ 11. Parameter Settings for User Entity Instance: MainActivity:inst1
+ 12. Parameter Settings for User Entity Instance: MainActivity:inst1|VGAInterface:VGA
+ 13. Parameter Settings for User Entity Instance: MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterHorizontal
+ 14. Parameter Settings for User Entity Instance: MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterVertical
+ 15. Parameter Settings for User Entity Instance: MainActivity:inst1|VGAInterface:VGA|PixCounter:HorzPix
+ 16. Parameter Settings for User Entity Instance: MainActivity:inst1|VGAInterface:VGA|PixCounter:VertPix
  17. Parameter Settings for User Entity Instance: pll:inst|altpll:altpll_component
- 18. Parameter Settings for Inferred Entity Instance: MainActivity:inst4|lpm_mult:Mult0
+ 18. Parameter Settings for Inferred Entity Instance: MainActivity:inst1|lpm_mult:Mult0
  19. altpll Parameter Settings by Entity Instance
  20. lpm_mult Parameter Settings by Entity Instance
- 21. Port Connectivity Checks: "MainActivity:inst4|VGAInterface:VGA"
+ 21. Port Connectivity Checks: "MainActivity:inst1|VGAInterface:VGA"
  22. Post-Synthesis Netlist Statistics for Top Partition
  23. Elapsed Time Per Partition
  24. Analysis & Synthesis Messages
- 25. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -56,13 +55,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 22 12:43:31 2018       ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 23 00:41:11 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; VGA                                         ;
 ; Top-level Entity Name              ; VGA                                         ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 5,841                                       ;
-;     Total combinational functions  ; 5,841                                       ;
+; Total logic elements               ; 1,289                                       ;
+;     Total combinational functions  ; 1,289                                       ;
 ;     Dedicated logic registers      ; 59                                          ;
 ; Total registers                    ; 59                                          ;
 ; Total pins                         ; 30                                          ;
@@ -180,47 +179,47 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                                   ; Library ;
-+----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------------+---------+
-; pll.v                            ; yes             ; User Wizard-Generated File               ; C:/Users/jey96/Documents/VGA/pll.v                                             ;         ;
-; MainActivity.sv                  ; yes             ; User SystemVerilog HDL File              ; C:/Users/jey96/Documents/VGA/MainActivity.sv                                   ;         ;
-; VGAInterface.sv                  ; yes             ; User SystemVerilog HDL File              ; C:/Users/jey96/Documents/VGA/VGAInterface.sv                                   ;         ;
-; PixCounter.sv                    ; yes             ; User SystemVerilog HDL File              ; C:/Users/jey96/Documents/VGA/PixCounter.sv                                     ;         ;
-; Counter.sv                       ; yes             ; User SystemVerilog HDL File              ; C:/Users/jey96/Documents/VGA/Counter.sv                                        ;         ;
-; image.txt                        ; yes             ; Auto-Found File                          ; C:/Users/jey96/Documents/VGA/image.txt                                         ;         ;
-; vga.bdf                          ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/jey96/Documents/VGA/vga.bdf                                           ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altpll.tdf              ;         ;
-; aglobal171.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc          ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_pll.inc         ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratixii_pll.inc       ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/cycloneii_pll.inc       ;         ;
-; db/pll_altpll1.v                 ; yes             ; Auto-Generated Megafunction              ; C:/Users/jey96/Documents/VGA/db/pll_altpll1.v                                  ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
-; multcore.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/multcore.inc            ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
-; altshift.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
-; multcore.tdf                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/multcore.tdf            ;         ;
-; csa_add.inc                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/csa_add.inc             ;         ;
-; mpar_add.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
-; muleabz.inc                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/muleabz.inc             ;         ;
-; mul_lfrg.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
-; mul_boothc.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
-; alt_ded_mult.inc                 ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
-; alt_ded_mult_y.inc               ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
-; dffpipe.inc                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
-; mpar_add.tdf                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
-; addcore.inc                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/addcore.inc             ;         ;
-; look_add.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/look_add.inc            ;         ;
-; alt_stratix_add_sub.inc          ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
-; db/add_sub_fkh.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Users/jey96/Documents/VGA/db/add_sub_fkh.tdf                                ;         ;
-; db/add_sub_jkh.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Users/jey96/Documents/VGA/db/add_sub_jkh.tdf                                ;         ;
-; altshift.tdf                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altshift.tdf            ;         ;
-+----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                   ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
+; VGA.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/Users/jey96/Documents/VGA/VGA.bdf                                           ;         ;
+; pll.v                            ; yes             ; User Wizard-Generated File         ; C:/Users/jey96/Documents/VGA/pll.v                                             ;         ;
+; VGAInterface.sv                  ; yes             ; User SystemVerilog HDL File        ; C:/Users/jey96/Documents/VGA/VGAInterface.sv                                   ;         ;
+; PixCounter.sv                    ; yes             ; User SystemVerilog HDL File        ; C:/Users/jey96/Documents/VGA/PixCounter.sv                                     ;         ;
+; Counter.sv                       ; yes             ; User SystemVerilog HDL File        ; C:/Users/jey96/Documents/VGA/Counter.sv                                        ;         ;
+; MainAcitivity.sv                 ; yes             ; User SystemVerilog HDL File        ; C:/Users/jey96/Documents/VGA/MainAcitivity.sv                                  ;         ;
+; image.txt                        ; yes             ; Auto-Found File                    ; C:/Users/jey96/Documents/VGA/image.txt                                         ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altpll.tdf              ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc          ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_pll.inc         ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratixii_pll.inc       ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/cycloneii_pll.inc       ;         ;
+; db/pll_altpll1.v                 ; yes             ; Auto-Generated Megafunction        ; C:/Users/jey96/Documents/VGA/db/pll_altpll1.v                                  ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; db/add_sub_dkh.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/jey96/Documents/VGA/db/add_sub_dkh.tdf                                ;         ;
+; db/add_sub_hkh.tdf               ; yes             ; Auto-Generated Megafunction        ; C:/Users/jey96/Documents/VGA/db/add_sub_hkh.tdf                                ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altshift.tdf            ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------+
@@ -235,10 +234,10 @@ refer to the applicable agreement for further details.
 ; Total PLLs               ; 1                         ;
 ;     -- PLLs              ; 1                         ;
 ;                          ;                           ;
-; Maximum fan-out node     ; MainActivity:inst4|Add0~0 ;
-; Maximum fan-out          ; 2168                      ;
-; Total fan-out            ; 23078                     ;
-; Average fan-out          ; 3.87                      ;
+; Maximum fan-out node     ; MainActivity:inst1|Add0~0 ;
+; Maximum fan-out          ; 412                       ;
+; Total fan-out            ; 5019                      ;
+; Average fan-out          ; 3.56                      ;
 +--------------------------+---------------------------+
 
 
@@ -247,21 +246,21 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------+--------------+--------------+
 ; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                            ; Entity Name  ; Library Name ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------+--------------+--------------+
-; |VGA                                              ; 5841 (0)            ; 59 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 30   ; 0            ; |VGA                                                                                                                                           ; VGA          ; work         ;
-;    |MainActivity:inst4|                           ; 5841 (5735)         ; 59 (9)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4                                                                                                                        ; MainActivity ; work         ;
-;       |VGAInterface:VGA|                          ; 84 (27)             ; 50 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4|VGAInterface:VGA                                                                                                       ; VGAInterface ; work         ;
-;          |Counter:TimeCounterHorizontal|          ; 20 (20)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterHorizontal                                                                         ; Counter      ; work         ;
-;          |Counter:TimeCounterVertical|            ; 13 (13)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterVertical                                                                           ; Counter      ; work         ;
-;          |PixCounter:HorzPix|                     ; 12 (12)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4|VGAInterface:VGA|PixCounter:HorzPix                                                                                    ; PixCounter   ; work         ;
-;          |PixCounter:VertPix|                     ; 12 (12)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4|VGAInterface:VGA|PixCounter:VertPix                                                                                    ; PixCounter   ; work         ;
-;       |lpm_mult:Mult0|                            ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4|lpm_mult:Mult0                                                                                                         ; lpm_mult     ; work         ;
-;          |multcore:mult_core|                     ; 22 (9)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4|lpm_mult:Mult0|multcore:mult_core                                                                                      ; multcore     ; work         ;
-;             |mpar_add:padder|                     ; 13 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                      ; mpar_add     ; work         ;
-;                |lpm_add_sub:adder[0]|             ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ; lpm_add_sub  ; work         ;
-;                   |add_sub_fkh:auto_generated|    ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_fkh:auto_generated                      ; add_sub_fkh  ; work         ;
-;                |mpar_add:sub_par_add|             ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ; mpar_add     ; work         ;
-;                   |lpm_add_sub:adder[0]|          ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ; lpm_add_sub  ; work         ;
-;                      |add_sub_jkh:auto_generated| ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst4|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_jkh:auto_generated ; add_sub_jkh  ; work         ;
+; |VGA                                              ; 1289 (0)            ; 59 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 30   ; 0            ; |VGA                                                                                                                                           ; VGA          ; work         ;
+;    |MainActivity:inst1|                           ; 1289 (1187)         ; 59 (9)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1                                                                                                                        ; MainActivity ; work         ;
+;       |VGAInterface:VGA|                          ; 84 (27)             ; 50 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1|VGAInterface:VGA                                                                                                       ; VGAInterface ; work         ;
+;          |Counter:TimeCounterHorizontal|          ; 20 (20)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterHorizontal                                                                         ; Counter      ; work         ;
+;          |Counter:TimeCounterVertical|            ; 13 (13)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterVertical                                                                           ; Counter      ; work         ;
+;          |PixCounter:HorzPix|                     ; 12 (12)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1|VGAInterface:VGA|PixCounter:HorzPix                                                                                    ; PixCounter   ; work         ;
+;          |PixCounter:VertPix|                     ; 12 (12)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1|VGAInterface:VGA|PixCounter:VertPix                                                                                    ; PixCounter   ; work         ;
+;       |lpm_mult:Mult0|                            ; 18 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1|lpm_mult:Mult0                                                                                                         ; lpm_mult     ; work         ;
+;          |multcore:mult_core|                     ; 18 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1|lpm_mult:Mult0|multcore:mult_core                                                                                      ; multcore     ; work         ;
+;             |mpar_add:padder|                     ; 8 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                      ; mpar_add     ; work         ;
+;                |lpm_add_sub:adder[0]|             ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ; lpm_add_sub  ; work         ;
+;                   |add_sub_dkh:auto_generated|    ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_dkh:auto_generated                      ; add_sub_dkh  ; work         ;
+;                |mpar_add:sub_par_add|             ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ; mpar_add     ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ; lpm_add_sub  ; work         ;
+;                      |add_sub_hkh:auto_generated| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|MainActivity:inst1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_hkh:auto_generated ; add_sub_hkh  ; work         ;
 ;    |pll:inst|                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|pll:inst                                                                                                                                  ; pll          ; work         ;
 ;       |altpll:altpll_component|                   ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|pll:inst|altpll:altpll_component                                                                                                          ; altpll       ; work         ;
 ;          |pll_altpll1:auto_generated|             ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |VGA|pll:inst|altpll:altpll_component|pll_altpll1:auto_generated                                                                               ; pll_altpll1  ; work         ;
@@ -298,32 +297,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                               ; Fan out ;
 +---------------------------------------------------------------------------------+---------+
-; MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[8] ; 4       ;
-; MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[9] ; 4       ;
-; MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[4] ; 4       ;
-; MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[3] ; 3       ;
-; MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[2] ; 3       ;
-; MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[1] ; 3       ;
-; MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[0] ; 4       ;
-; MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterVertical|TIME_COUNT[3]   ; 6       ;
-; MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterVertical|TIME_COUNT[9]   ; 7       ;
+; MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[8] ; 4       ;
+; MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[9] ; 4       ;
+; MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[4] ; 4       ;
+; MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[3] ; 3       ;
+; MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[2] ; 3       ;
+; MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[1] ; 3       ;
+; MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterHorizontal|TIME_COUNT[0] ; 4       ;
+; MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterVertical|TIME_COUNT[3]   ; 6       ;
+; MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterVertical|TIME_COUNT[9]   ; 7       ;
 ; Total number of inverted registers = 9                                          ;         ;
 +---------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MainActivity:inst4 ;
-+----------------+---------------+--------------------------------+
-; Parameter Name ; Value         ; Type                           ;
-+----------------+---------------+--------------------------------+
-; Gimpy          ; 0010111000001 ; Unsigned Binary                ;
-; GimpyXY        ; 1100001       ; Unsigned Binary                ;
-+----------------+---------------+--------------------------------+
+; Parameter Settings for User Entity Instance: MainActivity:inst1 ;
++----------------+------------------+-----------------------------+
+; Parameter Name ; Value            ; Type                        ;
++----------------+------------------+-----------------------------+
+; Gimpy          ; 0000101010010000 ; Unsigned Binary             ;
+; GimpyXY        ; 00110100         ; Unsigned Binary             ;
++----------------+------------------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MainActivity:inst4|VGAInterface:VGA ;
+; Parameter Settings for User Entity Instance: MainActivity:inst1|VGAInterface:VGA ;
 +--------------------------+------------+------------------------------------------+
 ; Parameter Name           ; Value      ; Type                                     ;
 +--------------------------+------------+------------------------------------------+
@@ -340,7 +339,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterHorizontal ;
+; Parameter Settings for User Entity Instance: MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterHorizontal ;
 +----------------+----------------------------------+------------------------------------------------------------+
 ; Parameter Name ; Value                            ; Type                                                       ;
 +----------------+----------------------------------+------------------------------------------------------------+
@@ -352,7 +351,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterVertical ;
+; Parameter Settings for User Entity Instance: MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterVertical ;
 +----------------+----------------------------------+----------------------------------------------------------+
 ; Parameter Name ; Value                            ; Type                                                     ;
 +----------------+----------------------------------+----------------------------------------------------------+
@@ -364,7 +363,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MainActivity:inst4|VGAInterface:VGA|PixCounter:HorzPix ;
+; Parameter Settings for User Entity Instance: MainActivity:inst1|VGAInterface:VGA|PixCounter:HorzPix ;
 +----------------------+----------------------------------+-------------------------------------------+
 ; Parameter Name       ; Value                            ; Type                                      ;
 +----------------------+----------------------------------+-------------------------------------------+
@@ -376,7 +375,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MainActivity:inst4|VGAInterface:VGA|PixCounter:VertPix ;
+; Parameter Settings for User Entity Instance: MainActivity:inst1|VGAInterface:VGA|PixCounter:VertPix ;
 +----------------------+----------------------------------+-------------------------------------------+
 ; Parameter Name       ; Value                            ; Type                                      ;
 +----------------------+----------------------------------+-------------------------------------------+
@@ -762,7 +761,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: MainActivity:inst4|lpm_mult:Mult0   ;
+; Parameter Settings for Inferred Entity Instance: MainActivity:inst1|lpm_mult:Mult0   ;
 +------------------------------------------------+---------------+---------------------+
 ; Parameter Name                                 ; Value         ; Type                ;
 +------------------------------------------------+---------------+---------------------+
@@ -770,10 +769,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IGNORE_CARRY_BUFFERS                           ; OFF           ; IGNORE_CARRY        ;
 ; AUTO_CASCADE_CHAINS                            ; ON            ; AUTO_CASCADE        ;
 ; IGNORE_CASCADE_BUFFERS                         ; OFF           ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 10            ; Untyped             ;
-; LPM_WIDTHB                                     ; 8             ; Untyped             ;
-; LPM_WIDTHP                                     ; 18            ; Untyped             ;
-; LPM_WIDTHR                                     ; 18            ; Untyped             ;
+; LPM_WIDTHA                                     ; 9             ; Untyped             ;
+; LPM_WIDTHB                                     ; 6             ; Untyped             ;
+; LPM_WIDTHP                                     ; 15            ; Untyped             ;
+; LPM_WIDTHR                                     ; 15            ; Untyped             ;
 ; LPM_WIDTHS                                     ; 1             ; Untyped             ;
 ; LPM_REPRESENTATION                             ; UNSIGNED      ; Untyped             ;
 ; LPM_PIPELINE                                   ; 0             ; Untyped             ;
@@ -781,7 +780,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; INPUT_A_IS_CONSTANT                            ; NO            ; Untyped             ;
 ; INPUT_B_IS_CONSTANT                            ; YES           ; Untyped             ;
 ; USE_EAB                                        ; OFF           ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 6             ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5             ; Untyped             ;
 ; DEVICE_FAMILY                                  ; Cyclone IV GX ; Untyped             ;
 ; CARRY_CHAIN                                    ; MANUAL        ; Untyped             ;
 ; APEX20K_TECHNOLOGY_MAPPER                      ; LUT           ; TECH_MAPPER_APEX20K ;
@@ -819,10 +818,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                                  ; Value                             ;
 +---------------------------------------+-----------------------------------+
 ; Number of entity instances            ; 1                                 ;
-; Entity Instance                       ; MainActivity:inst4|lpm_mult:Mult0 ;
-;     -- LPM_WIDTHA                     ; 10                                ;
-;     -- LPM_WIDTHB                     ; 8                                 ;
-;     -- LPM_WIDTHP                     ; 18                                ;
+; Entity Instance                       ; MainActivity:inst1|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 9                                 ;
+;     -- LPM_WIDTHB                     ; 6                                 ;
+;     -- LPM_WIDTHP                     ; 15                                ;
 ;     -- LPM_REPRESENTATION             ; UNSIGNED                          ;
 ;     -- INPUT_A_IS_CONSTANT            ; NO                                ;
 ;     -- INPUT_B_IS_CONSTANT            ; YES                               ;
@@ -834,7 +833,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "MainActivity:inst4|VGAInterface:VGA"                                                   ;
+; Port Connectivity Checks: "MainActivity:inst1|VGAInterface:VGA"                                                   ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                             ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
@@ -852,20 +851,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 29                          ;
 ;     ENA SCLR          ; 19                          ;
 ;     plain             ; 11                          ;
-; cycloneiii_lcell_comb ; 5842                        ;
-;     arith             ; 58                          ;
-;         2 data inputs ; 41                          ;
-;         3 data inputs ; 17                          ;
-;     normal            ; 5784                        ;
+; cycloneiii_lcell_comb ; 1290                        ;
+;     arith             ; 50                          ;
+;         2 data inputs ; 37                          ;
+;         3 data inputs ; 13                          ;
+;     normal            ; 1240                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 13                          ;
-;         2 data inputs ; 57                          ;
-;         3 data inputs ; 279                         ;
-;         4 data inputs ; 5434                        ;
+;         2 data inputs ; 69                          ;
+;         3 data inputs ; 118                         ;
+;         4 data inputs ; 1039                        ;
 ; cycloneiv_pll         ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 15.60                       ;
-; Average LUT depth     ; 11.80                       ;
+; Max LUT depth         ; 12.30                       ;
+; Average LUT depth     ; 9.17                        ;
 +-----------------------+-----------------------------+
 
 
@@ -874,7 +873,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:02:04     ;
+; Top            ; 00:00:13     ;
 +----------------+--------------+
 
 
@@ -884,48 +883,68 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Apr 22 12:40:23 2018
+    Info: Processing started: Mon Apr 23 00:40:22 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA -c VGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file output_pixels.sv
-    Info (12023): Found entity 1: output_pixels File: C:/Users/jey96/Documents/VGA/output_pixels.sv Line: 21
+Info (12248): Elaborating Platform Designer system entity "vgapll.qsys"
+Info (12250): 2018.04.23.00:40:48 Progress: Loading VGA/vgapll.qsys
+Info (12250): 2018.04.23.00:40:49 Progress: Reading input file
+Info (12250): 2018.04.23.00:40:49 Progress: Adding video_pll_0 [altera_up_avalon_video_pll 17.1]
+Info (12250): 2018.04.23.00:40:50 Progress: Parameterizing module video_pll_0
+Info (12250): 2018.04.23.00:40:50 Progress: Building connections
+Info (12250): 2018.04.23.00:40:50 Progress: Parameterizing connections
+Info (12250): 2018.04.23.00:40:50 Progress: Validating
+Info (12250): 2018.04.23.00:40:52 Progress: Done reading input file
+Info (12250): Vgapll: Generating vgapll "vgapll" for QUARTUS_SYNTH
+Info (12250): Video_pll_0: "vgapll" instantiated altera_up_avalon_video_pll "video_pll_0"
+Info (12250): Video_pll: "video_pll_0" instantiated altera_up_altpll "video_pll"
+Info (12250): Reset_from_locked: "video_pll_0" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
+Info (12250): Vgapll: Done "vgapll" with 4 modules, 4 files
+Info (12249): Finished elaborating Platform Designer system entity "vgapll.qsys"
+Info (12021): Found 1 design units, including 1 entities, in source file vga.bdf
+    Info (12023): Found entity 1: VGA
+Info (12021): Found 1 design units, including 1 entities, in source file xvga.sv
+    Info (12023): Found entity 1: xvga File: C:/Users/jey96/Documents/VGA/xvga.sv Line: 21
+Warning (12019): Can't analyze file -- file pll_bb.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file pll.v
     Info (12023): Found entity 1: pll File: C:/Users/jey96/Documents/VGA/pll.v Line: 39
-Warning (10229): Verilog HDL Expression warning at MainActivity.sv(32): truncated literal to match 13 bits File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 32
-Warning (10229): Verilog HDL Expression warning at MainActivity.sv(33): truncated literal to match 7 bits File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 33
-Info (12021): Found 1 design units, including 1 entities, in source file mainactivity.sv
-    Info (12023): Found entity 1: MainActivity File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file vgainterface.sv
     Info (12023): Found entity 1: VGAInterface File: C:/Users/jey96/Documents/VGA/VGAInterface.sv Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file pixcounter.sv
     Info (12023): Found entity 1: PixCounter File: C:/Users/jey96/Documents/VGA/PixCounter.sv Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file counter.sv
     Info (12023): Found entity 1: Counter File: C:/Users/jey96/Documents/VGA/Counter.sv Line: 21
-Warning (12125): Using design file vga.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: VGA
+Warning (10229): Verilog HDL Expression warning at MainAcitivity.sv(32): truncated literal to match 13 bits File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 32
+Warning (10229): Verilog HDL Expression warning at MainAcitivity.sv(33): truncated literal to match 7 bits File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file mainacitivity.sv
+    Info (12023): Found entity 1: MainActivity File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/vgapll/submodules/altera_up_altpll.v
+    Info (12023): Found entity 1: altera_up_altpll File: C:/Users/jey96/Documents/VGA/db/ip/vgapll/submodules/altera_up_altpll.v Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/vgapll/submodules/altera_up_avalon_reset_from_locked_signal.v
+    Info (12023): Found entity 1: altera_up_avalon_reset_from_locked_signal File: C:/Users/jey96/Documents/VGA/db/ip/vgapll/submodules/altera_up_avalon_reset_from_locked_signal.v Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/vgapll/submodules/vgapll_video_pll_0.v
+    Info (12023): Found entity 1: vgapll_video_pll_0 File: C:/Users/jey96/Documents/VGA/db/ip/vgapll/submodules/vgapll_video_pll_0.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/vgapll/vgapll.v
+    Info (12023): Found entity 1: vgapll File: C:/Users/jey96/Documents/VGA/db/ip/vgapll/vgapll.v Line: 6
 Info (12127): Elaborating entity "VGA" for the top level hierarchy
-Info (12128): Elaborating entity "MainActivity" for hierarchy "MainActivity:inst4"
-Warning (10036): Verilog HDL or VHDL warning at MainActivity.sv(62): object "X" assigned a value but never read File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 62
-Warning (10036): Verilog HDL or VHDL warning at MainActivity.sv(63): object "Y" assigned a value but never read File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 63
-Warning (10036): Verilog HDL or VHDL warning at MainActivity.sv(65): object "ZeroX" assigned a value but never read File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 65
-Warning (10036): Verilog HDL or VHDL warning at MainActivity.sv(66): object "ZeroY" assigned a value but never read File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 66
-Warning (10230): Verilog HDL assignment warning at MainActivity.sv(65): truncated value with size 32 to match size of target (5) File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 65
-Warning (10230): Verilog HDL assignment warning at MainActivity.sv(66): truncated value with size 32 to match size of target (5) File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 66
-Warning (10230): Verilog HDL assignment warning at MainActivity.sv(84): truncated value with size 32 to match size of target (13) File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 84
-Warning (10030): Net "COLOUR_DATA.data_a" at MainActivity.sv(43) has no driver or initial value, using a default initial value '0' File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 43
-Warning (10030): Net "COLOUR_DATA.waddr_a" at MainActivity.sv(43) has no driver or initial value, using a default initial value '0' File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 43
-Warning (10030): Net "COLOUR_DATA.we_a" at MainActivity.sv(43) has no driver or initial value, using a default initial value '0' File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 43
-Info (12128): Elaborating entity "VGAInterface" for hierarchy "MainActivity:inst4|VGAInterface:VGA" File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 61
-Info (12128): Elaborating entity "Counter" for hierarchy "MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterHorizontal" File: C:/Users/jey96/Documents/VGA/VGAInterface.sv Line: 73
+Info (12128): Elaborating entity "MainActivity" for hierarchy "MainActivity:inst1"
+Warning (10230): Verilog HDL assignment warning at MainAcitivity.sv(65): truncated value with size 32 to match size of target (5) File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 65
+Warning (10230): Verilog HDL assignment warning at MainAcitivity.sv(66): truncated value with size 32 to match size of target (5) File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 66
+Warning (10850): Verilog HDL warning at MainAcitivity.sv(89): number of words (2702) in memory file does not match the number of elements in the address range [0:2703] File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 89
+Warning (10030): Net "COLOUR_DATA.data_a" at MainAcitivity.sv(43) has no driver or initial value, using a default initial value '0' File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 43
+Warning (10030): Net "COLOUR_DATA.waddr_a" at MainAcitivity.sv(43) has no driver or initial value, using a default initial value '0' File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 43
+Warning (10030): Net "COLOUR_DATA.we_a" at MainAcitivity.sv(43) has no driver or initial value, using a default initial value '0' File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 43
+Info (12128): Elaborating entity "VGAInterface" for hierarchy "MainActivity:inst1|VGAInterface:VGA" File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 61
+Info (12128): Elaborating entity "Counter" for hierarchy "MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterHorizontal" File: C:/Users/jey96/Documents/VGA/VGAInterface.sv Line: 73
 Warning (10230): Verilog HDL assignment warning at Counter.sv(39): truncated value with size 32 to match size of target (10) File: C:/Users/jey96/Documents/VGA/Counter.sv Line: 39
 Warning (10230): Verilog HDL assignment warning at Counter.sv(47): truncated value with size 32 to match size of target (10) File: C:/Users/jey96/Documents/VGA/Counter.sv Line: 47
-Info (12128): Elaborating entity "Counter" for hierarchy "MainActivity:inst4|VGAInterface:VGA|Counter:TimeCounterVertical" File: C:/Users/jey96/Documents/VGA/VGAInterface.sv Line: 84
+Info (12128): Elaborating entity "Counter" for hierarchy "MainActivity:inst1|VGAInterface:VGA|Counter:TimeCounterVertical" File: C:/Users/jey96/Documents/VGA/VGAInterface.sv Line: 84
 Warning (10230): Verilog HDL assignment warning at Counter.sv(39): truncated value with size 32 to match size of target (10) File: C:/Users/jey96/Documents/VGA/Counter.sv Line: 39
 Warning (10230): Verilog HDL assignment warning at Counter.sv(47): truncated value with size 32 to match size of target (10) File: C:/Users/jey96/Documents/VGA/Counter.sv Line: 47
-Info (12128): Elaborating entity "PixCounter" for hierarchy "MainActivity:inst4|VGAInterface:VGA|PixCounter:HorzPix" File: C:/Users/jey96/Documents/VGA/VGAInterface.sv Line: 127
+Info (12128): Elaborating entity "PixCounter" for hierarchy "MainActivity:inst1|VGAInterface:VGA|PixCounter:HorzPix" File: C:/Users/jey96/Documents/VGA/VGAInterface.sv Line: 127
 Warning (10230): Verilog HDL assignment warning at PixCounter.sv(59): truncated value with size 32 to match size of target (10) File: C:/Users/jey96/Documents/VGA/PixCounter.sv Line: 59
-Info (12128): Elaborating entity "PixCounter" for hierarchy "MainActivity:inst4|VGAInterface:VGA|PixCounter:VertPix" File: C:/Users/jey96/Documents/VGA/VGAInterface.sv Line: 141
+Info (12128): Elaborating entity "PixCounter" for hierarchy "MainActivity:inst1|VGAInterface:VGA|PixCounter:VertPix" File: C:/Users/jey96/Documents/VGA/VGAInterface.sv Line: 141
 Warning (10230): Verilog HDL assignment warning at PixCounter.sv(59): truncated value with size 32 to match size of target (9) File: C:/Users/jey96/Documents/VGA/PixCounter.sv Line: 59
 Info (12128): Elaborating entity "pll" for hierarchy "pll:inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "pll:inst|altpll:altpll_component" File: C:/Users/jey96/Documents/VGA/pll.v Line: 90
@@ -989,52 +1008,47 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/pll_
     Info (12023): Found entity 1: pll_altpll1 File: C:/Users/jey96/Documents/VGA/db/pll_altpll1.v Line: 29
 Info (12128): Elaborating entity "pll_altpll1" for hierarchy "pll:inst|altpll:altpll_component|pll_altpll1:auto_generated" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "MainActivity:inst4|COLOUR_DATA" is uninferred due to asynchronous read logic File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 43
-Critical Warning (127005): Memory depth (65536) in the design file differs from memory depth (50625) in the Memory Initialization File "C:/Users/jey96/Documents/VGA/db/VGA.ram0_MainActivity_ff464b5e.hdl.mif" -- setting initial value for remaining addresses to 0
+    Info (276007): RAM logic "MainActivity:inst1|COLOUR_DATA" is uninferred due to asynchronous read logic File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 43
+Critical Warning (127005): Memory depth (4096) in the design file differs from memory depth (2704) in the Memory Initialization File "C:/Users/jey96/Documents/VGA/db/VGA.ram0_MainActivity_dd555e9e.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/jey96/Documents/VGA/db/VGA.ram0_MainActivity_dd555e9e.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "MainActivity:inst4|Mult0" File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 84
-Info (12130): Elaborated megafunction instantiation "MainActivity:inst4|lpm_mult:Mult0" File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 84
-Info (12133): Instantiated megafunction "MainActivity:inst4|lpm_mult:Mult0" with the following parameter: File: C:/Users/jey96/Documents/VGA/MainActivity.sv Line: 84
-    Info (12134): Parameter "LPM_WIDTHA" = "10"
-    Info (12134): Parameter "LPM_WIDTHB" = "8"
-    Info (12134): Parameter "LPM_WIDTHP" = "18"
-    Info (12134): Parameter "LPM_WIDTHR" = "18"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "MainActivity:inst1|Mult0" File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 100
+Info (12130): Elaborated megafunction instantiation "MainActivity:inst1|lpm_mult:Mult0" File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 100
+Info (12133): Instantiated megafunction "MainActivity:inst1|lpm_mult:Mult0" with the following parameter: File: C:/Users/jey96/Documents/VGA/MainAcitivity.sv Line: 100
+    Info (12134): Parameter "LPM_WIDTHA" = "9"
+    Info (12134): Parameter "LPM_WIDTHB" = "6"
+    Info (12134): Parameter "LPM_WIDTHP" = "15"
+    Info (12134): Parameter "LPM_WIDTHR" = "15"
     Info (12134): Parameter "LPM_WIDTHS" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
-    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
-Info (12131): Elaborated megafunction instantiation "MainActivity:inst4|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "MainActivity:inst4|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 308
-Info (12131): Elaborated megafunction instantiation "MainActivity:inst4|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "MainActivity:inst4|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/multcore.tdf Line: 228
-Info (12131): Elaborated megafunction instantiation "MainActivity:inst4|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "MainActivity:inst4|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_fkh.tdf
-    Info (12023): Found entity 1: add_sub_fkh File: C:/Users/jey96/Documents/VGA/db/add_sub_fkh.tdf Line: 22
-Info (12131): Elaborated megafunction instantiation "MainActivity:inst4|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "MainActivity:inst4|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
-Info (12131): Elaborated megafunction instantiation "MainActivity:inst4|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "MainActivity:inst4|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_jkh.tdf
-    Info (12023): Found entity 1: add_sub_jkh File: C:/Users/jey96/Documents/VGA/db/add_sub_jkh.tdf Line: 22
-Info (12131): Elaborated megafunction instantiation "MainActivity:inst4|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "MainActivity:inst4|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 351
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "MainActivity:inst1|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "MainActivity:inst1|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 308
+Info (12131): Elaborated megafunction instantiation "MainActivity:inst1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "MainActivity:inst1|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/multcore.tdf Line: 228
+Info (12131): Elaborated megafunction instantiation "MainActivity:inst1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "MainActivity:inst1|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_dkh.tdf
+    Info (12023): Found entity 1: add_sub_dkh File: C:/Users/jey96/Documents/VGA/db/add_sub_dkh.tdf Line: 22
+Info (12131): Elaborated megafunction instantiation "MainActivity:inst1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "MainActivity:inst1|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
+Info (12131): Elaborated megafunction instantiation "MainActivity:inst1|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "MainActivity:inst1|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_hkh.tdf
+    Info (12023): Found entity 1: add_sub_hkh File: C:/Users/jey96/Documents/VGA/db/add_sub_hkh.tdf Line: 22
+Info (12131): Elaborated megafunction instantiation "MainActivity:inst1|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "MainActivity:inst1|lpm_mult:Mult0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 351
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VGA_SYNC_N" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/Users/jey96/Documents/VGA/output_files/VGA.map.smsg
+Warning (20013): Ignored 19 assignments for entity "vgapll" -- entity does not exist in design
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 5872 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1320 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 5841 logic cells
+    Info (21061): Implemented 1289 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 795 megabytes
-    Info: Processing ended: Sun Apr 22 12:43:31 2018
-    Info: Elapsed time: 00:03:08
-    Info: Total CPU time (on all processors): 00:03:30
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/jey96/Documents/VGA/output_files/VGA.map.smsg.
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 767 megabytes
+    Info: Processing ended: Mon Apr 23 00:41:11 2018
+    Info: Elapsed time: 00:00:49
+    Info: Total CPU time (on all processors): 00:01:38
 
 
