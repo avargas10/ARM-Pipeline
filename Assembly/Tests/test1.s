@@ -1,8 +1,4 @@
-mov r1, #8
-mov r2, #2
-str r2, [r1,#0]
-ldr r3, [r1,#0]
-cmp     r3, r2
-beq     label
-label 
-    add r5,r2,#4
+mov r1, #100
+mov r2, #10
+ldr r3,[r2,#35]
+mul r3,r2,r3

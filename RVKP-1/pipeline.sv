@@ -510,7 +510,7 @@ always@(*) begin
 		end
 
 		`branch: begin	
-			driven = 1;
+			//driven = 1;
 			alu_op1 = current_pc-4;
 			alu_op2 = (instr_mul_alu[23] == 1)? {6'b111111,instr_mul_alu[23:0],2'b00}:{6'b000000,instr_mul_alu[23:0],2'b00};	//sign extended 24 bit offset.
 			useShift = 0;
@@ -526,9 +526,9 @@ always@(*) begin
 
 
 		default: begin
-				//driven = 0;
+				driven = 0;
 				alu_op1 = mul_alu_out1;
-				useShift = 1; //alu_op2 = shifter_result;	
+				useShift = 1;	
 				alu_opcode =`ADD;
 			end
 	endcase

@@ -1,6 +1,11 @@
-mov r0,#0
-str r2 ,[r0,#0]
-str r3 ,[r0,#45]
-mul r4, r3,r2
+mov r1,#0
+mov r2,#45
+mov r3,#3000
+ldr r2 ,[r1,#4]
+ldr r4 ,[r2,#0]
+mul r5, r3,r2
+str r4,[r3,#4]
+
+
 
 
