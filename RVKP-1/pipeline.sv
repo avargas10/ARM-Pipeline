@@ -489,19 +489,19 @@ end
 always@(*) begin
 	case(type_mul_alu)
 		`dataProcessing: begin
-				alu_op1 = mul_alu_out1;	//=R[instr[[19:16]]
-				useShift = 1; 					//alu_op2 = shifter_result;
+				alu_op1 = mul_alu_out1;	
+				useShift = 1; 					
 				alu_opcode = instr_mul_alu[24:21];
 			end
 
 		`multiply: begin
-			if(instr_mul_alu[21] == 1 ) begin //Multiply accumulate
-				alu_op1 = mul_alu_out2;	//=R[instr[[19:16]]
+			if(instr_mul_alu[21] == 1 ) begin
+				alu_op1 = mul_alu_out2;	
 				alu_op2 = mulRes_mul_alu;
 				useShift = 0;
 				alu_opcode = `ADD;
 			end
-			else begin	//No accumulate. Add 0, so that nzcv flags go through.
+			else begin	
 				alu_op1 = 0;
 				alu_op2 = mulRes_mul_alu;
 				useShift = 0;
@@ -509,20 +509,19 @@ always@(*) begin
 			end
 		end
 
-		`branch: begin	//address calculation
-			//flush instructions.
-			//driven = 1;
-			alu_op1 = current_pc-4;	//because current pc is 3 instructions ahead. As seen from simulator
+		`branch: begin	
+			driven = 1;
+			alu_op1 = current_pc-4;
 			alu_op2 = (instr_mul_alu[23] == 1)? {6'b111111,instr_mul_alu[23:0],2'b00}:{6'b000000,instr_mul_alu[23:0],2'b00};	//sign extended 24 bit offset.
 			useShift = 0;
 			alu_opcode = `ADD;
 		end
 
 		`loadStoreUnsigned: begin
-			//address calculation
-			alu_op1 = mul_alu_out1;		//base register.
-			useShift = 1;	//offset			//alu_op2 = shifter_result;
-			alu_opcode = (instr_mul_alu[23]==1)?`ADD: `SUB;	//depending on up bit
+
+			alu_op1 = mul_alu_out1;		
+			useShift = 1;	
+			alu_opcode = (instr_mul_alu[23]==1)?`ADD: `SUB;	
 		end
 
 
@@ -545,19 +544,16 @@ always@(*) begin
 	else begin
 		case(type_alu_Mem)
 			`loadStoreUnsigned: begin
-				memory_data_address = (instr_alu_Mem[24]==1)?aluRes_alu_Mem:alu_Mem_out1;	//pre or post indexing
+				memory_data_address = (instr_alu_Mem[24]==1)?aluRes_alu_Mem:alu_Mem_out1;	
 				isByte = instr_alu_Mem[22];
-				if(instr_alu_Mem[20] == 0) begin	//store
-					memory_in_data = alu_Mem_out2;	//store base register
+				if(instr_alu_Mem[20] == 0) begin	
+					memory_in_data = alu_Mem_out2;	
 					mem_we = 1;
 				end
-				else begin //load
+				else begin 
 					mem_re = 1;
 				end
 			end
-
-
-
 			default: begin
 				mem_we = 0;
 				mem_re = 0;
@@ -567,7 +563,7 @@ always@(*) begin
 end
 
 
-//Write back
+
 always@(*) begin
 	if(isExecutedMem_WB == 0) begin
 		pc_update = current_pc + 4;//
@@ -586,18 +582,18 @@ always@(*) begin
 				we1 = (is_aluWB_Mem_WB == 1)? 1:0;
 				we2 = 0;
 				cspr_update = {aluNCZV_Mem_WB,cspr_update[27:0]};
-				cspr_write = instr_Mem_WB[20];	//set bit
+				cspr_write = instr_Mem_WB[20];	
 				pc_update = current_pc + 4;
 				pc_write = 1;
 			end
 
 			`multiply: begin
 				write_address = instr_Mem_WB[19:16];
-				write_data = aluRes_Mem_WB;	//remember accumulate?
+				write_data = aluRes_Mem_WB;	
 				we1 = 1;
 				we2 = 0;
 				cspr_update = {aluNCZV_Mem_WB,cspr_update[27:0]};
-				cspr_update = instr_Mem_WB[20];	//set bit
+				cspr_update = instr_Mem_WB[20];	
 				pc_update = current_pc + 4;
 				pc_write = 1;
 			end
@@ -606,7 +602,7 @@ always@(*) begin
 				pc_update = aluRes_Mem_WB;
 				pc_write = 1;
 				cspr_write = 0;
-				if(instr_Mem_WB[24]==0)	we1 = 0;	//i.e, not link
+				if(instr_Mem_WB[24]==0)	we1 = 0;	
 				else begin
 					write_address = 4'd14;
 					we1 = 1;
@@ -624,14 +620,14 @@ always@(*) begin
 			end
 
 			`loadStoreUnsigned: begin
-				if(instr_Mem_WB[20]==1) begin 	//Load from memory
+				if(instr_Mem_WB[20]==1) begin 	
 					write_data = memOut_Mem_WB;
 					write_address = instr_Mem_WB[15:12];
 					we1 = 1;
 				end
-				else we1 = 0;	//store from memory
+				else we1 = 0;	
 
-				if(instr_Mem_WB[24] == 0 || instr_Mem_WB[21] ==1 ) begin	//postindexing or //preindexing and write back bit set
+				if(instr_Mem_WB[24] == 0 || instr_Mem_WB[21] ==1 ) begin	
 					write_address_2 = instr_Mem_WB[19:16];
 					write_data_2 = aluRes_Mem_WB;
 					we2 = 1;
@@ -654,16 +650,15 @@ always@(*) begin
 end
 
 
-//Pipeline update
+
 always @(posedge clk) begin
 	fetch_instr = 1; 
 	if(number_stalls!=0) number_stalls = number_stalls-1;
 
-	//i.e no stalls
 	else begin
 		current_pc = pc_update;
 
-		/*******MEM/W*****/
+
 		isExecutedMem_WB =(drive_alu_Mem ==1)?0:isExecutedAlu_Mem;
 		type_Mem_WB 	 = type_alu_Mem;
 		instr_Mem_WB 	 = instr_alu_Mem;
@@ -677,10 +672,8 @@ always @(posedge clk) begin
 		aluNCZV_Mem_WB 	 = aluNCZV_alu_Mem;
 		is_aluWB_Mem_WB = is_aluWB_alu_Mem;   
 		drive_Mem_WB	 = drive_alu_Mem;
-		/*******MEM/W*****/
 
-		
-		/*******ALU/MEM*****/
+
 		isExecutedAlu_Mem = (drive_mul_alu==1)?0:MUL_ALU_will_this_be_executed;
 		type_alu_Mem 	  = type_mul_alu;
 		instr_alu_Mem 	  = instr_mul_alu;
@@ -693,11 +686,8 @@ always @(posedge clk) begin
 		aluNCZV_alu_Mem   = alu_nzcv;
 		is_aluWB_alu_Mem  = isWB_alu;
 		drive_alu_Mem	  = drive_mul_alu;
-		next_nzcv = alu_nzcv;	//forwarding!
-		/*******ALU/MEM*****/
+		next_nzcv = alu_nzcv;	
 
-		/*******MUL/ALU*****/
-		////condition field checking done in alu stage, right aftern zcvnzcv is calculated . so if decided to be not executing, make type undefined.
 		MUL_ALU_will_this_be_executed = (drive_reg_mul == 1)?0:will_this_be_executed;
 		type_mul_alu 		 =type_reg_mul;
 		instr_mul_alu 		 =instr_reg_mul;
@@ -707,10 +697,8 @@ always @(posedge clk) begin
 		mul_alu_out4 	     =(isNext4_mul_alu == 0)?reg_mul_out4: nextData4_mul_alu;
 		mulRes_mul_alu	     = mulRes;
 		drive_mul_alu		 = drive_reg_mul;
-		//MUL_ALU_shifter_result = shifter_result;
-		/*******MUL/ALU*****/
 
-		/*******R/MUL*****/
+
 		type_reg_mul 		 =type_f_reg;
 		instr_reg_mul 		 =instr_f_reg;
 		reg_mul_out1 	 	 =(isNext1 == 0)?out_1:nextData_1;
@@ -718,21 +706,12 @@ always @(posedge clk) begin
 		reg_mul_out3 	 	 =(isNext3 == 0)?out_3:nextData_3;
 		reg_mul_out4 	 	 =(isNext4 == 0)?out_4:nextData_4;
 		drive_reg_mul		 =drive_f_reg;
-		/*******R/MUL*****/
 
-		/*******F/R*****/
 		instr_f_reg    = instr;
 		type_f_reg 	 = itype;
 		drive_f_reg	 =  driven;
-		/*******F/R*****/
 
-		//Flushing: For branch instructions at write back stage, flush all the pipeline filled
-		if(type_mul_alu==`branch )begin
-			driven=1;
-		end
-		if(type_mul_alu!=`branch && type_mul_alu!=`dataProcessing && type_mul_alu!=`multiply && type_mul_alu!=`loadStoreUnsigned)begin
-			driven = 0;
-		end
+	
 		if( (type_Mem_WB == `branch || type_Mem_WB == `branchAndExchange) && (isExecutedMem_WB ==1)) begin
 			driven = 1;
 			drive_f_reg = 1;
