@@ -442,8 +442,7 @@ char *yytext;
   #include <string.h>
   #include <stdlib.h>
   void yyerror(std::string S);
-  extern int yylineno;
-#line 447 "lex.yy.c"
+#line 446 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -594,11 +593,11 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 17 "Compiler.l"
+#line 16 "Compiler.l"
 
 
     /*Operation Keywords*/
-#line 602 "lex.yy.c"
+#line 601 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -691,119 +690,119 @@ do_action:	/* This label is used only to access EOF actions. */
 	{ /* beginning of action switch */
 case 1:
 YY_RULE_SETUP
-#line 20 "Compiler.l"
+#line 19 "Compiler.l"
 {yylval.id=strdup(yytext); return addition;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 21 "Compiler.l"
+#line 20 "Compiler.l"
 {yylval.id=strdup(yytext); return subtra;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 22 "Compiler.l"
+#line 21 "Compiler.l"
 {yylval.id=strdup(yytext); return multiple;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 23 "Compiler.l"
+#line 22 "Compiler.l"
 {yylval.id=strdup(yytext); return braneq;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 24 "Compiler.l"
+#line 23 "Compiler.l"
 {yylval.id=strdup(yytext); return branne;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 25 "Compiler.l"
+#line 24 "Compiler.l"
 {yylval.id=strdup(yytext); return load;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 26 "Compiler.l"
+#line 25 "Compiler.l"
 {yylval.id=strdup(yytext); return store;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 27 "Compiler.l"
+#line 26 "Compiler.l"
 {yylval.id=strdup(yytext); return comp;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 28 "Compiler.l"
+#line 27 "Compiler.l"
 {yylval.id=strdup(yytext); return mv;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 29 "Compiler.l"
+#line 28 "Compiler.l"
 {yylval.id=strdup(yytext); return branch;}
 	YY_BREAK
 /*Types*/
 case 11:
 YY_RULE_SETUP
-#line 32 "Compiler.l"
+#line 31 "Compiler.l"
 {yylval.id=strdup(yytext); return dcb;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 33 "Compiler.l"
+#line 32 "Compiler.l"
 {yylval.id=strdup(yytext); return dcw;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 34 "Compiler.l"
+#line 33 "Compiler.l"
 {yylval.id=strdup(yytext); return dcd;}
 	YY_BREAK
 /*Registers*/
 case 14:
 YY_RULE_SETUP
-#line 37 "Compiler.l"
+#line 36 "Compiler.l"
 {yylval.id=strdup(yytext); return reg;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 39 "Compiler.l"
+#line 38 "Compiler.l"
 {yylval.id=strdup(yytext); return immediate;}
 	YY_BREAK
 /*Tags*/
 case 16:
 YY_RULE_SETUP
-#line 42 "Compiler.l"
+#line 41 "Compiler.l"
 {yylval.id=strdup(yytext); return label;}
 	YY_BREAK
 /*Comments*/
 case 17:
 YY_RULE_SETUP
-#line 44 "Compiler.l"
+#line 43 "Compiler.l"
 {yylval.id=strdup(yytext); return commentary;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 46 "Compiler.l"
+#line 45 "Compiler.l"
 {yylval.num=atoi(yytext); return number;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 48 "Compiler.l"
+#line 47 "Compiler.l"
 {return yytext[0];}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 49 "Compiler.l"
+#line 48 "Compiler.l"
 {;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 50 "Compiler.l"
+#line 49 "Compiler.l"
 {yyerror("invalid character");}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 51 "Compiler.l"
+#line 50 "Compiler.l"
 ECHO;
 	YY_BREAK
-#line 807 "lex.yy.c"
+#line 806 "lex.yy.c"
 			case YY_STATE_EOF(INITIAL):
 				yyterminate();
 
@@ -1687,7 +1686,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 51 "Compiler.l"
+#line 50 "Compiler.l"
 
 int yywrap(void){
   return 1;

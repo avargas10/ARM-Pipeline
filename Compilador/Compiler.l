@@ -4,7 +4,6 @@
   #include <string.h>
   #include <stdlib.h>
   void yyerror(std::string S);
-  extern int yylineno;
 %}
 
 %option yylineno

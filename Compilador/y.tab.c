@@ -86,9 +86,11 @@
     std::map<std::string,int> futureLabels; //En caso de encontrar una etiqueta antes de ser declarada
     std::fstream fs;
     std::fstream fs2;
+    std::string final_message="Compiler success";
     int memCount=0;
 
     int yylex();
+    extern int yylineno;
     void encondig_instruccion(std::string op,std::string rs,std::string rs2,std::string rd);
     void encondig_instruccion1(std::string op,std::string rs,std::string rd,std::string immen);
     void encondig_instruccion2(std::string op,std::string rs,std::string rd);
@@ -99,7 +101,7 @@
     void encondig_instruccion7(std::string op,std::string rd,std::string rs,std::string rs2);
     std::string regtobin(std::string r);
     int indexOf(std::string tag);
-    std::string immtobin(std::string in,int type);
+    std::string immtobin(std::string in,int type,std::string rs);
     void procces_label(std::string tag,std::string g,int type);
     void variablestobin(int val);
     std::string current_type="DCD";
@@ -111,7 +113,7 @@
 
 
 /* Line 189 of yacc.c  */
-#line 115 "y.tab.c"
+#line 117 "y.tab.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -186,7 +188,7 @@ typedef union YYSTYPE
 {
 
 /* Line 214 of yacc.c  */
-#line 42 "Compiler.y"
+#line 44 "Compiler.y"
 
   char* id;
   int num;
@@ -194,7 +196,7 @@ typedef union YYSTYPE
 
 
 /* Line 214 of yacc.c  */
-#line 198 "y.tab.c"
+#line 200 "y.tab.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -206,7 +208,7 @@ typedef union YYSTYPE
 
 
 /* Line 264 of yacc.c  */
-#line 210 "y.tab.c"
+#line 212 "y.tab.c"
 
 #ifdef short
 # undef short
@@ -507,10 +509,10 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    58,    58,    59,    60,    61,    62,    63,    64,    65,
-      68,    69,    70,    71,    72,    73,    74,    75,    76,    77,
-      78,    79,    80,    83,    85,    86,    88,    89,    90,    93,
-      94,    95,    96,    97,    98,    99,   100,   101,   102
+       0,    60,    60,    61,    62,    63,    64,    65,    66,    67,
+      70,    71,    72,    73,    74,    75,    76,    77,    78,    79,
+      80,    81,    82,    85,    87,    88,    90,    91,    92,    95,
+      96,    97,    98,    99,   100,   101,   102,   103,   104
 };
 #endif
 
@@ -1444,231 +1446,231 @@ yyreduce:
         case 4:
 
 /* Line 1455 of yacc.c  */
-#line 60 "Compiler.y"
+#line 62 "Compiler.y"
     {procces_label((yyvsp[(2) - (3)].id),"",1);}
     break;
 
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 61 "Compiler.y"
+#line 63 "Compiler.y"
     {procces_label((yyvsp[(2) - (4)].id),"",1);}
     break;
 
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 63 "Compiler.y"
+#line 65 "Compiler.y"
     {procces_label((yyvsp[(2) - (4)].id),"",1);}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 68 "Compiler.y"
+#line 70 "Compiler.y"
     {encondig_instruccion2((yyvsp[(1) - (4)].id),(yyvsp[(4) - (4)].id),(yyvsp[(2) - (4)].id));}
     break;
 
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 69 "Compiler.y"
+#line 71 "Compiler.y"
     {encondig_instruccion3((yyvsp[(1) - (4)].id),(yyvsp[(2) - (4)].id),(yyvsp[(4) - (4)].id));}
     break;
 
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 70 "Compiler.y"
+#line 72 "Compiler.y"
     {encondig_instruccion5((yyvsp[(1) - (2)].id),(yyvsp[(2) - (2)].id));}
     break;
 
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 71 "Compiler.y"
+#line 73 "Compiler.y"
     {encondig_instruccion4((yyvsp[(1) - (5)].id),(yyvsp[(2) - (5)].id),(yyvsp[(5) - (5)].id));}
     break;
 
   case 14:
 
 /* Line 1455 of yacc.c  */
-#line 72 "Compiler.y"
+#line 74 "Compiler.y"
     {encondig_instruccion1((yyvsp[(1) - (6)].id),(yyvsp[(4) - (6)].id),(yyvsp[(2) - (6)].id),(yyvsp[(6) - (6)].id));}
     break;
 
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 73 "Compiler.y"
+#line 75 "Compiler.y"
     {encondig_instruccion6((yyvsp[(1) - (6)].id),(yyvsp[(2) - (6)].id),(yyvsp[(5) - (6)].id),"",1);}
     break;
 
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 74 "Compiler.y"
+#line 76 "Compiler.y"
     {encondig_instruccion6((yyvsp[(1) - (8)].id),(yyvsp[(2) - (8)].id),(yyvsp[(5) - (8)].id),(yyvsp[(7) - (8)].id),2);}
     break;
 
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 75 "Compiler.y"
+#line 77 "Compiler.y"
     {encondig_instruccion6((yyvsp[(1) - (8)].id),(yyvsp[(2) - (8)].id),(yyvsp[(5) - (8)].id),(yyvsp[(7) - (8)].id),3);}
     break;
 
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 76 "Compiler.y"
+#line 78 "Compiler.y"
     {encondig_instruccion7((yyvsp[(1) - (8)].id),(yyvsp[(2) - (8)].id),(yyvsp[(5) - (8)].id),(yyvsp[(8) - (8)].id));}
     break;
 
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 77 "Compiler.y"
+#line 79 "Compiler.y"
     {encondig_instruccion6((yyvsp[(1) - (9)].id),(yyvsp[(2) - (9)].id),(yyvsp[(5) - (9)].id),(yyvsp[(7) - (9)].id),4);}
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 78 "Compiler.y"
+#line 80 "Compiler.y"
     {encondig_instruccion((yyvsp[(1) - (6)].id),(yyvsp[(4) - (6)].id),(yyvsp[(6) - (6)].id),(yyvsp[(2) - (6)].id));}
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 79 "Compiler.y"
+#line 81 "Compiler.y"
     {;}
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 80 "Compiler.y"
+#line 82 "Compiler.y"
     {yyerror("2, instruccion wrong");}
     break;
 
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 83 "Compiler.y"
+#line 85 "Compiler.y"
     {procces_label((yyvsp[(1) - (3)].id),(yyvsp[(2) - (3)].id),2);}
     break;
 
   case 24:
 
 /* Line 1455 of yacc.c  */
-#line 85 "Compiler.y"
+#line 87 "Compiler.y"
     {variablestobin((yyvsp[(1) - (1)].num));}
     break;
 
   case 25:
 
 /* Line 1455 of yacc.c  */
-#line 86 "Compiler.y"
+#line 88 "Compiler.y"
     {variablestobin((yyvsp[(3) - (3)].num));}
     break;
 
   case 26:
 
 /* Line 1455 of yacc.c  */
-#line 88 "Compiler.y"
+#line 90 "Compiler.y"
     {(yyval.id)=(yyvsp[(1) - (1)].id);}
     break;
 
   case 27:
 
 /* Line 1455 of yacc.c  */
-#line 89 "Compiler.y"
+#line 91 "Compiler.y"
     {(yyval.id)=(yyvsp[(1) - (1)].id);}
     break;
 
   case 28:
 
 /* Line 1455 of yacc.c  */
-#line 90 "Compiler.y"
+#line 92 "Compiler.y"
     {(yyval.id)=(yyvsp[(1) - (1)].id);}
     break;
 
   case 29:
 
 /* Line 1455 of yacc.c  */
-#line 93 "Compiler.y"
+#line 95 "Compiler.y"
     {;}
     break;
 
   case 30:
 
 /* Line 1455 of yacc.c  */
-#line 94 "Compiler.y"
+#line 96 "Compiler.y"
     {;}
     break;
 
   case 31:
 
 /* Line 1455 of yacc.c  */
-#line 95 "Compiler.y"
+#line 97 "Compiler.y"
     {;}
     break;
 
   case 32:
 
 /* Line 1455 of yacc.c  */
-#line 96 "Compiler.y"
+#line 98 "Compiler.y"
     {;}
     break;
 
   case 33:
 
 /* Line 1455 of yacc.c  */
-#line 97 "Compiler.y"
+#line 99 "Compiler.y"
     {;}
     break;
 
   case 34:
 
 /* Line 1455 of yacc.c  */
-#line 98 "Compiler.y"
+#line 100 "Compiler.y"
     {;}
     break;
 
   case 35:
 
 /* Line 1455 of yacc.c  */
-#line 99 "Compiler.y"
+#line 101 "Compiler.y"
     {;}
     break;
 
   case 36:
 
 /* Line 1455 of yacc.c  */
-#line 100 "Compiler.y"
+#line 102 "Compiler.y"
     {;}
     break;
 
   case 37:
 
 /* Line 1455 of yacc.c  */
-#line 101 "Compiler.y"
+#line 103 "Compiler.y"
     {;}
     break;
 
   case 38:
 
 /* Line 1455 of yacc.c  */
-#line 102 "Compiler.y"
+#line 104 "Compiler.y"
     {;}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1672 "y.tab.c"
+#line 1674 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1880,7 +1882,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 105 "Compiler.y"
+#line 107 "Compiler.y"
 
 
 extern int yyparse();
@@ -1945,14 +1947,16 @@ void encondig_instruccion3(std::string op,std::string rs,std::string imme){
   text_memory+=0x4;
   if(op.compare("cmp")==0 || op.compare("CMP")==0 || op.compare("Cmp")==0){
     binIns+="00110101";
-    binIns+=regtobin(rs);
+    std::string r=regtobin(rs);
+    binIns+=r;
     binIns+="0000";
-    binIns+=immtobin(imme,1);
+    binIns+=immtobin(imme,1,r);
     fs<<binIns<<'\n';
   }else if(op.compare("mov")==0 || op.compare("MOV")==0 || op.compare("Mov")==0){
     binIns+="001110100000";
-    binIns+=regtobin(rs);
-    binIns+=immtobin(imme,1);
+    std::string r=regtobin(rs);
+    binIns+=r;
+    binIns+=immtobin(imme,1,r);
     fs<<binIns<<'\n';
   }else{
     std::cout<< "Error at read instruccion: 2"<<'\n';
@@ -1989,7 +1993,7 @@ void encondig_instruccion5(std::string op,std::string tag){
     if(index < 0){
       futureLabels[tag]=fs.tellp();
     }
-    int result=(index-text_memory+0x4)/4;
+    int result=(index-text_memory+0x14)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
     fs<<"11100001101000000000000000000000"<<'\n';
@@ -1997,13 +2001,14 @@ void encondig_instruccion5(std::string op,std::string tag){
     fs<<"11100001101000000000000000000000"<<'\n';
     fs<<"11100001101000000000000000000000"<<'\n';
     fs<<"11100001101000000000000000000000"<<'\n';
+    text_memory+=0x10;
   }else if(op.compare("Beq")==0 || op.compare("BEQ")==0 || op.compare("beq")==0){
     std::string binIns="00001010";
     int index=labels.find(tag)->second;
     if(index < 0){
       futureLabels[tag]=fs.tellp();
     }
-    int result=(index-text_memory+0x4)/4;
+    int result=(index-text_memory+0x14)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
     fs<<"11100001101000000000000000000000"<<'\n';
@@ -2011,13 +2016,14 @@ void encondig_instruccion5(std::string op,std::string tag){
     fs<<"11100001101000000000000000000000"<<'\n';
     fs<<"11100001101000000000000000000000"<<'\n';
     fs<<"11100001101000000000000000000000"<<'\n';
+    text_memory+=0x10;
   }else if(op.compare("Bne")==0 || op.compare("BNE")==0 || op.compare("bne")==0){
     std::string binIns="00011010";
     int index=labels.find(tag)->second;
     if(index < 0){
       futureLabels[tag]=fs.tellp();
     }
-    int result=(index-text_memory+0x4)/4;
+    int result=(index-text_memory+0x14)/4;
     binIns+=std::bitset<24>(result).to_string();
     fs<<binIns<<'\n';
     fs<<"11100001101000000000000000000000"<<'\n';
@@ -2025,6 +2031,7 @@ void encondig_instruccion5(std::string op,std::string tag){
     fs<<"11100001101000000000000000000000"<<'\n';
     fs<<"11100001101000000000000000000000"<<'\n';
     fs<<"11100001101000000000000000000000"<<'\n';
+    text_memory+=0x10;
   }else{
     std::cout<< "Error at read instruccion: 2"<<'\n';
   }
@@ -2045,6 +2052,7 @@ void encondig_instruccion6(std::string op,std::string rd,std::string rs,std::str
       fs<<"11100001101000000000000000000000"<<'\n';
       fs<<"11100001101000000000000000000000"<<'\n';
       fs<<"11100001101000000000000000000000"<<'\n';
+      text_memory+=0xC;
     }else if(type==2){
       binIns+="011001";
       binIns+=regtobin(rs);
@@ -2055,47 +2063,52 @@ void encondig_instruccion6(std::string op,std::string rd,std::string rs,std::str
       fs<<"11100001101000000000000000000000"<<'\n';
       fs<<"11100001101000000000000000000000"<<'\n';
       fs<<"11100001101000000000000000000000"<<'\n';
+      text_memory+=0xC;
     }else if(type==3){
       if(rs2.find("-")==std::string::npos){
         binIns+="111001";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
-        binIns+=immtobin(rs2,2);
+        binIns+=immtobin(rs2,2,"");
         fs<<binIns<<'\n';
         fs<<"11100001101000000000000000000000"<<'\n';
         fs<<"11100001101000000000000000000000"<<'\n';
-        fs<<"11100001101000000000000000000000"<<'\n';;
+        fs<<"11100001101000000000000000000000"<<'\n';
+        text_memory+=0xC;
       }else{
         rs2.erase(1,1);
         binIns+="110001";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
-        binIns+=immtobin(rs2,2);
+        binIns+=immtobin(rs2,2,"");
         fs<<binIns<<'\n';
         fs<<"11100001101000000000000000000000"<<'\n';
         fs<<"11100001101000000000000000000000"<<'\n';
         fs<<"11100001101000000000000000000000"<<'\n';
+        text_memory+=0xC;
       }
     }else if(type==4){
       if(rs2.find("-")==std::string::npos){
         binIns+="111011";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
-        binIns+=immtobin(rs2,2);
+        binIns+=immtobin(rs2,2,"");
         fs<<binIns<<'\n';
         fs<<"11100001101000000000000000000000"<<'\n';
         fs<<"11100001101000000000000000000000"<<'\n';
         fs<<"11100001101000000000000000000000"<<'\n';
+        text_memory+=0xC;
       }else{
         rs2.erase(1,1);
         binIns+="110011";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
-        binIns+=immtobin(rs2,2);
+        binIns+=immtobin(rs2,2,"");
         fs<<binIns<<'\n';
         fs<<"11100001101000000000000000000000"<<'\n';
         fs<<"11100001101000000000000000000000"<<'\n';
         fs<<"11100001101000000000000000000000"<<'\n';
+        text_memory+=0xC;
       }
     }
   }else if(op.compare("str")==0 || op.compare("Str")==0 || op.compare("STR")==0){
@@ -2117,14 +2130,14 @@ void encondig_instruccion6(std::string op,std::string rd,std::string rs,std::str
         binIns+="111000";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
-        binIns+=immtobin(rs2,2);
+        binIns+=immtobin(rs2,2,"");
         fs<<binIns<<'\n';
       }else{
         rs2.erase(1,1);
         binIns+="110000";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
-        binIns+=immtobin(rs2,2);
+        binIns+=immtobin(rs2,2,"");
         fs<<binIns<<'\n';
       }
     }else if(type==4){
@@ -2132,14 +2145,14 @@ void encondig_instruccion6(std::string op,std::string rd,std::string rs,std::str
         binIns+="111010";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
-        binIns+=immtobin(rs2,2);
+        binIns+=immtobin(rs2,2,"");
         fs<<binIns<<'\n';
       }else{
         rs2.erase(1,1);
         binIns+="110010";
         binIns+=regtobin(rs);
         binIns+=regtobin(rd);
-        binIns+=immtobin(rs2,2);
+        binIns+=immtobin(rs2,2,"");
         fs<<binIns<<'\n';
       }
     }
@@ -2155,35 +2168,37 @@ void encondig_instruccion7(std::string op,std::string rd,std::string rs,std::str
       binIns+="101001";
       binIns+=regtobin(rs);
       binIns+=regtobin(rd);
-      binIns+=immtobin(rs2,2);
+      binIns+=immtobin(rs2,2,"");
       fs<<binIns<<'\n';
       fs<<"11100001101000000000000000000000"<<'\n';
       fs<<"11100001101000000000000000000000"<<'\n';
       fs<<"11100001101000000000000000000000"<<'\n';
+      text_memory+=0xC;
     }else{
       rs2.erase(1,1);
       binIns+="100001";
       binIns+=regtobin(rs);
       binIns+=regtobin(rd);
-      binIns+=immtobin(rs2,2);
+      binIns+=immtobin(rs2,2,"");
       fs<<binIns<<'\n';
       fs<<"11100001101000000000000000000000"<<'\n';
       fs<<"11100001101000000000000000000000"<<'\n';
       fs<<"11100001101000000000000000000000"<<'\n';
+      text_memory+=0xC;
     }
   }else if(op.compare("str")==0 || op.compare("Str")==0 || op.compare("STR")==0){
     if(rs2.find("-")==std::string::npos){
       binIns+="101000";
       binIns+=regtobin(rs);
       binIns+=regtobin(rd);
-      binIns+=immtobin(rs2,2);
+      binIns+=immtobin(rs2,2,"");
       fs<<binIns<<'\n';
     }else{
       rs2.erase(1,1);
       binIns+="100000";
       binIns+=regtobin(rs);
       binIns+=regtobin(rd);
-      binIns+=immtobin(rs2,2);
+      binIns+=immtobin(rs2,2,"");
       fs<<binIns<<'\n';
     }
   }
@@ -2195,15 +2210,17 @@ void encondig_instruccion1(std::string op,std::string rs,std::string rd,std::str
   text_memory+=0x4;
   if(op.compare("Add")==0 || op.compare("ADD")==0 || op.compare("add")==0){
     binIns+="00101000";
-    binIns+=regtobin(rs);
+    std::string r=regtobin(rs);
+    binIns+=r;
     binIns+=regtobin(rd);
-    binIns+=immtobin(immen,1);
+    binIns+=immtobin(immen,1,r);
     fs<<binIns<<'\n';
   }else if(op.compare("Sub")==0 || op.compare("sub")==0 || op.compare("SUB")==0){
     binIns+="00100100";
-    binIns+=regtobin(rs);
+    std::string r=regtobin(rs);
+    binIns+=r;
     binIns+=regtobin(rd);
-    binIns+=immtobin(immen,1);
+    binIns+=immtobin(immen,1,r);
     fs<<binIns<<'\n';
   }
 }
@@ -2272,7 +2289,7 @@ void procces_label(std::string tag,std::string g,int type){
 
 //Se guarda el inmediato en binario
 //Type= De que tamaño sera el inmediato
-std::string immtobin(std::string in,int type){
+std::string immtobin(std::string in,int type,std::string rs){
   in.erase(0,1);
   int x=0;
   if(in.find("0x")==std::string::npos){
@@ -2282,9 +2299,20 @@ std::string immtobin(std::string in,int type){
   }
 
   if(type==1){
-    if(x<255){
-      std::string bin="0000";
-      bin+=std::bitset<8>(x).to_string();
+    if(x<4096){
+      std::string bin=std::bitset<12>(x).to_string();
+      return bin;
+    }else{
+      while(x>4096){
+        x=x-4095;
+        std::string ins="111000101000";
+        ins+=rs;
+        ins+=rs;
+        ins+="111111111111";
+        fs<<ins<<'\n';
+        text_memory+=0x4;
+      }
+      std::string bin=std::bitset<12>(x).to_string();
       return bin;
     }
   }else if(type==2){
@@ -2301,7 +2329,8 @@ void printt(std::string s){
 }
 
 void yyerror(std::string S){
-  std::cout << S << std::endl;
+  final_message="Compiler failed";
+  std::cout << S <<" at line: "<<yylineno<<'\n';
 }
 
 int main(void) {
@@ -2322,7 +2351,7 @@ int main(void) {
 	} while (!feof(yyin));
   fs.close();
   fs2.close();
-  std::cout<<"Compiler success"<<'\n';
+  std::cout<<final_message<<'\n';
   for(int i=0;i<100;++i);
 }
 
