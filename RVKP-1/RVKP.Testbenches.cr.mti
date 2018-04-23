@@ -47,13 +47,6 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	pipeline
 
-} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplier.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/multiplier.sv
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module multiplier
-
-Top level modules:
-	multiplier
-
 } {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBankTB.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/registerBankTB.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module registerBankTB
@@ -88,6 +81,13 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 
 Top level modules:
 	multiplierTB
+
+} {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/instr_Mem.sv
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module instr_Mem
+
+Top level modules:
+	instr_Mem
 
 } {} {}} C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv {1 {vlog -work work -sv -stats=none C:/Users/afeli/Documents/GitHub/ARM-Pipeline/RVKP-1/shift.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
