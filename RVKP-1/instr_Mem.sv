@@ -13,8 +13,8 @@ input clk;
 output reg [31:0] instr; //Instruccion de salida
 
 initial begin
-	$readmemb("code_Mem.txt",ram); //Carga las instrucciones a memoria
-	//$readmemb("convolution_Mem.txt",ram); //Carga las instrucciones a memoria
+	//$readmemb("code_Mem.txt",ram); //Carga las instrucciones a memoria
+	$readmemb("convolution.txt",ram); //Carga las instrucciones a memoria
 end
 
 

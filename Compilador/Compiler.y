@@ -257,7 +257,7 @@ void encondig_instruccion5(std::string op,std::string tag){
     fs<<"11100001101000000000000000000000"<<'\n';
     fs<<"11100001101000000000000000000000"<<'\n';
     fs<<"11100001101000000000000000000000"<<'\n';
-    text_memory+=0x10;
+    text_memory+=0x10 ;
   }else{
     std::cout<< "Error at read instruccion: 2"<<'\n';
   }
